@@ -68,22 +68,12 @@
         </li><!-- End Dashboard Nav -->
   
         <li class="nav-item">
-          <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
-            <i class="bi bi-menu-button-wide"></i><span>Sparepart</span><i class="bi bi-chevron-down ms-auto"></i>
+          <a class="nav-link " href="../admin/view_barang.php">
+            <i class="bi bi-grid"></i>
+            <span>Sparepart</span>
           </a>
-          <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-            <li>
-              <a href="../admin/view_barang.php">
-                <i class="bi bi-circle"></i><span>Barang</span>
-              </a>
-            </li>
-            <li>
-              <a href="../admin/view_stok.php">
-                <i class="bi bi-circle"></i><span>Stok Barang</span>
-              </a>
-            </li>
-          </ul>
-        </li><!-- End Components Nav -->
+        </li>
+  
   
         <li class="nav-item">
           <a class="nav-link " href="index_admin.php">
@@ -169,11 +159,19 @@
       <h1>Dashboard</h1>
       <nav>
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="dashboard">Home</a></li>
+          <li class="breadcrumb-item"><a href="../admin/index_admin.php">Home</a></li>
         </ol>
+
       </nav>
     </div><!-- End Page Title -->
 
+
+    <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
+  <div class="card-header">Welcome To Bima Motor</div>
+  <div class="card-body">
+    <h5 class="card-title">We Serve you with a good</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+  </div>
 
   </main><!-- End #main -->
 

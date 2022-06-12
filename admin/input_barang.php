@@ -70,27 +70,9 @@ include "../config.php";
         </li><!-- End Dashboard Nav -->
   
         <li class="nav-item">
-          <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
-            <i class="bi bi-menu-button-wide"></i><span>Sparepart</span><i class="bi bi-chevron-down ms-auto"></i>
-          </a>
-          <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-            <li>
-              <a href="../admin/view_barang.php">
-                <i class="bi bi-circle"></i><span>Barang</span>
-              </a>
-            </li>
-            <li>
-              <a href="components-accordion.html">
-                <i class="bi bi-circle"></i><span>Stok Barang</span>
-              </a>
-            </li>
-          </ul>
-        </li><!-- End Components Nav -->
-  
-        <li class="nav-item">
-          <a class="nav-link " href="index_admin.php">
+          <a class="nav-link " href="../admin/view_barang.php">
             <i class="bi bi-grid"></i>
-            <span>Pegawai</span>
+            <span>Sparepart</span>
           </a>
         </li>
   
@@ -173,7 +155,6 @@ include "../config.php";
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="../admin/index_admin.php">Home</a></li>
           <li class="breadcrumb-item">Sparepart</li>
-          <li class="breadcrumb-item active">Barang</li>
           <li class="breadcrumb-item active">Tambah Barang</li>
         </ol>
       </nav>
@@ -216,6 +197,20 @@ include "../config.php";
                     </div>
                 </div>
 
+                <label for="">Harga Beli</label>
+                <div class="form-group">
+                    <div class="form-line">
+                        <input type="text" name="harga_beli" class="form-control" required />
+                    </div>
+                </div>
+
+                <label for="">Jumlah Barang</label>
+                <div class="form-group">
+                    <div class="form-line">
+                        <input type="text" name="jumlah_barang" class="form-control" required />
+                    </div>
+                </div>
+
 
                 <input type="submit" name="simpan" value="Simpan" class="but mb-4 w-50 mt-2">
 
@@ -234,8 +229,10 @@ include "../config.php";
         $id_barang = $_POST['id_barang'];
         $nama_barang = $_POST['nama_barang'];
         $harga_jual = $_POST['harga_jual'];
+        $harga_beli = $_POST['harga_beli'];
+        $jumlah_barang = $_POST['jumlah_barang'];
     
-        $sql = pg_query($conn, "insert into barang (id_barang,nama_barang,harga_jual) values ('$id_barang','$nama_barang','$harga_jual')");
+        $sql = pg_query($conn, "insert into barang (id_barang,nama_barang,harga_jual,harga_beli,jumlah_barang) values ('$id_barang','$nama_barang','$harga_jual', '$harga_beli', '$jumlah_barang')");
     
         if ($sql) {
         ?>

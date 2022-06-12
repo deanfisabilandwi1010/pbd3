@@ -72,22 +72,11 @@ $row = pg_fetch_array($sql);
         </li><!-- End Dashboard Nav -->
   
         <li class="nav-item">
-          <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
-            <i class="bi bi-menu-button-wide"></i><span>Sparepart</span><i class="bi bi-chevron-down ms-auto"></i>
+          <a class="nav-link " href="../admin/view_barang.php">
+            <i class="bi bi-grid"></i>
+            <span>Sparepart</span>
           </a>
-          <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-            <li>
-              <a href="../admin/view_barang.php">
-                <i class="bi bi-circle"></i><span>Barang</span>
-              </a>
-            </li>
-            <li>
-              <a href="components-accordion.html">
-                <i class="bi bi-circle"></i><span>Stok Barang</span>
-              </a>
-            </li>
-          </ul>
-        </li><!-- End Components Nav -->
+        </li>
   
         <li class="nav-item">
           <a class="nav-link " href="index_admin.php">
@@ -170,10 +159,12 @@ $row = pg_fetch_array($sql);
   <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>Dashboard</h1>
+      <h1>Sparepart</h1>
       <nav>
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item"><a href="../admin/index_admin.php">Home</a></li>
+          <li class="breadcrumb-item">Sparepart</li>
+          <li class="breadcrumb-item">Edit Barang</li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
@@ -187,7 +178,7 @@ include "../config.php";
 <section class="main-panel d-flex">
     <div class="container card">
         <div class="section-title">
-            <h3 class="fw-bolder mb-4">Tambah Barang</h3>
+            <h3 class="fw-bolder mb-4">Edit Barang</h3>
 
         </div>
        
@@ -215,6 +206,20 @@ include "../config.php";
                     </div>
                 </div>
 
+                <label for="">Harga Beli</label>
+                <div class="form-group">
+                    <div class="form-line">
+                    <input type="integer" class="form-control" name="harga_beli" value="<?php echo $row['harga_beli']?>" required>
+                    </div>
+                </div>
+
+                <label for="">Jumlah Barang</label>
+                <div class="form-group">
+                    <div class="form-line">
+                    <input type="integer" class="form-control" readonly name="jumlah_barang" value="<?php echo $row['jumlah_barang']?>" required>
+                    </div>
+                </div>
+
 
                 <input type="submit" name="simpan" value="Simpan" class="but mb-4 w-50 mt-2">
 
@@ -233,8 +238,10 @@ include "../config.php";
             $id_barang = $_POST['id_barang'];
             $nama_barang = $_POST['nama_barang'];
             $harga_jual = $_POST['harga_jual'];
+            $harga_beli = $_POST['harga_beli'];
+            $jumlah_barang = $_POST['jumlah_barang'];
     
-        $sql =  pg_query($conn,"UPDATE barang SET nama_barang='$nama_barang',  harga_jual='$harga_jual' WHERE id_barang='$id_barang'");
+        $sql =  pg_query($conn,"UPDATE barang SET nama_barang='$nama_barang',  harga_jual='$harga_jual', harga_beli='$harga_beli', jumlah_barang='$jumlah_barang' WHERE id_barang='$id_barang'");
     
         if($sql){
         echo "<script>alert('Data berhasil diedit');window.location='../admin/view_barang.php';</script>";

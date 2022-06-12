@@ -70,22 +70,11 @@ include "../config.php";
         </li><!-- End Dashboard Nav -->
   
         <li class="nav-item">
-          <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
-            <i class="bi bi-menu-button-wide"></i><span>Sparepart</span><i class="bi bi-chevron-down ms-auto"></i>
+          <a class="nav-link " href="../admin/view_barang.php">
+            <i class="bi bi-grid"></i>
+            <span>Sparepart</span>
           </a>
-          <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-            <li>
-              <a href="../admin/view_barang.php">
-                <i class="bi bi-circle"></i><span>Barang</span>
-              </a>
-            </li>
-            <li>
-              <a href="components-accordion.html">
-                <i class="bi bi-circle"></i><span>Stok Barang</span>
-              </a>
-            </li>
-          </ul>
-        </li><!-- End Components Nav -->
+        </li>
   
         <li class="nav-item">
           <a class="nav-link " href="index_admin.php">
@@ -173,7 +162,6 @@ include "../config.php";
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="index.html">Home</a></li>
           <li class="breadcrumb-item">Sparepart</li>
-          <li class="breadcrumb-item active">Barang</li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
@@ -191,8 +179,10 @@ include "../config.php";
                 <thead>
                   <tr>
                     <td scope="col">Kode Barang</td>
-                    <td scope="col">Nama Barang</td>
-                    <td scope="col">Harga Barang</td>
+                    <td scope="col">Nama Barng</td>
+                    <td scope="col">Harga Jual</td>
+                    <td scope="col">Harga Beli</td>
+                    <td scope="col">Jumlah Barang</td>
                     
                   </tr>
                 </thead>
@@ -207,6 +197,8 @@ include "../config.php";
                     <td><?=$row['id_barang']?></td>
                     <td><?=$row['nama_barang']?></td>
                     <td><?=$row['harga_jual']?></td>
+                    <td><?=$row['harga_beli']?></td>
+                    <td><?=$row['jumlah_barang']?></td>
                     <td align = "center">
                     <a class="btn btn-primary" href="../admin/edit_barang.php?id_barang=<?=$row['id_barang']?>">Edit</a>
                     <a onclick="return confirm('Yakin menghapus data ini ?')" class="btn btn-danger" href="../admin/hapus_barang.php?id_barang=<?=$row['id_barang']?>">Hapus</a>
