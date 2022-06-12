@@ -10,7 +10,7 @@ include "../config.php";
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Barang / tambah barang - Bima Motor</title>
+  <title>Transaksi / Stok - Bima Motor</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -34,12 +34,7 @@ include "../config.php";
   <!-- Template Main CSS File -->
   <link href="../assets/css/style.css" rel="stylesheet">
   
-  <!-- =======================================================
-  * Template Name: NiceAdmin - v2.2.2
-  * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+ 
   </head>
   
   <body>
@@ -49,7 +44,7 @@ include "../config.php";
   
     <div class="d-flex align-items-center justify-content-between">
       <a href="index.html" class="logo d-flex align-items-center">
-       <img src="../assets/img/Logoo.PNG" alt="">
+      <img src="../assets/img/Logoo.PNG" alt="">
         <span class="d-none d-lg-block">Bima Motor</span>
       </a>
       <i class="bi bi-list toggle-sidebar-btn"></i>
@@ -63,7 +58,7 @@ include "../config.php";
       <ul class="sidebar-nav" id="sidebar-nav">
   
         <li class="nav-item">
-          <a class="nav-link " href="../admin/index_admin.php">
+          <a class="nav-link " href="index_admin.php">
             <i class="bi bi-grid"></i>
             <span>Beranda</span>
           </a>
@@ -80,7 +75,7 @@ include "../config.php";
               </a>
             </li>
             <li>
-              <a href="components-accordion.html">
+              <a href="../admin/view_stok.php">
                 <i class="bi bi-circle"></i><span>Stok Barang</span>
               </a>
             </li>
@@ -168,90 +163,74 @@ include "../config.php";
   <main id="main" class="main">
 
     <div class="pagetitle">
-    <h1>Barang</h1>
+      <h1>Barang</h1>
       <nav>
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="../admin/index_admin.php">Home</a></li>
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
           <li class="breadcrumb-item">Sparepart</li>
-          <li class="breadcrumb-item active">Barang</li>
-          <li class="breadcrumb-item active">Tambah Barang</li>
+          <li class="breadcrumb-item active">Stok Barang</li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
 
-    <?php
-include "../config.php";
+    <section class="section">
+      <div class="row">
+        <div class="col-lg-12">
 
-?>
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Tabel Stok Barang</h5>
 
+              <!-- Default Table -->
+              <table class="table">
+                <thead>
+                  <tr>
+                    <td scope="col">ID Stok</td>
+                    <td scope="col">Kode Barang</td>
+                    <td scope="col">Nama Barang</td>
+                    <td scope="col">Jumlah Barang</td>
+                    <td scope="col">Harga Beli</td>
+                  </tr>
+                </thead>
 
-<section class="main-panel d-flex">
-    <div class="container card">
-        <div class="section-title">
-            <h3 class="fw-bolder mb-4">Tambah Barang</h3>
+                <tbody>
+                  <?php
+                  $result = pg_query($conn,"SELECT *FROM stok ");
+                  while ($row = pg_fetch_array($result)){
+                    ?>
+                  
+                  <tr>
+                    <td><?=$row['id_stok']?></td>
+                    <td><?=$row['id_barang']?></td>
+                    <td><?=$row['nama_barang']?></td>
+                    <td><?=$row['jumlah_barang']?></td>
+                    <td><?=$row['harga_beli']?></td>
+                    <td align = "center">
+                    <a class="btn btn-primary" href="../admin/edit_barang.php?id_barang=<?=$row['id_barang']?>">Edit</a>
+                    <a onclick="return confirm('Yakin menghapus data ini ?')" class="btn btn-danger" href="../admin/hapus_barang.php?id_barang=<?=$row['id_barang']?>">Hapus</a>
+                    
+                  </td>
+                  </tr>
+                  <?php
+                  }
+                  ?>
+                <!-- <a href="../admin/input_barang.php" class="button-link">add</a> -->
+                <!-- <button class="btn btn-primary" href="../admin/input_barang.php" >Add</button> -->
+                
+                
+                <button class="btn btn-primary" onclick="location.href='../admin/input_barang.php'" type="button" style="float: right" >Add</button>
+                
+                
+                  
 
+                </tbody>
+              </table>
+              <!-- End Default Table Example -->
+            </div>
+          </div>
         </div>
-       
-
-        <form method="POST" class="d-flex">
-            <div class="col-sm-6">
-                <label for="">Id Barang</label>
-                <div class="form-group">
-                    <div class="form-line">
-                        <input type="text" name="id_barang" class="form-control" maxlength="5" required />
-                    </div>
-                </div>
-
-                <label for="">Nama Barang</label>
-                <div class="form-group">
-                    <div class="form-line">
-                        <input type="text" name="nama_barang" class="form-control" required />
-                    </div>
-                </div>
-
-                <label for="">Harga Jual</label>
-                <div class="form-group">
-                    <div class="form-line">
-                        <input type="text" name="harga_jual" class="form-control" required />
-                    </div>
-                </div>
-
-
-                <input type="submit" name="simpan" value="Simpan" class="but mb-4 w-50 mt-2">
-
-            </div>
-            <div class="col-sm-6">
-
-                </div>
-
-
-            </div>
-
-        </form>
-        <?php 
-   
-        if (isset($_POST['simpan'])) {
-        $id_barang = $_POST['id_barang'];
-        $nama_barang = $_POST['nama_barang'];
-        $harga_jual = $_POST['harga_jual'];
-    
-        $sql = pg_query($conn, "insert into barang (id_barang,nama_barang,harga_jual) values ('$id_barang','$nama_barang','$harga_jual')");
-    
-        if ($sql) {
-        ?>
-            echo "<script>alert('Data berhasil ditambah');window.location='../admin/view_barang.php';</script>";
-        <?php
-        }
-        }
-        
-        ?>
-
-
-?>
-
-    </div>
-</section>
-
+      </div>
+    </section>
 
   </main><!-- End #main -->
 
@@ -261,10 +240,7 @@ include "../config.php";
       &copy; Copyright <strong><span>Bima Motor</span></strong>. All Rights Reserved
     </div>
     <div class="credits">
-      <!-- All the links in the footer should remain intact. -->
-      <!-- You can delete the links only if you purchased the pro version. -->
-      <!-- Licensing information: https://bootstrapmade.com/license/ -->
-      <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
+     
       Designed by <a href="https://bootstrapmade.com/">Bima Motor</a>
     </div>
   </footer><!-- End Footer -->
@@ -280,9 +256,8 @@ include "../config.php";
   <script src="../assets/vendor/simple-datatables/simple-datatables.js"></script>
   <script src="../assets/vendor/tinymce/tinymce.min.js"></script>
   <script src="../assets/vendor/php-email-form/validate.js"></script>
-
   <!-- Template Main JS File -->
-  <script src="../assets/js/main.js"></script>
+  <script src="assets/js/main.js"></script>
 
 </body>
 

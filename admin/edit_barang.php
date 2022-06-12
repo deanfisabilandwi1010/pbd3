@@ -18,7 +18,7 @@ $row = pg_fetch_array($sql);
 
   <!-- Favicons -->
   <link href="../assets/img/Logoo.PNG" rel="icon">
-  <link href="../assets/img/Logoo.PNG" rel="Logoo">
+  <link href="../assets/img/Logoo.PNG" rel="icon">
   
   <!-- Google Fonts -->
   <link href="https://fonts.gstatic.com" rel="preconnect">
@@ -51,7 +51,7 @@ $row = pg_fetch_array($sql);
   
     <div class="d-flex align-items-center justify-content-between">
       <a href="index.html" class="logo d-flex align-items-center">
-        <img src="assets/img/Logoo.PNG" alt="">
+        <img src="../assets/img/Logoo.PNG" alt="">
         <span class="d-none d-lg-block">Bima Motor</span>
       </a>
       <i class="bi bi-list toggle-sidebar-btn"></i>

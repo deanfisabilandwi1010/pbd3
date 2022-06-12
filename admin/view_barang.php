@@ -49,7 +49,7 @@ include "../config.php";
   
     <div class="d-flex align-items-center justify-content-between">
       <a href="index.html" class="logo d-flex align-items-center">
-        <img src="assets/img/Logoo.PNG" alt="">
+      <img src="../assets/img/Logoo.PNG" alt="">
         <span class="d-none d-lg-block">Bima Motor</span>
       </a>
       <i class="bi bi-list toggle-sidebar-btn"></i>
@@ -208,7 +208,7 @@ include "../config.php";
                     <td><?=$row['nama_barang']?></td>
                     <td><?=$row['harga_jual']?></td>
                     <td align = "center">
-                    <a class="btn btn-warning" href="../admin/edit_barang.php?id_barang=<?=$row['id_barang']?>">Edit</a>
+                    <a class="btn btn-primary" href="../admin/edit_barang.php?id_barang=<?=$row['id_barang']?>">Edit</a>
                     <a onclick="return confirm('Yakin menghapus data ini ?')" class="btn btn-danger" href="../admin/hapus_barang.php?id_barang=<?=$row['id_barang']?>">Hapus</a>
                     
                   </td>
