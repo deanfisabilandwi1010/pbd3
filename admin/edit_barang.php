@@ -65,7 +65,7 @@ $row = pg_fetch_array($sql);
       <ul class="sidebar-nav" id="sidebar-nav">
   
         <li class="nav-item">
-          <a class="nav-link " href="index.html">
+          <a class="nav-link " href="../admin/index_admin.php">
             <i class="bi bi-grid"></i>
             <span>Beranda</span>
           </a>
@@ -77,7 +77,7 @@ $row = pg_fetch_array($sql);
           </a>
           <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
             <li>
-              <a href="components-alerts.html">
+              <a href="../admin/view_barang.php">
                 <i class="bi bi-circle"></i><span>Barang</span>
               </a>
             </li>
