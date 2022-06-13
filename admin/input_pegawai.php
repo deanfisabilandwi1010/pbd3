@@ -224,9 +224,10 @@ include "../config.php";
         $sql = pg_query($conn, "insert into pegawai (id_pegawai,nama_pegawai,jabatan,no_hp_pegawai) values ('$id_pegawai','$nama_pegawai','$jabatan', '$no_hp_pegawai')");
     
         if ($sql) {
-        ?>
-            echo "<script>alert('Data berhasil ditambah');window.location='../admin/view_pegawai.php';</script>";
-        <?php
+        
+            echo "<script>alert('Data berhasil ditambah');window.location='../admin/view_pegawai.php'</script>";
+      
+
         }
         }
         

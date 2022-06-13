@@ -1,4 +1,4 @@
-<?php
+<?php  
 include "../config.php";
 
 ?>
@@ -48,7 +48,7 @@ include "../config.php";
   <header id="header" class="header fixed-top d-flex align-items-center">
   
     <div class="d-flex align-items-center justify-content-between">
-      <a href="index.html" class="logo d-flex align-items-center">
+      <a href="../admin/index_admin.php" class="logo d-flex align-items-center">
       <img src="../assets/img/Logoo.PNG" alt="">
         <span class="d-none d-lg-block">Bima Motor</span>
       </a>
@@ -62,8 +62,13 @@ include "../config.php";
   
       <ul class="sidebar-nav" id="sidebar-nav">
   
+<<<<<<< HEAD
       <li class="nav-item">
           <a class="nav-link " href="index_admin.php">
+=======
+        <li class="nav-item">
+          <a class="nav-link " href="../admin/index_admin.php">
+>>>>>>> 80d482249926993a13e949e042b7535c34704938
             <i class="bi bi-grid"></i>
             <span>Beranda</span>
           </a>
@@ -150,7 +155,7 @@ include "../config.php";
       <h1>Barang</h1>
       <nav>
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item"><a href="../admin/index_admin.php">Home</a></li>
           <li class="breadcrumb-item">Sparepart</li>
         </ol>
       </nav>
@@ -188,7 +193,7 @@ include "../config.php";
                     <td><?=$row['nama_barang']?></td>
                     <td><?=$row['harga_jual']?></td>
                     <td><?=$row['harga_beli']?></td>
-                    <td><?=$row['total_barang']?></td>
+                    <td><?=$row['jumlah_barang']?></td>
                     <td align = "center">
                     <a class="btn btn-primary" href="../admin/edit_barang.php?id_barang=<?=$row['id_barang']?>">Edit</a>
                     <a onclick="return confirm('Yakin menghapus data ini ?')" class="btn btn-danger" href="../admin/hapus_barang.php?id_barang=<?=$row['id_barang']?>">Hapus</a>
@@ -244,7 +249,7 @@ include "../config.php";
   <script src="../assets/vendor/tinymce/tinymce.min.js"></script>
   <script src="../assets/vendor/php-email-form/validate.js"></script>
   <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
+  <script src="../assets/js/main.js"></script>
 
 </body>
 

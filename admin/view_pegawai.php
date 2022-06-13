@@ -48,7 +48,7 @@ include "../config.php";
   <header id="header" class="header fixed-top d-flex align-items-center">
   
     <div class="d-flex align-items-center justify-content-between">
-      <a href="index.html" class="logo d-flex align-items-center">
+      <a href="../admin/index_admin.php" class="logo d-flex align-items-center">
       <img src="../assets/img/Logoo.PNG" alt="">
         <span class="d-none d-lg-block">Bima Motor</span>
       </a>
@@ -57,9 +57,9 @@ include "../config.php";
   </header><!-- End Header -->
   
   
-    <!-- ======= Sidebar ======= -->
-    <aside id="sidebar" class="sidebar">
+  <aside id="sidebar" class="sidebar">
   
+<<<<<<< HEAD
       <ul class="sidebar-nav" id="sidebar-nav">
       <li class="nav-item">
           <a class="nav-link " href="index_admin.php">
@@ -72,15 +72,48 @@ include "../config.php";
           <a class="nav-link " href="../admin/view_barang.php">
             <i class="bi bi-grid"></i>
             <span>Sparepart</span>
+=======
+  <ul class="sidebar-nav" id="sidebar-nav">
+
+    <li class="nav-item">
+      <a class="nav-link " href="../admin/index_admin.php">
+        <i class="bi bi-grid"></i>
+        <span>Beranda</span>
+      </a>
+    </li><!-- End Dashboard Nav -->
+
+    <li class="nav-item">
+      <a class="nav-link " href="../admin/view_barang.php">
+        <i class="bi bi-grid"></i>
+        <span>Sparepart</span>
+      </a>
+    </li>
+
+
+    <li class="nav-item">
+      <a class="nav-link " href="../admin/view_pegawai.php">
+        <i class="bi bi-grid"></i>
+        <span>Pegawai</span>
+      </a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link collapsed" data-bs-target="#laporan-nav" data-bs-toggle="collapse" href="#">
+        <i class="bi bi-eval-wide"></i><span>Laporan</span><i class="bi bi-chevron-down ms-auto"></i>
+      </a>
+      <ul id="laporan-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+        <li>
+          <a href="components-alerts.html">
+            <i class="bi bi-circle"></i><span>Pembelian</span>
+>>>>>>> 80d482249926993a13e949e042b7535c34704938
           </a>
         </li>
-  
-        <li class="nav-item">
-          <a class="nav-link " href="../admin/view_pegawai.php">
-            <i class="bi bi-grid"></i>
-            <span>Pegawai</span>
+        <li>
+          <a href="components-accordion.html">
+            <i class="bi bi-circle"></i><span>Pelanggan</span>
           </a>
         </li>
+<<<<<<< HEAD
 
         <li class="nav-item">
           <a class="nav-link " href="../admin/view_pelanggan.php">
@@ -116,31 +149,63 @@ include "../config.php";
           <li class="nav-item">
           <a class="nav-link collapsed" data-bs-target="#laporan-nav" data-bs-toggle="collapse" href="#">
             <i class="bi bi-eval-wide"></i><span>Transaksi</span><i class="bi bi-chevron-down ms-auto"></i>
+=======
+        <li>
+          <a href="components-accordion.html">
+            <i class="bi bi-circle"></i><span>Penjualan</span>
           </a>
-          <ul id="laporan-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-            <li>
-              <a href="components-alerts.html">
-                <i class="bi bi-circle"></i><span>Transaksi</span>
-              </a>
-            </li>
-            <li>
-              <a href="components-accordion.html">
-                <i class="bi bi-circle"></i><span>Pembayaran</span>
-              </a>
-            </li>
-          </ul>
-          </li>
-        <li class="nav-heading">Pages</li>
-  
-        
-  
-        <li class="nav-item">
-          <a class="nav-link collapsed" href="pages-faq.html">
-            <i class="bi bi-question-circle"></i>
-            <span>Tentang</span>
+        </li>
+      </ul>
+      </li>
+
+      <li class="nav-item">
+      <a class="nav-link collapsed" data-bs-target="#pelanggan-nav" data-bs-toggle="collapse" href="#">
+        <i class="bi bi-eval-wide"></i><span>Pelanggan</span><i class="bi bi-chevron-down ms-auto"></i>
+      </a>
+      <ul id="pelanggan-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+        <li>
+          <a href="components-alerts.html">
+            <i class="bi bi-circle"></i><span>Data Pelanggan</span>
           </a>
+        </li>
+      </ul>
+      </li>
+
+      <li class="nav-item">
+      <a class="nav-link collapsed" data-bs-target="#transaksi-nav" data-bs-toggle="collapse" href="#">
+        <i class="bi bi-eval-wide"></i><span>Transaksi</span><i class="bi bi-chevron-down ms-auto"></i>
+      </a>
+      <ul id="transaksi-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+        <li>
+          <a href="components-alerts.html">
+            <i class="bi bi-circle"></i><span>Transaksi</span>
+>>>>>>> 80d482249926993a13e949e042b7535c34704938
+          </a>
+        </li>
+        <li>
+          <a href="components-accordion.html">
+            <i class="bi bi-circle"></i><span>Pembayaran</span>
+          </a>
+<<<<<<< HEAD
         </li><!-- End F.A.Q Page Nav -->
     </aside><!-- End Sidebar-->
+=======
+        </li>
+      </ul>
+      </li>
+    <li class="nav-heading">Pages</li>
+
+    
+
+    <li class="nav-item">
+      <a class="nav-link collapsed" href="pages-faq.html">
+        <i class="bi bi-question-circle"></i>
+        <span>Tentang</span>
+      </a>
+    </li><!-- End F.A.Q Page Nav -->
+
+</aside><!-- End Sidebar-->
+>>>>>>> 80d482249926993a13e949e042b7535c34704938
 
   <main id="main" class="main">
 
@@ -148,7 +213,7 @@ include "../config.php";
       <h1>Pegawai</h1>
       <nav>
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item"><a href="../admin/index_admin.php">Home</a></li>
           <li class="breadcrumb-item">Pegawai</li>
         </ol>
       </nav>

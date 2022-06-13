@@ -206,7 +206,7 @@ include "../config.php";
                 <label for="">Jumlah Barang</label>
                 <div class="form-group">
                     <div class="form-line">
-                    <input type="integer" class="form-control" readonly name="total_barang" value="<?php echo $row['total_barang']?>" required>
+                    <input type="integer" class="form-control" readonly name="jumlah_barang" value="<?php echo $row['jumlah_barang']?>" required>
                     </div>
                 </div>
 
@@ -229,9 +229,9 @@ include "../config.php";
             $nama_barang = $_POST['nama_barang'];
             $harga_jual = $_POST['harga_jual'];
             $harga_beli = $_POST['harga_beli'];
-            $total_barang = $_POST['total_barang'];
+            $jumlah_barang = $_POST['jumlah_barang'];
     
-        $sql =  pg_query($conn,"UPDATE barang SET nama_barang='$nama_barang',  harga_jual='$harga_jual', harga_beli='$harga_beli', total_barang ='$total_barang' WHERE id_barang='$id_barang'");
+        $sql =  pg_query($conn,"UPDATE barang SET nama_barang='$nama_barang',  harga_jual='$harga_jual', harga_beli='$harga_beli', jumlah_barang ='$jumlah_barang' WHERE id_barang='$id_barang'");
     
         if($sql){
         echo "<script>alert('Data berhasil diedit');window.location='../admin/view_barang.php';</script>";
