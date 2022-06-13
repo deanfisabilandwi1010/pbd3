@@ -240,15 +240,6 @@ include "../config.php";
 
 
         <form method="POST" class="d-flex">
-<<<<<<< HEAD
-          <div class="col-sm-6">
-            <label for="">Id Barang</label>
-            <div class="form-group">
-              <div class="form-line">
-                <input type="text" name="id_barang" class="form-control" maxlength="5" required />
-              </div>
-            </div>
-=======
             <div class="col-sm-6">
                 <label for="">Id Barang</label>
                 <div class="form-group">
@@ -287,7 +278,6 @@ include "../config.php";
 
 
                 <input type="submit" class = "btn btn-primary" name="simpan" value="Simpan" class="but mb-4 w-50 mt-2">
->>>>>>> dc08fa82c39d0751f25a040d59c2702626d9853f
 
             <label for="">Nama Barang</label>
             <div class="form-group">
