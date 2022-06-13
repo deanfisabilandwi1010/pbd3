@@ -1,21 +1,25 @@
 <?php
+include '../config.php'; 
+
+$id_pegawai = $_GET['id_pegawai'];
+$sql = pg_query($conn, "SELECT * from pegawai where id_pegawai='$id_pegawai'");
+$row = pg_fetch_array($sql);
 
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
 
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>DashBoard - Bima Motor</title>
+  <title>Edit Barang - Bima Motor</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
   <!-- Favicons -->
   <link href="../assets/img/Logoo.PNG" rel="icon">
   <link href="../assets/img/Logoo.PNG" rel="icon">
+  
   <!-- Google Fonts -->
   <link href="https://fonts.gstatic.com" rel="preconnect">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
@@ -74,14 +78,13 @@
           </a>
         </li>
   
-  
         <li class="nav-item">
           <a class="nav-link " href="../admin/view_pegawai.php">
             <i class="bi bi-grid"></i>
             <span>Pegawai</span>
           </a>
         </li>
-
+  
         <li class="nav-item">
           <a class="nav-link collapsed" data-bs-target="#laporan-nav" data-bs-toggle="collapse" href="#">
             <i class="bi bi-eval-wide"></i><span>Laporan</span><i class="bi bi-chevron-down ms-auto"></i>
@@ -151,14 +154,98 @@
   <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>Dashboard</h1>
+      <h1>Pegawai</h1>
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="../admin/index_admin.php">Home</a></li>
+          <li class="breadcrumb-item">Pegawai</li>
+          <li class="breadcrumb-item">Edit Pegawai</li>
         </ol>
-
       </nav>
     </div><!-- End Page Title -->
+
+    <?php
+include "../config.php";
+
+?>
+
+
+<section class="main-panel d-flex">
+    <div class="container card">
+        <div class="section-title">
+            <h3 class="fw-bolder mb-4">Edit Pegawai</h3>
+
+        </div>
+       
+
+        <form method="POST" class="d-flex">
+            <div class="col-sm-6">
+                <label for="">Id Pegawai</label>
+                <div class="form-group">
+                    <div class="form-line">
+                    <input type="text" class="form-control" readonly name="id_pegawai" value="<?php echo $row['id_pegawai']?>" required>
+                    </div>
+                </div>
+
+                <label for="">Nama Pegawai</label>
+                <div class="form-group">
+                    <div class="form-line">
+                    <input type="text" class="form-control" name="nama_pegawai" value="<?php echo $row['nama_pegawai']?>" required>
+                    </div>
+                </div>
+
+                <label for="">Jabatan</label>
+                <div class="form-group">
+                    <div class="form-line">
+                    <input type="text" class="form-control" name="jabatan" value="<?php echo $row['jabatan']?>" required>
+                    </div>
+                </div>
+
+                <label for="">Nomor Telepon</label>
+                <div class="form-group">
+                    <div class="form-line">
+                    <input type="text" class="form-control" name="no_hp_pegawai" value="<?php echo $row['no_hp_pegawai']?>" required>
+                    </div>
+                </div>
+
+                <div>
+                <input type="submit" name="simpan" value="Simpan" class="but mb-4 w-50 mt-2">
+                </div>
+
+
+
+            </div>
+            <div class="col-sm-6">
+
+                </div>
+
+
+            </div>
+
+        </form>
+        <?php 
+   
+        if (isset($_POST['simpan'])) {
+            $id_pegawai = $_POST['id_pegawai'];
+            $nama_pegawai = $_POST['nama_pegawai'];
+            $jabatan = $_POST['jabatan'];
+            $no_hp_pegawai = $_POST['no_hp_pegawai'];
+    
+        $sql =  pg_query($conn,"UPDATE pegawai SET nama_pegawai='$nama_pegawai',  jabatan='$jabatan', no_hp_pegawai='$no_hp_pegawai' WHERE id_pegawai='$id_pegawai'");
+    
+        if($sql){
+        echo "<script>alert('Data berhasil diedit');window.location='../admin/view_barang.php';</script>";
+        } else {
+        echo pg_last_error($conn);
+        }
+        }
+        
+        
+        ?>
+
+
+    </div>
+</section>
 
 
   </main><!-- End #main -->
