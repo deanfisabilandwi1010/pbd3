@@ -10,7 +10,7 @@ include "../config.php";
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Sparepart - Bima Motor</title>
+  <title>Input Pegawai - Bima Motor</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -49,7 +49,7 @@ include "../config.php";
   
     <div class="d-flex align-items-center justify-content-between">
       <a href="index.html" class="logo d-flex align-items-center">
-      <img src="../assets/img/Logoo.PNG" alt="">
+       <img src="../assets/img/Logoo.PNG" alt="">
         <span class="d-none d-lg-block">Bima Motor</span>
       </a>
       <i class="bi bi-list toggle-sidebar-btn"></i>
@@ -63,7 +63,7 @@ include "../config.php";
       <ul class="sidebar-nav" id="sidebar-nav">
   
         <li class="nav-item">
-          <a class="nav-link " href="index_admin.php">
+          <a class="nav-link " href="../admin/index_admin.php">
             <i class="bi bi-grid"></i>
             <span>Beranda</span>
           </a>
@@ -73,13 +73,6 @@ include "../config.php";
           <a class="nav-link " href="../admin/view_barang.php">
             <i class="bi bi-grid"></i>
             <span>Sparepart</span>
-          </a>
-        </li>
-  
-        <li class="nav-item">
-          <a class="nav-link " href="index_admin.php">
-            <i class="bi bi-grid"></i>
-            <span>Pegawai</span>
           </a>
         </li>
   
@@ -152,74 +145,97 @@ include "../config.php";
   <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>Barang</h1>
+    <h1>Pegawai</h1>
       <nav>
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-          <li class="breadcrumb-item">Sparepart</li>
+          <li class="breadcrumb-item"><a href="../admin/index_admin.php">Home</a></li>
+          <li class="breadcrumb-item">Pegawai</li>
+          <li class="breadcrumb-item active">Tambah Pegawai</li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
 
-    <section class="section">
-      <div class="row">
-        <div class="col-lg-12">
+    <?php
+include "../config.php";
 
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Tabel Barang</h5>
+?>
 
-              <!-- Default Table -->
-              <table class="table">
-                <thead>
-                  <tr>
-                    <td scope="col">Kode Barang</td>
-                    <td scope="col">Nama Barng</td>
-                    <td scope="col">Harga Jual</td>
-                    <td scope="col">Harga Beli</td>
-                    <td scope="col">Jumlah Barang</td>
-                    
-                  </tr>
-                </thead>
 
-                <tbody>
-                  <?php
-                  $result = pg_query($conn,"SELECT *FROM barang ");
-                  while ($row = pg_fetch_array($result)){
-                    ?>
-                  
-                  <tr>
-                    <td><?=$row['id_barang']?></td>
-                    <td><?=$row['nama_barang']?></td>
-                    <td><?=$row['harga_jual']?></td>
-                    <td><?=$row['harga_beli']?></td>
-                    <td><?=$row['jumlah_barang']?></td>
-                    <td align = "center">
-                    <a class="btn btn-primary" href="../admin/edit_barang.php?id_barang=<?=$row['id_barang']?>">Edit</a>
-                    <a onclick="return confirm('Yakin menghapus data ini ?')" class="btn btn-danger" href="../admin/hapus_barang.php?id_barang=<?=$row['id_barang']?>">Hapus</a>
-                    
-                  </td>
-                  </tr>
-                  <?php
-                  }
-                  ?>
-                <!-- <a href="../admin/input_barang.php" class="button-link">add</a> -->
-                <!-- <button class="btn btn-primary" href="../admin/input_barang.php" >Add</button> -->
-                
-                
-                <button class="btn btn-primary" onclick="location.href='../admin/input_barang.php'" type="button" style="float: right" >Add</button>
-                
-                
-                  
+<section class="main-panel d-flex">
+    <div class="container card">
+        <div class="section-title">
+            <h3 class="fw-bolder mb-4">Tambah Pegawai</h3>
 
-                </tbody>
-              </table>
-              <!-- End Default Table Example -->
-            </div>
-          </div>
         </div>
-      </div>
-    </section>
+       
+
+        <form method="POST" class="d-flex">
+            <div class="col-sm-6">
+                <label for="">Id Pegawai</label>
+                <div class="form-group">
+                    <div class="form-line">
+                        <input type="text" name="id_pegawai" class="form-control" maxlength="10" required />
+                    </div>
+                </div>
+
+                <label for="">Nama Pegawai</label>
+                <div class="form-group">
+                    <div class="form-line">
+                        <input type="text" name="nama_pegawai" class="form-control" required />
+                    </div>
+                </div>
+
+                <label for="">Jabatan</label>
+                <div class="form-group">
+                    <div class="form-line">
+                        <input type="text" name="jabatan" class="form-control" required />
+                    </div>
+                </div>
+
+                <label for="">Nomor Telepon</label>
+                <div class="form-group">
+                    <div class="form-line">
+                        <input type="text" name="no_hp_pegawai" class="form-control" required />
+                    </div>
+                </div>
+
+                <input type="submit" class = "btn btn-primary" name="simpan" value="Simpan" class="but mb-4 w-50 mt-2">
+
+            </div>
+            <div class="col-sm-6">
+
+                </div>
+
+
+            </div>
+
+        </form>
+        <?php 
+   
+        if (isset($_POST['simpan'])) {
+        $id_barang = $_POST['id_pegawai'];
+        $nama_barang = $_POST['nama_pegawai'];
+        $harga_jual = $_POST['jabatan'];
+        $harga_beli = $_POST['harga_beli'];
+        $jumlah_barang = $_POST['jumlah_barang'];
+    
+        $sql = pg_query($conn, "insert into barang (id_barang,nama_barang,harga_jual,harga_beli,jumlah_barang) values ('$id_barang','$nama_barang','$harga_jual', '$harga_beli', '$jumlah_barang')");
+    
+        if ($sql) {
+        ?>
+            echo "<script>alert('Data berhasil ditambah');window.location='../admin/view_barang.php';</script>";
+        <?php
+        }
+        }
+        
+        ?>
+
+
+?>
+
+    </div>
+</section>
+
 
   </main><!-- End #main -->
 
@@ -248,8 +264,9 @@ include "../config.php";
   <script src="../assets/vendor/simple-datatables/simple-datatables.js"></script>
   <script src="../assets/vendor/tinymce/tinymce.min.js"></script>
   <script src="../assets/vendor/php-email-form/validate.js"></script>
+
   <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
+  <script src="../assets/js/main.js"></script>
 
 </body>
 

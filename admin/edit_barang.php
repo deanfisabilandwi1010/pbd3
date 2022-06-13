@@ -12,7 +12,7 @@ $row = pg_fetch_array($sql);
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Transaksi / Stok - Bima Motor</title>
+  <title>Edit Barang - Bima Motor</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -116,11 +116,6 @@ $row = pg_fetch_array($sql);
             <li>
               <a href="components-alerts.html">
                 <i class="bi bi-circle"></i><span>Data Pelanggan</span>
-              </a>
-            </li>
-            <li>
-              <a href="components-accordion.html">
-                <i class="bi bi-circle"></i><span>Data Mobil Pelanggan</span>
               </a>
             </li>
           </ul>

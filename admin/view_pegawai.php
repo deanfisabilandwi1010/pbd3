@@ -10,7 +10,7 @@ include "../config.php";
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Sparepart - Bima Motor</title>
+  <title>Pegawai - Bima Motor</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -152,11 +152,11 @@ include "../config.php";
   <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>Barang</h1>
+      <h1>Pegawai</h1>
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-          <li class="breadcrumb-item">Sparepart</li>
+          <li class="breadcrumb-item">Pegawai</li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
@@ -167,32 +167,31 @@ include "../config.php";
 
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Tabel Barang</h5>
+              <h5 class="card-title">Tabel Pegawai</h5>
 
               <!-- Default Table -->
               <table class="table">
                 <thead>
                   <tr>
-                    <td scope="col">Kode Barang</td>
-                    <td scope="col">Nama Barng</td>
-                    <td scope="col">Harga Jual</td>
-                    <td scope="col">Harga Beli</td>
-                    <td scope="col">Jumlah Barang</td>
+                    <td scope="col">ID Pegawai</td>
+                    <td scope="col">Nama Pegawai</td>
+                    <td scope="col">Jabatan</td>
+                    <td scope="col">Nomor Telepon</td>
                     
                   </tr>
                 </thead>
 
                 <tbody>
                   <?php
-                  $result = pg_query($conn,"SELECT *FROM barang ");
+                  $result = pg_query($conn,"SELECT *FROM pegawai ");
                   while ($row = pg_fetch_array($result)){
                     ?>
                   
                   <tr>
-                    <td><?=$row['id_barang']?></td>
-                    <td><?=$row['nama_barang']?></td>
-                    <td><?=$row['harga_jual']?></td>
-                    <td><?=$row['harga_beli']?></td>
+                    <td><?=$row['id_pegawi']?></td>
+                    <td><?=$row['nama_pegawai']?></td>
+                    <td><?=$row['jabatan']?></td>
+                    <td><?=$row['no_hp_pegawai']?></td>
                     <td><?=$row['jumlah_barang']?></td>
                     <td align = "center">
                     <a class="btn btn-primary" href="../admin/edit_barang.php?id_barang=<?=$row['id_barang']?>">Edit</a>

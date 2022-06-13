@@ -10,7 +10,7 @@ include "../config.php";
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Barang / tambah barang - Bima Motor</title>
+  <title>Input Barang - Bima Motor</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -107,11 +107,6 @@ include "../config.php";
             <li>
               <a href="components-alerts.html">
                 <i class="bi bi-circle"></i><span>Data Pelanggan</span>
-              </a>
-            </li>
-            <li>
-              <a href="components-accordion.html">
-                <i class="bi bi-circle"></i><span>Data Mobil Pelanggan</span>
               </a>
             </li>
           </ul>
