@@ -62,13 +62,8 @@ include "../config.php";
   
       <ul class="sidebar-nav" id="sidebar-nav">
   
-<<<<<<< HEAD
       <li class="nav-item">
-          <a class="nav-link " href="index_admin.php">
-=======
-        <li class="nav-item">
           <a class="nav-link " href="../admin/index_admin.php">
->>>>>>> 80d482249926993a13e949e042b7535c34704938
             <i class="bi bi-grid"></i>
             <span>Beranda</span>
           </a>

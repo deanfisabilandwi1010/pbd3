@@ -113,7 +113,6 @@ include "../config.php";
             <i class="bi bi-circle"></i><span>Pelanggan</span>
           </a>
         </li>
-<<<<<<< HEAD
 
         <li class="nav-item">
           <a class="nav-link " href="../admin/view_pelanggan.php">
@@ -149,37 +148,6 @@ include "../config.php";
           <li class="nav-item">
           <a class="nav-link collapsed" data-bs-target="#laporan-nav" data-bs-toggle="collapse" href="#">
             <i class="bi bi-eval-wide"></i><span>Transaksi</span><i class="bi bi-chevron-down ms-auto"></i>
-=======
-        <li>
-          <a href="components-accordion.html">
-            <i class="bi bi-circle"></i><span>Penjualan</span>
-          </a>
-        </li>
-      </ul>
-      </li>
-
-      <li class="nav-item">
-      <a class="nav-link collapsed" data-bs-target="#pelanggan-nav" data-bs-toggle="collapse" href="#">
-        <i class="bi bi-eval-wide"></i><span>Pelanggan</span><i class="bi bi-chevron-down ms-auto"></i>
-      </a>
-      <ul id="pelanggan-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-        <li>
-          <a href="components-alerts.html">
-            <i class="bi bi-circle"></i><span>Data Pelanggan</span>
-          </a>
-        </li>
-      </ul>
-      </li>
-
-      <li class="nav-item">
-      <a class="nav-link collapsed" data-bs-target="#transaksi-nav" data-bs-toggle="collapse" href="#">
-        <i class="bi bi-eval-wide"></i><span>Transaksi</span><i class="bi bi-chevron-down ms-auto"></i>
-      </a>
-      <ul id="transaksi-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-        <li>
-          <a href="components-alerts.html">
-            <i class="bi bi-circle"></i><span>Transaksi</span>
->>>>>>> 80d482249926993a13e949e042b7535c34704938
           </a>
         </li>
         <li>
