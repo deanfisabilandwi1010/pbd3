@@ -193,8 +193,8 @@ include "../config.php";
                     <td><?=$row['jabatan']?></td>
                     <td><?=$row['no_hp_pegawai']?></td>
                     <td align = "center">
-                    <a class="btn btn-primary" href="../admin/edit_pegawai.php">Edit</a>
-                    <a onclick="return confirm('Yakin menghapus data ini ?')" class="btn btn-danger" href="../admin/hapus_barang.php?id_barang=<?=$row['id_pegawai']?>">Hapus</a>
+                    <a class="btn btn-primary" href="../admin/edit_pegawai.php?id_pegawai=<?=$row['id_pegawai']?>">Edit</a>
+                    <a onclick="return confirm('Yakin menghapus data ini ?')" class="btn btn-danger" href="../admin/hapus_pegawai.php?id_pegawai=<?=$row['id_pegawai']?>">Hapus</a>
                     
                   </td>
                   </tr>

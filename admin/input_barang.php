@@ -207,7 +207,7 @@ include "../config.php";
                 </div>
 
 
-                <input type="submit"  name="simpan" value="Simpan" class="but mb-4 w-50 mt-2">
+                <input type="submit" class = "btn btn-primary" name="simpan" value="Simpan" class="but mb-4 w-50 mt-2">
 
             </div>
             <div class="col-sm-6">

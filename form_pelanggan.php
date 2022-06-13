@@ -132,11 +132,11 @@ include "config.php";
           $no_hp = $_POST['no_hp'];
           $keperluan = $_POST['keperluan'];
       
-          $sql = pg_query($conn, "INSERT INTO mobil (id_pelanggan,plat_mobil,jenis_mobil,nama_pelanggan,no_hp,keperluan) VALUES ('$id_pelanggan','$plat_mobil','$jenis_mobil','$nama_pelanggan','$plat_mobil','$plat_mobil')");
+          $sql = pg_query($conn, "INSERT INTO pelanggan (id_pelanggan,plat_mobil,jenis_mobil,nama_pelanggan,no_hp,keperluan) VALUES ('$id_pelanggan','$plat_mobil','$jenis_mobil','$nama_pelanggan','$plat_mobil','$plat_mobil')");
       
           if ($sql) {
           ?>
-              echo "<script>alert('Silahkan Isi Data Diri');window.location='form_data_pelanggan.php';</script>";
+              echo "<script>alert('Data Berhasil Ditambahkan');window.location='form_pelanggan.php';</script>";
           <?php
           }
           }

@@ -199,6 +199,7 @@ include "../config.php";
                     </div>
                 </div>
 
+                
                 <input type="submit" class = "btn btn-primary" name="simpan" value="Simpan" class="but mb-4 w-50 mt-2">
 
             </div>

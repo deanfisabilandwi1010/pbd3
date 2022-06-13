@@ -234,7 +234,7 @@ include "../config.php";
         $sql =  pg_query($conn,"UPDATE pegawai SET nama_pegawai='$nama_pegawai',  jabatan='$jabatan', no_hp_pegawai='$no_hp_pegawai' WHERE id_pegawai='$id_pegawai'");
     
         if($sql){
-        echo "<script>alert('Data berhasil diedit');window.location='../admin/view_barang.php';</script>";
+        echo "<script>alert('Data berhasil diedit');window.location='../admin/view_pegawai.php';</script>";
         } else {
         echo pg_last_error($conn);
         }
