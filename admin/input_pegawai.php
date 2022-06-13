@@ -75,6 +75,13 @@ include "../config.php";
             <span>Sparepart</span>
           </a>
         </li>
+
+        <li class="nav-item">
+          <a class="nav-link " href="../admin/view_pegawai.php">
+            <i class="bi bi-grid"></i>
+            <span>Pegawai</span>
+          </a>
+        </li>
   
         <li class="nav-item">
           <a class="nav-link collapsed" data-bs-target="#laporan-nav" data-bs-toggle="collapse" href="#">
@@ -231,7 +238,6 @@ include "../config.php";
         ?>
 
 
-?>
 
     </div>
 </section>

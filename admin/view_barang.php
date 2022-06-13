@@ -77,7 +77,7 @@ include "../config.php";
         </li>
   
         <li class="nav-item">
-          <a class="nav-link " href="index_admin.php">
+          <a class="nav-link " href="../admin/view_pegawai.php">
             <i class="bi bi-grid"></i>
             <span>Pegawai</span>
           </a>
