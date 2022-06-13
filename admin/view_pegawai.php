@@ -61,8 +61,7 @@ include "../config.php";
     <aside id="sidebar" class="sidebar">
   
       <ul class="sidebar-nav" id="sidebar-nav">
-  
-        <li class="nav-item">
+      <li class="nav-item">
           <a class="nav-link " href="index_admin.php">
             <i class="bi bi-grid"></i>
             <span>Beranda</span>
@@ -80,6 +79,13 @@ include "../config.php";
           <a class="nav-link " href="../admin/view_pegawai.php">
             <i class="bi bi-grid"></i>
             <span>Pegawai</span>
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link " href="../admin/view_pelanggan.php">
+            <i class="bi bi-grid"></i>
+            <span>Pelanggan</span>
           </a>
         </li>
   
@@ -106,18 +112,6 @@ include "../config.php";
           </ul>
           </li>
   
-          <li class="nav-item">
-          <a class="nav-link collapsed" data-bs-target="#laporan-nav" data-bs-toggle="collapse" href="#">
-            <i class="bi bi-eval-wide"></i><span>Pelanggan</span><i class="bi bi-chevron-down ms-auto"></i>
-          </a>
-          <ul id="laporan-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-            <li>
-              <a href="components-alerts.html">
-                <i class="bi bi-circle"></i><span>Data Pelanggan</span>
-              </a>
-            </li>
-          </ul>
-          </li>
 
           <li class="nav-item">
           <a class="nav-link collapsed" data-bs-target="#laporan-nav" data-bs-toggle="collapse" href="#">
@@ -146,7 +140,6 @@ include "../config.php";
             <span>Tentang</span>
           </a>
         </li><!-- End F.A.Q Page Nav -->
-  
     </aside><!-- End Sidebar-->
 
   <main id="main" class="main">

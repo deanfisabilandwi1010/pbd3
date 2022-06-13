@@ -62,8 +62,8 @@ include "../config.php";
   
       <ul class="sidebar-nav" id="sidebar-nav">
   
-        <li class="nav-item">
-          <a class="nav-link " href="../admin/index_admin.php">
+      <li class="nav-item">
+          <a class="nav-link " href="index_admin.php">
             <i class="bi bi-grid"></i>
             <span>Beranda</span>
           </a>
@@ -75,11 +75,18 @@ include "../config.php";
             <span>Sparepart</span>
           </a>
         </li>
-
+  
         <li class="nav-item">
           <a class="nav-link " href="../admin/view_pegawai.php">
             <i class="bi bi-grid"></i>
             <span>Pegawai</span>
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link " href="../admin/view_pelanggan.php">
+            <i class="bi bi-grid"></i>
+            <span>Pelanggan</span>
           </a>
         </li>
   
@@ -106,18 +113,6 @@ include "../config.php";
           </ul>
           </li>
   
-          <li class="nav-item">
-          <a class="nav-link collapsed" data-bs-target="#laporan-nav" data-bs-toggle="collapse" href="#">
-            <i class="bi bi-eval-wide"></i><span>Pelanggan</span><i class="bi bi-chevron-down ms-auto"></i>
-          </a>
-          <ul id="laporan-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-            <li>
-              <a href="components-alerts.html">
-                <i class="bi bi-circle"></i><span>Data Pelanggan</span>
-              </a>
-            </li>
-          </ul>
-          </li>
 
           <li class="nav-item">
           <a class="nav-link collapsed" data-bs-target="#laporan-nav" data-bs-toggle="collapse" href="#">
