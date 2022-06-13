@@ -195,7 +195,7 @@ include "../config.php";
                 <label for="">Nomor Telepon</label>
                 <div class="form-group">
                     <div class="form-line">
-                        <input type="text" name="no_hp_pegawai" class="form-control" required />
+                        <input type="integer" name="no_hp_pegawai" class="form-control" required />
                     </div>
                 </div>
 
@@ -213,17 +213,16 @@ include "../config.php";
         <?php 
    
         if (isset($_POST['simpan'])) {
-        $id_barang = $_POST['id_pegawai'];
-        $nama_barang = $_POST['nama_pegawai'];
-        $harga_jual = $_POST['jabatan'];
-        $harga_beli = $_POST['harga_beli'];
-        $jumlah_barang = $_POST['jumlah_barang'];
+        $id_pegawai = $_POST['id_pegawai'];
+        $nama_pegawai = $_POST['nama_pegawai'];
+        $jabatan = $_POST['jabatan'];
+        $no_hp_pegawai = $_POST['no_hp_pegawai'];
     
-        $sql = pg_query($conn, "insert into barang (id_barang,nama_barang,harga_jual,harga_beli,jumlah_barang) values ('$id_barang','$nama_barang','$harga_jual', '$harga_beli', '$jumlah_barang')");
+        $sql = pg_query($conn, "insert into pegawai (id_pegawai,nama_pegawai,jabatan,no_hp_pegawai) values ('$id_pegawai','$nama_pegawai','$jabatan', '$no_hp_pegawai')");
     
         if ($sql) {
         ?>
-            echo "<script>alert('Data berhasil ditambah');window.location='../admin/view_barang.php';</script>";
+            echo "<script>alert('Data berhasil ditambah');window.location='../admin/view_pegawai.php';</script>";
         <?php
         }
         }

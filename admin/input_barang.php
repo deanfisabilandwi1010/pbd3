@@ -202,12 +202,12 @@ include "../config.php";
                 <label for="">Jumlah Barang</label>
                 <div class="form-group">
                     <div class="form-line">
-                        <input type="text" name="jumlah_barang" class="form-control" required />
+                        <input type="text" name="total_barang" class="form-control" required />
                     </div>
                 </div>
 
 
-                <input type="submit" name="simpan" value="Simpan" class="but mb-4 w-50 mt-2">
+                <input type="submit"  name="simpan" value="Simpan" class="but mb-4 w-50 mt-2">
 
             </div>
             <div class="col-sm-6">
@@ -225,9 +225,9 @@ include "../config.php";
         $nama_barang = $_POST['nama_barang'];
         $harga_jual = $_POST['harga_jual'];
         $harga_beli = $_POST['harga_beli'];
-        $jumlah_barang = $_POST['jumlah_barang'];
+        $total_barang = $_POST['total_barang'];
     
-        $sql = pg_query($conn, "insert into barang (id_barang,nama_barang,harga_jual,harga_beli,jumlah_barang) values ('$id_barang','$nama_barang','$harga_jual', '$harga_beli', '$jumlah_barang')");
+        $sql = pg_query($conn, "insert into barang (id_barang,nama_barang,harga_jual,harga_beli,total_barang) values ('$id_barang','$nama_barang','$harga_jual', '$harga_beli', '$total_barang')");
     
         if ($sql) {
         ?>

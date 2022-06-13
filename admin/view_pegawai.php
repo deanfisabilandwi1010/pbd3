@@ -188,14 +188,13 @@ include "../config.php";
                     ?>
                   
                   <tr>
-                    <td><?=$row['id_pegawi']?></td>
+                    <td><?=$row['id_pegawai']?></td>
                     <td><?=$row['nama_pegawai']?></td>
                     <td><?=$row['jabatan']?></td>
                     <td><?=$row['no_hp_pegawai']?></td>
-                    <td><?=$row['jumlah_barang']?></td>
                     <td align = "center">
-                    <a class="btn btn-primary" href="../admin/edit_barang.php?id_barang=<?=$row['id_barang']?>">Edit</a>
-                    <a onclick="return confirm('Yakin menghapus data ini ?')" class="btn btn-danger" href="../admin/hapus_barang.php?id_barang=<?=$row['id_barang']?>">Hapus</a>
+                    <a class="btn btn-primary" href="../admin/edit_.php?id_barang=<?=$row['id_pegawai']?>">Edit</a>
+                    <a onclick="return confirm('Yakin menghapus data ini ?')" class="btn btn-danger" href="../admin/hapus_barang.php?id_barang=<?=$row['id_pegawai']?>">Hapus</a>
                     
                   </td>
                   </tr>
@@ -206,7 +205,7 @@ include "../config.php";
                 <!-- <button class="btn btn-primary" href="../admin/input_barang.php" >Add</button> -->
                 
                 
-                <button class="btn btn-primary" onclick="location.href='../admin/input_barang.php'" type="button" style="float: right" >Add</button>
+                <button class="btn btn-primary" onclick="location.href='../admin/input_pegawai.php'" type="button" style="float: right" >Add</button>
                 
                 
                   

@@ -193,7 +193,7 @@ include "../config.php";
                     <td><?=$row['nama_barang']?></td>
                     <td><?=$row['harga_jual']?></td>
                     <td><?=$row['harga_beli']?></td>
-                    <td><?=$row['jumlah_barang']?></td>
+                    <td><?=$row['total_barang']?></td>
                     <td align = "center">
                     <a class="btn btn-primary" href="../admin/edit_barang.php?id_barang=<?=$row['id_barang']?>">Edit</a>
                     <a onclick="return confirm('Yakin menghapus data ini ?')" class="btn btn-danger" href="../admin/hapus_barang.php?id_barang=<?=$row['id_barang']?>">Hapus</a>
