@@ -64,8 +64,8 @@ $row = pg_fetch_array($sql);
   
       <ul class="sidebar-nav" id="sidebar-nav">
   
-        <li class="nav-item">
-          <a class="nav-link " href="../admin/index_admin.php">
+      <li class="nav-item">
+          <a class="nav-link " href="index_admin.php">
             <i class="bi bi-grid"></i>
             <span>Beranda</span>
           </a>
@@ -82,6 +82,13 @@ $row = pg_fetch_array($sql);
           <a class="nav-link " href="../admin/view_pegawai.php">
             <i class="bi bi-grid"></i>
             <span>Pegawai</span>
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link " href="../admin/view_pelanggan.php">
+            <i class="bi bi-grid"></i>
+            <span>Pelanggan</span>
           </a>
         </li>
   
@@ -108,18 +115,6 @@ $row = pg_fetch_array($sql);
           </ul>
           </li>
   
-          <li class="nav-item">
-          <a class="nav-link collapsed" data-bs-target="#laporan-nav" data-bs-toggle="collapse" href="#">
-            <i class="bi bi-eval-wide"></i><span>Pelanggan</span><i class="bi bi-chevron-down ms-auto"></i>
-          </a>
-          <ul id="laporan-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-            <li>
-              <a href="components-alerts.html">
-                <i class="bi bi-circle"></i><span>Data Pelanggan</span>
-              </a>
-            </li>
-          </ul>
-          </li>
 
           <li class="nav-item">
           <a class="nav-link collapsed" data-bs-target="#laporan-nav" data-bs-toggle="collapse" href="#">
@@ -211,7 +206,7 @@ include "../config.php";
                 <label for="">Jumlah Barang</label>
                 <div class="form-group">
                     <div class="form-line">
-                    <input type="integer" class="form-control" readonly name="jumlah_barang" value="<?php echo $row['jumlah_barang']?>" required>
+                    <input type="integer" class="form-control" readonly name="total_barang" value="<?php echo $row['total_barang']?>" required>
                     </div>
                 </div>
 
@@ -234,9 +229,9 @@ include "../config.php";
             $nama_barang = $_POST['nama_barang'];
             $harga_jual = $_POST['harga_jual'];
             $harga_beli = $_POST['harga_beli'];
-            $jumlah_barang = $_POST['jumlah_barang'];
+            $total_barang = $_POST['total_barang'];
     
-        $sql =  pg_query($conn,"UPDATE barang SET nama_barang='$nama_barang',  harga_jual='$harga_jual', harga_beli='$harga_beli', jumlah_barang ='$jumlah_barang' WHERE id_barang='$id_barang'");
+        $sql =  pg_query($conn,"UPDATE barang SET nama_barang='$nama_barang',  harga_jual='$harga_jual', harga_beli='$harga_beli', total_barang ='$total_barang' WHERE id_barang='$id_barang'");
     
         if($sql){
         echo "<script>alert('Data berhasil diedit');window.location='../admin/view_barang.php';</script>";
