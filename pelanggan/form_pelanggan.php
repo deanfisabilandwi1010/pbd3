@@ -1,13 +1,20 @@
 <?php
-include "config.php";
+  include "../config.php";
 
+  $query = pg_query($conn, "SELECT max(id_pelanggan) as id_pelanggan FROM pelanggan");
+  $row = pg_fetch_array($query);
+  $kode = $row['id_pelanggan'];
+  $urutan = (int) substr($kode, 3, 3);
+  $huruf = "P";
+  $urutan=$urutan+1;
+  $id = $huruf.sprintf("%03s", $urutan);
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
+<meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
   <title>Form Pelanggan - Bima Motor</title>
@@ -15,24 +22,24 @@ include "config.php";
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="assets/img/Logoo.PNG" rel="icon">
-  <link href="assets/img/Logoo.PNG" rel="Logoo">
+  <link href="../assets/img/Logoo.PNG" rel="icon">
+  <link href="../assets/img/Logoo.PNG" rel="Logoo">
 
   <!-- Google Fonts -->
   <link href="https://fonts.gstatic.com" rel="preconnect">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="assets/vendor/quill/quill.snow.css" rel="stylesheet">
-  <link href="assets/vendor/quill/quill.bubble.css" rel="stylesheet">
-  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
-  <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet">
+  <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="../assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="../assets/vendor/quill/quill.snow.css" rel="stylesheet">
+  <link href="../assets/vendor/quill/quill.bubble.css" rel="stylesheet">
+  <link href="../assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="../assets/vendor/simple-datatables/style.css" rel="stylesheet">
 
   <!-- Template Main CSS File -->
-  <link href="assets/css/style.css" rel="stylesheet">
+  <link href="../assets/css/style.css" rel="stylesheet">
 
   <!-- =======================================================
   * Template Name: NiceAdmin - v2.2.2
@@ -54,7 +61,7 @@ include "config.php";
 
               <div class="d-flex justify-content-center py-4">
                 <a href="index.html" class="logo d-flex align-items-center w-auto">
-                  <img src="assets/img/Logoo.PNG" alt="">
+                  <img src="../assets/img/Logoo.PNG" alt="">
                   <span class="d-none d-lg-block">Bima Motor</span>
                 </a>
               </div><!-- End Logo -->
@@ -73,7 +80,7 @@ include "config.php";
                   <label for="">ID Pelanggan</label>
                     <div class="form-group">
                     <div class="form-line">
-                    <input type="text" name="id_pelanggan" class="form-control"  readonly />
+                    <input type="text" name="id_pelanggan" value="<?php echo $id?>" class="form-control" readonly />
                     </div>
                     </div>
 
@@ -132,11 +139,11 @@ include "config.php";
           $no_hp = $_POST['no_hp'];
           $keperluan = $_POST['keperluan'];
       
-          $sql = pg_query($conn, "INSERT INTO pelanggan (id_pelanggan,plat_mobil,jenis_mobil,nama_pelanggan,no_hp,keperluan) VALUES ('$id_pelanggan','$plat_mobil','$jenis_mobil','$nama_pelanggan','$plat_mobil','$plat_mobil')");
+          $sql = pg_query($conn, "INSERT INTO pelanggan (id_pelanggan,plat_mobil,jenis_mobil,nama_pelanggan,no_hp,keperluan) VALUES ('$id_pelanggan','$plat_mobil','$jenis_mobil','$nama_pelanggan','$no_hp','$keperluan')");
       
           if ($sql) {
           ?>
-              echo "<script>alert('Data Berhasil Ditambahkan');window.location='form_pelanggan.php';</script>";
+              echo "<script>alert('Data Berhasil Ditambahkan');window.location='success.php';</script>";
           <?php
           }
           }
