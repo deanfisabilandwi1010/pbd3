@@ -1,4 +1,5 @@
 <?php
+include "../config.php";
 
 ?>
 
@@ -9,13 +10,14 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>DashBoard - Bima Motor</title>
+  <title>Input Pegawai - Bima Motor</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
   <!-- Favicons -->
   <link href="../assets/img/Logoo.PNG" rel="icon">
-  <link href="../assets/img/Logoo.PNG" rel="icon">
+  <link href="../assets/img/Logoo.PNG" rel="Logoo">
+  
   <!-- Google Fonts -->
   <link href="https://fonts.gstatic.com" rel="preconnect">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
@@ -46,8 +48,8 @@
   <header id="header" class="header fixed-top d-flex align-items-center">
   
     <div class="d-flex align-items-center justify-content-between">
-      <a href="index_admin.php" class="logo d-flex align-items-center">
-        <img src="../assets/img/Logoo.PNG" alt="">
+      <a href="index.html" class="logo d-flex align-items-center">
+       <img src="../assets/img/Logoo.PNG" alt="">
         <span class="d-none d-lg-block">Bima Motor</span>
       </a>
       <i class="bi bi-list toggle-sidebar-btn"></i>
@@ -73,15 +75,14 @@
             <span>Sparepart</span>
           </a>
         </li>
-  
-  
+
         <li class="nav-item">
           <a class="nav-link " href="../admin/view_pegawai.php">
             <i class="bi bi-grid"></i>
             <span>Pegawai</span>
           </a>
         </li>
-
+  
         <li class="nav-item">
           <a class="nav-link collapsed" data-bs-target="#laporan-nav" data-bs-toggle="collapse" href="#">
             <i class="bi bi-eval-wide"></i><span>Laporan</span><i class="bi bi-chevron-down ms-auto"></i>
@@ -106,12 +107,12 @@
           </li>
   
           <li class="nav-item">
-          <a class="nav-link collapsed" data-bs-target="#pelanggan-nav" data-bs-toggle="collapse" href="#">
+          <a class="nav-link collapsed" data-bs-target="#laporan-nav" data-bs-toggle="collapse" href="#">
             <i class="bi bi-eval-wide"></i><span>Pelanggan</span><i class="bi bi-chevron-down ms-auto"></i>
           </a>
-          <ul id="pelanggan-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <ul id="laporan-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
             <li>
-              <a href="../pelanggan/welcome_pelanggan.php">
+              <a href="components-alerts.html">
                 <i class="bi bi-circle"></i><span>Data Pelanggan</span>
               </a>
             </li>
@@ -119,10 +120,10 @@
           </li>
 
           <li class="nav-item">
-          <a class="nav-link collapsed" data-bs-target="#transaksi-nav" data-bs-toggle="collapse" href="#">
+          <a class="nav-link collapsed" data-bs-target="#laporan-nav" data-bs-toggle="collapse" href="#">
             <i class="bi bi-eval-wide"></i><span>Transaksi</span><i class="bi bi-chevron-down ms-auto"></i>
           </a>
-          <ul id="transaksi-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <ul id="laporan-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
             <li>
               <a href="components-alerts.html">
                 <i class="bi bi-circle"></i><span>Transaksi</span>
@@ -151,14 +152,96 @@
   <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>Dashboard</h1>
+    <h1>Pegawai</h1>
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="../admin/index_admin.php">Home</a></li>
+          <li class="breadcrumb-item">Pegawai</li>
+          <li class="breadcrumb-item active">Tambah Pegawai</li>
         </ol>
-
       </nav>
     </div><!-- End Page Title -->
+
+    <?php
+include "../config.php";
+
+?>
+
+
+<section class="main-panel d-flex">
+    <div class="container card">
+        <div class="section-title">
+            <h3 class="fw-bolder mb-4">Tambah Pegawai</h3>
+
+        </div>
+       
+
+        <form method="POST" class="d-flex">
+            <div class="col-sm-6">
+                <label for="">Id Pegawai</label>
+                <div class="form-group">
+                    <div class="form-line">
+                        <input type="text" name="id_pegawai" class="form-control" maxlength="10" required />
+                    </div>
+                </div>
+
+                <label for="">Nama Pegawai</label>
+                <div class="form-group">
+                    <div class="form-line">
+                        <input type="text" name="nama_pegawai" class="form-control" required />
+                    </div>
+                </div>
+
+                <label for="">Jabatan</label>
+                <div class="form-group">
+                    <div class="form-line">
+                        <input type="text" name="jabatan" class="form-control" required />
+                    </div>
+                </div>
+
+                <label for="">Nomor Telepon</label>
+                <div class="form-group">
+                    <div class="form-line">
+                        <input type="integer" name="no_hp_pegawai" class="form-control" required />
+                    </div>
+                </div>
+
+                
+                <input type="submit" class = "btn btn-primary" name="simpan" value="Simpan" class="but mb-4 w-50 mt-2">
+
+            </div>
+            <div class="col-sm-6">
+
+                </div>
+
+
+            </div>
+
+        </form>
+        <?php 
+   
+        if (isset($_POST['simpan'])) {
+        $id_pegawai = $_POST['id_pegawai'];
+        $nama_pegawai = $_POST['nama_pegawai'];
+        $jabatan = $_POST['jabatan'];
+        $no_hp_pegawai = $_POST['no_hp_pegawai'];
+    
+        $sql = pg_query($conn, "insert into pegawai (id_pegawai,nama_pegawai,jabatan,no_hp_pegawai) values ('$id_pegawai','$nama_pegawai','$jabatan', '$no_hp_pegawai')");
+    
+        if ($sql) {
+        
+            echo "<script>alert('Data berhasil ditambah');window.location='../admin/view_pegawai.php'</script>";
+      
+
+        }
+        }
+        
+        ?>
+
+
+
+    </div>
+</section>
 
 
   </main><!-- End #main -->

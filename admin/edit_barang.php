@@ -12,7 +12,7 @@ $row = pg_fetch_array($sql);
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Transaksi / Stok - Bima Motor</title>
+  <title>Edit Barang - Bima Motor</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -79,7 +79,7 @@ $row = pg_fetch_array($sql);
         </li>
   
         <li class="nav-item">
-          <a class="nav-link " href="index_admin.php">
+          <a class="nav-link " href="../admin/view_pegawai.php">
             <i class="bi bi-grid"></i>
             <span>Pegawai</span>
           </a>
@@ -116,11 +116,6 @@ $row = pg_fetch_array($sql);
             <li>
               <a href="components-alerts.html">
                 <i class="bi bi-circle"></i><span>Data Pelanggan</span>
-              </a>
-            </li>
-            <li>
-              <a href="components-accordion.html">
-                <i class="bi bi-circle"></i><span>Data Mobil Pelanggan</span>
               </a>
             </li>
           </ul>
@@ -241,7 +236,7 @@ include "../config.php";
             $harga_beli = $_POST['harga_beli'];
             $jumlah_barang = $_POST['jumlah_barang'];
     
-        $sql =  pg_query($conn,"UPDATE barang SET nama_barang='$nama_barang',  harga_jual='$harga_jual', harga_beli='$harga_beli', jumlah_barang='$jumlah_barang' WHERE id_barang='$id_barang'");
+        $sql =  pg_query($conn,"UPDATE barang SET nama_barang='$nama_barang',  harga_jual='$harga_jual', harga_beli='$harga_beli', jumlah_barang ='$jumlah_barang' WHERE id_barang='$id_barang'");
     
         if($sql){
         echo "<script>alert('Data berhasil diedit');window.location='../admin/view_barang.php';</script>";

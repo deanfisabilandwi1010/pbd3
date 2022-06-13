@@ -9,7 +9,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>DashBoard - Bima Motor</title>
+  <title>Pemilik - Bima Motor</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -46,7 +46,7 @@
   <header id="header" class="header fixed-top d-flex align-items-center">
   
     <div class="d-flex align-items-center justify-content-between">
-      <a href="index_admin.php" class="logo d-flex align-items-center">
+      <a href="index.html" class="logo d-flex align-items-center">
         <img src="../assets/img/Logoo.PNG" alt="">
         <span class="d-none d-lg-block">Bima Motor</span>
       </a>
@@ -104,37 +104,7 @@
             </li>
           </ul>
           </li>
-  
-          <li class="nav-item">
-          <a class="nav-link collapsed" data-bs-target="#pelanggan-nav" data-bs-toggle="collapse" href="#">
-            <i class="bi bi-eval-wide"></i><span>Pelanggan</span><i class="bi bi-chevron-down ms-auto"></i>
-          </a>
-          <ul id="pelanggan-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-            <li>
-              <a href="../pelanggan/welcome_pelanggan.php">
-                <i class="bi bi-circle"></i><span>Data Pelanggan</span>
-              </a>
-            </li>
-          </ul>
-          </li>
-
-          <li class="nav-item">
-          <a class="nav-link collapsed" data-bs-target="#transaksi-nav" data-bs-toggle="collapse" href="#">
-            <i class="bi bi-eval-wide"></i><span>Transaksi</span><i class="bi bi-chevron-down ms-auto"></i>
-          </a>
-          <ul id="transaksi-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-            <li>
-              <a href="components-alerts.html">
-                <i class="bi bi-circle"></i><span>Transaksi</span>
-              </a>
-            </li>
-            <li>
-              <a href="components-accordion.html">
-                <i class="bi bi-circle"></i><span>Pembayaran</span>
-              </a>
-            </li>
-          </ul>
-          </li>
+          
         <li class="nav-heading">Pages</li>
   
         

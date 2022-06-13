@@ -1,4 +1,4 @@
-<?php  
+<?php
 include "../config.php";
 
 ?>
@@ -10,7 +10,7 @@ include "../config.php";
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Sparepart - Bima Motor</title>
+  <title>Pegawai - Bima Motor</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -57,106 +57,106 @@ include "../config.php";
   </header><!-- End Header -->
   
   
-    <!-- ======= Sidebar ======= -->
-    <aside id="sidebar" class="sidebar">
+  <aside id="sidebar" class="sidebar">
   
-      <ul class="sidebar-nav" id="sidebar-nav">
-  
-        <li class="nav-item">
-          <a class="nav-link " href="../admin/index_admin.php">
-            <i class="bi bi-grid"></i>
-            <span>Beranda</span>
-          </a>
-        </li><!-- End Dashboard Nav -->
-  
-        <li class="nav-item">
-          <a class="nav-link " href="../admin/view_barang.php">
-            <i class="bi bi-grid"></i>
-            <span>Sparepart</span>
-          </a>
-        </li>
-  
-        <li class="nav-item">
-          <a class="nav-link " href="../admin/view_pegawai.php">
-            <i class="bi bi-grid"></i>
-            <span>Pegawai</span>
-          </a>
-        </li>
-  
-        <li class="nav-item">
-          <a class="nav-link collapsed" data-bs-target="#laporan-nav" data-bs-toggle="collapse" href="#">
-            <i class="bi bi-eval-wide"></i><span>Laporan</span><i class="bi bi-chevron-down ms-auto"></i>
-          </a>
-          <ul id="laporan-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-            <li>
-              <a href="components-alerts.html">
-                <i class="bi bi-circle"></i><span>Pembelian</span>
-              </a>
-            </li>
-            <li>
-              <a href="components-accordion.html">
-                <i class="bi bi-circle"></i><span>Pelanggan</span>
-              </a>
-            </li>
-            <li>
-              <a href="components-accordion.html">
-                <i class="bi bi-circle"></i><span>Penjualan</span>
-              </a>
-            </li>
-          </ul>
-          </li>
-  
-          <li class="nav-item">
-          <a class="nav-link collapsed" data-bs-target="#laporan-nav" data-bs-toggle="collapse" href="#">
-            <i class="bi bi-eval-wide"></i><span>Pelanggan</span><i class="bi bi-chevron-down ms-auto"></i>
-          </a>
-          <ul id="laporan-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-            <li>
-              <a href="components-alerts.html">
-                <i class="bi bi-circle"></i><span>Data Pelanggan</span>
-              </a>
-            </li>
-          </ul>
-          </li>
+  <ul class="sidebar-nav" id="sidebar-nav">
 
-          <li class="nav-item">
-          <a class="nav-link collapsed" data-bs-target="#laporan-nav" data-bs-toggle="collapse" href="#">
-            <i class="bi bi-eval-wide"></i><span>Transaksi</span><i class="bi bi-chevron-down ms-auto"></i>
+    <li class="nav-item">
+      <a class="nav-link " href="../admin/index_admin.php">
+        <i class="bi bi-grid"></i>
+        <span>Beranda</span>
+      </a>
+    </li><!-- End Dashboard Nav -->
+
+    <li class="nav-item">
+      <a class="nav-link " href="../admin/view_barang.php">
+        <i class="bi bi-grid"></i>
+        <span>Sparepart</span>
+      </a>
+    </li>
+
+
+    <li class="nav-item">
+      <a class="nav-link " href="../admin/view_pegawai.php">
+        <i class="bi bi-grid"></i>
+        <span>Pegawai</span>
+      </a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link collapsed" data-bs-target="#laporan-nav" data-bs-toggle="collapse" href="#">
+        <i class="bi bi-eval-wide"></i><span>Laporan</span><i class="bi bi-chevron-down ms-auto"></i>
+      </a>
+      <ul id="laporan-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+        <li>
+          <a href="components-alerts.html">
+            <i class="bi bi-circle"></i><span>Pembelian</span>
           </a>
-          <ul id="laporan-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-            <li>
-              <a href="components-alerts.html">
-                <i class="bi bi-circle"></i><span>Transaksi</span>
-              </a>
-            </li>
-            <li>
-              <a href="components-accordion.html">
-                <i class="bi bi-circle"></i><span>Pembayaran</span>
-              </a>
-            </li>
-          </ul>
-          </li>
-        <li class="nav-heading">Pages</li>
-  
-        
-  
-        <li class="nav-item">
-          <a class="nav-link collapsed" href="pages-faq.html">
-            <i class="bi bi-question-circle"></i>
-            <span>Tentang</span>
+        </li>
+        <li>
+          <a href="components-accordion.html">
+            <i class="bi bi-circle"></i><span>Pelanggan</span>
           </a>
-        </li><!-- End F.A.Q Page Nav -->
-  
-    </aside><!-- End Sidebar-->
+        </li>
+        <li>
+          <a href="components-accordion.html">
+            <i class="bi bi-circle"></i><span>Penjualan</span>
+          </a>
+        </li>
+      </ul>
+      </li>
+
+      <li class="nav-item">
+      <a class="nav-link collapsed" data-bs-target="#pelanggan-nav" data-bs-toggle="collapse" href="#">
+        <i class="bi bi-eval-wide"></i><span>Pelanggan</span><i class="bi bi-chevron-down ms-auto"></i>
+      </a>
+      <ul id="pelanggan-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+        <li>
+          <a href="components-alerts.html">
+            <i class="bi bi-circle"></i><span>Data Pelanggan</span>
+          </a>
+        </li>
+      </ul>
+      </li>
+
+      <li class="nav-item">
+      <a class="nav-link collapsed" data-bs-target="#transaksi-nav" data-bs-toggle="collapse" href="#">
+        <i class="bi bi-eval-wide"></i><span>Transaksi</span><i class="bi bi-chevron-down ms-auto"></i>
+      </a>
+      <ul id="transaksi-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+        <li>
+          <a href="components-alerts.html">
+            <i class="bi bi-circle"></i><span>Transaksi</span>
+          </a>
+        </li>
+        <li>
+          <a href="components-accordion.html">
+            <i class="bi bi-circle"></i><span>Pembayaran</span>
+          </a>
+        </li>
+      </ul>
+      </li>
+    <li class="nav-heading">Pages</li>
+
+    
+
+    <li class="nav-item">
+      <a class="nav-link collapsed" href="pages-faq.html">
+        <i class="bi bi-question-circle"></i>
+        <span>Tentang</span>
+      </a>
+    </li><!-- End F.A.Q Page Nav -->
+
+</aside><!-- End Sidebar-->
 
   <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>Barang</h1>
+      <h1>Pegawai</h1>
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="../admin/index_admin.php">Home</a></li>
-          <li class="breadcrumb-item">Sparepart</li>
+          <li class="breadcrumb-item">Pegawai</li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
@@ -167,36 +167,34 @@ include "../config.php";
 
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Tabel Barang</h5>
+              <h5 class="card-title">Tabel Pegawai</h5>
 
               <!-- Default Table -->
               <table class="table">
                 <thead>
                   <tr>
-                    <td scope="col">Kode Barang</td>
-                    <td scope="col">Nama Barng</td>
-                    <td scope="col">Harga Jual</td>
-                    <td scope="col">Harga Beli</td>
-                    <td scope="col">Jumlah Barang</td>
+                    <td scope="col">ID Pegawai</td>
+                    <td scope="col">Nama Pegawai</td>
+                    <td scope="col">Jabatan</td>
+                    <td scope="col">Nomor Telepon</td>
                     
                   </tr>
                 </thead>
 
                 <tbody>
                   <?php
-                  $result = pg_query($conn,"SELECT *FROM barang ");
+                  $result = pg_query($conn,"SELECT *FROM pegawai ");
                   while ($row = pg_fetch_array($result)){
                     ?>
                   
                   <tr>
-                    <td><?=$row['id_barang']?></td>
-                    <td><?=$row['nama_barang']?></td>
-                    <td><?=$row['harga_jual']?></td>
-                    <td><?=$row['harga_beli']?></td>
-                    <td><?=$row['jumlah_barang']?></td>
+                    <td><?=$row['id_pegawai']?></td>
+                    <td><?=$row['nama_pegawai']?></td>
+                    <td><?=$row['jabatan']?></td>
+                    <td><?=$row['no_hp_pegawai']?></td>
                     <td align = "center">
-                    <a class="btn btn-primary" href="../admin/edit_barang.php?id_barang=<?=$row['id_barang']?>">Edit</a>
-                    <a onclick="return confirm('Yakin menghapus data ini ?')" class="btn btn-danger" href="../admin/hapus_barang.php?id_barang=<?=$row['id_barang']?>">Hapus</a>
+                    <a class="btn btn-primary" href="../admin/edit_pegawai.php?id_pegawai=<?=$row['id_pegawai']?>">Edit</a>
+                    <a onclick="return confirm('Yakin menghapus data ini ?')" class="btn btn-danger" href="../admin/hapus_pegawai.php?id_pegawai=<?=$row['id_pegawai']?>">Hapus</a>
                     
                   </td>
                   </tr>
@@ -207,7 +205,7 @@ include "../config.php";
                 <!-- <button class="btn btn-primary" href="../admin/input_barang.php" >Add</button> -->
                 
                 
-                <button class="btn btn-primary" onclick="location.href='../admin/input_barang.php'" type="button" style="float: right" >Add</button>
+                <button class="btn btn-primary" onclick="location.href='../admin/input_pegawai.php'" type="button" style="float: right" >Add</button>
                 
                 
                   
@@ -249,7 +247,7 @@ include "../config.php";
   <script src="../assets/vendor/tinymce/tinymce.min.js"></script>
   <script src="../assets/vendor/php-email-form/validate.js"></script>
   <!-- Template Main JS File -->
-  <script src="../assets/js/main.js"></script>
+  <script src="assets/js/main.js"></script>
 
 </body>
 

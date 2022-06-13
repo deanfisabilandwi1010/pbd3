@@ -1,11 +1,20 @@
 <?php
+  include "../config.php";
 
+  $query = pg_query($conn, "SELECT max(id_pelanggan) as id_pelanggan FROM pelanggan");
+  $row = pg_fetch_array($query);
+  $kode = $row['id_pelanggan'];
+  $urutan = (int) substr($kode, 3, 3);
+  $huruf = "P";
+  $urutan=$urutan+1;
+  $id = $huruf.sprintf("%03s", $urutan);
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
+<meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
   <title>Form Pelanggan - Bima Motor</title>
@@ -13,24 +22,24 @@
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="assets/img/Logoo.PNG" rel="icon">
-  <link href="assets/img/Logoo.PNG" rel="Logoo">
+  <link href="../assets/img/Logoo.PNG" rel="icon">
+  <link href="../assets/img/Logoo.PNG" rel="Logoo">
 
   <!-- Google Fonts -->
   <link href="https://fonts.gstatic.com" rel="preconnect">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="assets/vendor/quill/quill.snow.css" rel="stylesheet">
-  <link href="assets/vendor/quill/quill.bubble.css" rel="stylesheet">
-  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
-  <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet">
+  <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="../assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="../assets/vendor/quill/quill.snow.css" rel="stylesheet">
+  <link href="../assets/vendor/quill/quill.bubble.css" rel="stylesheet">
+  <link href="../assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="../assets/vendor/simple-datatables/style.css" rel="stylesheet">
 
   <!-- Template Main CSS File -->
-  <link href="assets/css/style.css" rel="stylesheet">
+  <link href="../assets/css/style.css" rel="stylesheet">
 
   <!-- =======================================================
   * Template Name: NiceAdmin - v2.2.2
@@ -52,7 +61,7 @@
 
               <div class="d-flex justify-content-center py-4">
                 <a href="index.html" class="logo d-flex align-items-center w-auto">
-                  <img src="assets/img/Logoo.PNG" alt="">
+                  <img src="../assets/img/Logoo.PNG" alt="">
                   <span class="d-none d-lg-block">Bima Motor</span>
                 </a>
               </div><!-- End Logo -->
@@ -60,62 +69,89 @@
               <div class="card mb-3">
 
                 <div class="card-body">
-
+                  
                   <div class="pt-4 pb-2">
                     <h5 class="card-title text-center pb-0 fs-4">Selamat Datang Pelanggan Terhormat</h5>
                     <p class="text-center small">Silahkan Isi Data Anda</p>
                   </div>
 
-                  <form class="row g-3 needs-validation" novalidate>
+                  <form class="row g-3 needs-validation" action="" method="post">
 
-                  <label for="">id_pelanggan</label>
+                  <label for="">ID Pelanggan</label>
                     <div class="form-group">
                     <div class="form-line">
-                    <input type="text" name="id_pelanggan" class="form-control" maxlength="5" readonly />
+                    <input type="text" name="id_pelanggan" value="<?php echo $id?>" class="form-control" readonly />
                     </div>
                     </div>
 
                     <label for="">Plat Mobil</label>
                     <div class="form-group">
                     <div class="form-line">
-                    <input type="text" name="plat_mobil" class="form-control" maxlength="5" required />
+                    <input type="text" name="plat_mobil" class="form-control" required />
                     </div>
                     </div>
 
                     <label for="">Jenis Mobil</label>
                     <div class="form-group">
                     <div class="form-line">
-                    <input type="text" name="jenis_mobil" class="form-control" maxlength="5" required />
+                    <input type="text" name="jenis_mobil" class="form-control"  required />
                     </div>
                     </div>
 
                     <label for="">Nama Pelanggan</label>
                     <div class="form-group">
                     <div class="form-line">
-                    <input type="text" name="nama_pelanggan" class="form-control" maxlength="5" required />
+                    <input type="text" name="nama_pelanggan" class="form-control"  required />
                     </div>
                     </div>
 
-                    <label for="">Nomor Telpon</label>
+                    <label for="">Nomor Telepon</label>
                     <div class="form-group">
                     <div class="form-line">
-                    <input type="text" name="id_barang" class="form-control" maxlength="5" required />
+                    <input type="text" name="no_hp" class="form-control"  required />
                     </div>
                     </div>
 
                     <label for="">Keperluan</label>
                     <div class="form-group">
                     <div class="form-line">
-                    <input type="text" name="id_barang" class="form-control" maxlength="5" required />
+                    <input type="text" name="keperluan" class="form-control"  required />
                     </div>
                     </div>
+
+
+
                     <div class="col-12">
-                      <button class="btn btn-primary w-100" type="submit">Masuk</button>
+                      <input class="btn btn-primary w-100" name="next" type="submit" value ="next">
                     </div>
                   </form>
 
                 </div>
               </div>
+
+              <?php
+              
+          if (isset($_POST['next'])) {
+          $id_pelanggan = $_POST['id_pelanggan'];
+          $jenis_mobil = $_POST['jenis_mobil'];
+          $plat_mobil = $_POST['plat_mobil'];
+          $nama_pelanggan = $_POST['nama_pelanggan'];
+          $no_hp = $_POST['no_hp'];
+          $keperluan = $_POST['keperluan'];
+      
+          $sql = pg_query($conn, "INSERT INTO pelanggan (id_pelanggan,plat_mobil,jenis_mobil,nama_pelanggan,no_hp,keperluan) VALUES ('$id_pelanggan','$plat_mobil','$jenis_mobil','$nama_pelanggan','$no_hp','$keperluan')");
+      
+          if ($sql) {
+          ?>
+              echo "<script>alert('Data Berhasil Ditambahkan');window.location='success.php';</script>";
+          <?php
+          }
+          }
+          
+          ?>
+
+            
+
 
               <div class="credits">
                 <!-- All the links in the footer should remain intact. -->
@@ -144,7 +180,6 @@
   <script src="assets/vendor/quill/quill.min.js"></script>
   <script src="assets/vendor/simple-datatables/simple-datatables.js"></script>
   <script src="assets/vendor/tinymce/tinymce.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
