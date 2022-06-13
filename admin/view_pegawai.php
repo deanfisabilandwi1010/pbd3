@@ -57,11 +57,13 @@ include "../config.php";
   </header><!-- End Header -->
   
   
-  <aside id="sidebar" class="sidebar">
+    <!-- ======= Sidebar ======= -->
+    <aside id="sidebar" class="sidebar">
   
       <ul class="sidebar-nav" id="sidebar-nav">
+  
       <li class="nav-item">
-          <a class="nav-link " href="index_admin.php">
+          <a class="nav-link " href="../admin/index_admin.php">
             <i class="bi bi-grid"></i>
             <span>Beranda</span>
           </a>
@@ -73,9 +75,11 @@ include "../config.php";
             <span>Sparepart</span>
           </a>
         </li>
-        <li>
-          <a href="components-accordion.html">
-            <i class="bi bi-circle"></i><span>Pelanggan</span>
+  
+        <li class="nav-item">
+          <a class="nav-link " href="../admin/view_pegawai.php">
+            <i class="bi bi-grid"></i>
+            <span>Pegawai</span>
           </a>
         </li>
 
@@ -114,12 +118,30 @@ include "../config.php";
           <a class="nav-link collapsed" data-bs-target="#laporan-nav" data-bs-toggle="collapse" href="#">
             <i class="bi bi-eval-wide"></i><span>Transaksi</span><i class="bi bi-chevron-down ms-auto"></i>
           </a>
-        </li>
-        <li>
-          <a href="components-accordion.html">
-            <i class="bi bi-circle"></i><span>Pembayaran</span>
+          <ul id="laporan-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+            <li>
+              <a href="components-alerts.html">
+                <i class="bi bi-circle"></i><span>Transaksi</span>
+              </a>
+            </li>
+            <li>
+              <a href="components-accordion.html">
+                <i class="bi bi-circle"></i><span>Pembayaran</span>
+              </a>
+            </li>
+          </ul>
+          </li>
+        <li class="nav-heading">Pages</li>
+  
+        
+  
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="pages-faq.html">
+            <i class="bi bi-question-circle"></i>
+            <span>Tentang</span>
           </a>
         </li><!-- End F.A.Q Page Nav -->
+  
     </aside><!-- End Sidebar-->
 
   <main id="main" class="main">

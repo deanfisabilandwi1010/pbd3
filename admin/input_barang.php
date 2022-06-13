@@ -55,52 +55,15 @@ include "../config.php";
       <i class="bi bi-list toggle-sidebar-btn"></i>
     </div><!-- End Logo -->
   </header><!-- End Header -->
-<<<<<<< HEAD
 
 
-  <!-- ======= Sidebar ======= -->
-  <aside id="sidebar" class="sidebar">
-
-    <ul class="sidebar-nav" id="sidebar-nav">
-
-      <li class="nav-item">
-        <a class="nav-link " href="../admin/index_admin.php">
-          <i class="bi bi-grid"></i>
-          <span>Beranda</span>
-        </a>
-      </li><!-- End Dashboard Nav -->
-
-      <li class="nav-item">
-        <a class="nav-link " href="../admin/view_barang.php">
-          <i class="bi bi-grid"></i>
-          <span>Sparepart</span>
-        </a>
-      </li>
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#laporan-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-eval-wide"></i><span>Laporan</span><i class="bi bi-chevron-down ms-auto"></i>
-        </a>
-        <ul id="laporan-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-          <li>
-            <a href="components-alerts.html">
-              <i class="bi bi-circle"></i><span>Pembelian</span>
-            </a>
-          </li>
-          <li>
-            <a href="components-accordion.html">
-              <i class="bi bi-circle"></i><span>Pelanggan</span>
-            </a>
-=======
-  
-  
-    <!-- ======= Sidebar ======= -->
+  <  <!-- ======= Sidebar ======= -->
     <aside id="sidebar" class="sidebar">
   
       <ul class="sidebar-nav" id="sidebar-nav">
   
       <li class="nav-item">
-          <a class="nav-link " href="index_admin.php">
+          <a class="nav-link " href="../admin/index_admin.php">
             <i class="bi bi-grid"></i>
             <span>Beranda</span>
           </a>
@@ -150,21 +113,14 @@ include "../config.php";
           </ul>
           </li>
   
-<<<<<<< HEAD
 
           <li class="nav-item">
           <a class="nav-link collapsed" data-bs-target="#laporan-nav" data-bs-toggle="collapse" href="#">
             <i class="bi bi-eval-wide"></i><span>Transaksi</span><i class="bi bi-chevron-down ms-auto"></i>
-=======
-          <li class="nav-item">
-          <a class="nav-link collapsed" data-bs-target="#laporan-nav" data-bs-toggle="collapse" href="#">
-            <i class="bi bi-eval-wide"></i><span>Pelanggan</span><i class="bi bi-chevron-down ms-auto"></i>
->>>>>>> 80d482249926993a13e949e042b7535c34704938
           </a>
           <ul id="laporan-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
             <li>
               <a href="components-alerts.html">
-<<<<<<< HEAD
                 <i class="bi bi-circle"></i><span>Transaksi</span>
               </a>
             </li>
@@ -174,69 +130,19 @@ include "../config.php";
               </a>
             </li>
           </ul>
-=======
-                <i class="bi bi-circle"></i><span>Data Pelanggan</span>
-              </a>
-            </li>
-          </ul>
->>>>>>> dc08fa82c39d0751f25a040d59c2702626d9853f
           </li>
-          <li>
-            <a href="components-accordion.html">
-              <i class="bi bi-circle"></i><span>Penjualan</span>
-            </a>
->>>>>>> 80d482249926993a13e949e042b7535c34704938
-          </li>
-        </ul>
-      </li>
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#laporan-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-eval-wide"></i><span>Pelanggan</span><i class="bi bi-chevron-down ms-auto"></i>
-        </a>
-        <ul id="laporan-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-          <li>
-            <a href="components-alerts.html">
-              <i class="bi bi-circle"></i><span>Data Pelanggan</span>
-            </a>
-          </li>
-          <li>
-            <a href="components-accordion.html">
-              <i class="bi bi-circle"></i><span>Data Mobil Pelanggan</span>
-            </a>
-          </li>
-        </ul>
-      </li>
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#laporan-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-eval-wide"></i><span>Transaksi</span><i class="bi bi-chevron-down ms-auto"></i>
-        </a>
-        <ul id="laporan-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-          <li>
-            <a href="components-alerts.html">
-              <i class="bi bi-circle"></i><span>Transaksi</span>
-            </a>
-          </li>
-          <li>
-            <a href="components-accordion.html">
-              <i class="bi bi-circle"></i><span>Pembayaran</span>
-            </a>
-          </li>
-        </ul>
-      </li>
-      <li class="nav-heading">Pages</li>
-
-
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="pages-faq.html">
-          <i class="bi bi-question-circle"></i>
-          <span>Tentang</span>
-        </a>
-      </li><!-- End F.A.Q Page Nav -->
-
-  </aside><!-- End Sidebar-->
+        <li class="nav-heading">Pages</li>
+  
+        
+  
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="pages-faq.html">
+            <i class="bi bi-question-circle"></i>
+            <span>Tentang</span>
+          </a>
+        </li><!-- End F.A.Q Page Nav -->
+  
+    </aside><!-- End Sidebar-->
 
   <main id="main" class="main">
 
@@ -266,7 +172,6 @@ include "../config.php";
 
 
         <form method="POST" class="d-flex">
-<<<<<<< HEAD
           <div class="col-sm-6">
             <label for="">Id Barang</label>
             <div class="form-group">
@@ -274,46 +179,6 @@ include "../config.php";
                 <input type="text" name="id_barang" class="form-control" maxlength="5" required />
               </div>
             </div>
-=======
-            <div class="col-sm-6">
-                <label for="">Id Barang</label>
-                <div class="form-group">
-                    <div class="form-line">
-                        <input type="text" name="id_barang" class="form-control" maxlength="5" required />
-                    </div>
-                </div>
-
-                <label for="">Nama Barang</label>
-                <div class="form-group">
-                    <div class="form-line">
-                        <input type="text" name="nama_barang" class="form-control" required />
-                    </div>
-                </div>
-
-                <label for="">Harga Jual</label>
-                <div class="form-group">
-                    <div class="form-line">
-                        <input type="text" name="harga_jual" class="form-control" required />
-                    </div>
-                </div>
-
-                <label for="">Harga Beli</label>
-                <div class="form-group">
-                    <div class="form-line">
-                        <input type="text" name="harga_beli" class="form-control" required />
-                    </div>
-                </div>
-
-                <label for="">Jumlah Barang</label>
-                <div class="form-group">
-                    <div class="form-line">
-                        <input type="text" name="jumlah_barang" class="form-control" required />
-                    </div>
-                </div>
-
-
-                <input type="submit" class = "btn btn-primary" name="simpan" value="Simpan" class="but mb-4 w-50 mt-2">
->>>>>>> dc08fa82c39d0751f25a040d59c2702626d9853f
 
             <label for="">Nama Barang</label>
             <div class="form-group">
@@ -339,7 +204,7 @@ include "../config.php";
             <label for="">Jumlah Barang</label>
             <div class="form-group">
               <div class="form-line">
-                <input type="text" name="jumlah_barang" class="form-control" required />
+                <input type="text" name="total_barang" class="form-control" required />
               </div>
             </div>
 
@@ -362,9 +227,9 @@ include "../config.php";
         $nama_barang = $_POST['nama_barang'];
         $harga_jual = $_POST['harga_jual'];
         $harga_beli = $_POST['harga_beli'];
-        $jumlah_barang = $_POST['jumlah_barang'];
+        $total_barang = $_POST['total_barang'];
 
-        $sql = pg_query($conn, "insert into barang (id_barang,nama_barang,harga_jual,harga_beli,jumlah_barang) values ('$id_barang','$nama_barang','$harga_jual', '$harga_beli', '$jumlah_barang')");
+        $sql = pg_query($conn, "insert into barang (id_barang,nama_barang,harga_jual,harga_beli,total_barang) values ('$id_barang','$nama_barang','$harga_jual', '$harga_beli', '$total_barang')");
 
         if ($sql) {
       ?>
