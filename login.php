@@ -1,6 +1,3 @@
-<?php
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -66,29 +63,83 @@
                     <p class="text-center small">Masukkan username & password untuk login</p>
                   </div>
 
-                  <form class="row g-3 needs-validation" novalidate>
+                  <form action="<?php echo $_SERVER["PHP_SELF"];?>" method="post">
 
                     <div class="col-12">
                       <label for="yourUsername" class="form-label">Username</label>
                       <div class="input-group has-validation">
                         <span class="input-group-text" id="inputGroupPrepend">@</span>
-                        <input type="text" name="username" class="form-control" id="yourUsername" required>
+                        <input type="text" name="username" class="form-control" id="username" required>
                         <div class="invalid-feedback">Silahkan masukkan username anda</div>
                       </div>
                     </div>
 
                     <div class="col-12">
                       <label for="yourPassword" class="form-label">Password</label>
-                      <input type="password" name="password" class="form-control" id="yourPassword" required>
+                      <input type="password" name="password" class="form-control" id="password" required>
                       <div class="invalid-feedback">Silahkan masukkan password anda.</div>
                     </div>
 
                     <div class="col-12">
                     </div>
-                    <div class="col-12">
-                      <button class="btn btn-primary w-100" type="submit">Masuk</button>
                     </div>
+                            <input type="submit" value="Login" class="btn btn-primary">
                   </form>
+
+                  <?php
+		 //Fungsi untuk mencegah inputan karakter yang tidak sesuai
+		 
+     function input($username) {
+			$username = trim($username);
+			$username = stripslashes($username);
+			$username = htmlspecialchars($username);
+			return $username;
+		}
+		//Cek apakah ada kiriman form dari method post
+		if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+			session_start();
+			include "config.php";
+			$username = input($_POST["username"]);
+			$password = input(md5($_POST["password"]));
+
+			$sql = "select * from users where username='".$username."' and password='".$password."' limit 1";
+			$hasil = pg_query($conn,$sql);
+			$jumlah = pg_num_rows($hasil);
+
+			if ($jumlah>0) {
+				$row = pg_fetch_assoc($hasil);
+				$_SESSION["username"]=$row["username"];
+				$_SESSION["password"]=$row["password"];
+				$_SESSION["level"]=$row["level"];
+		
+		
+				if ($_SESSION["level"]=$row["level"]==5)
+				{
+					header("Location:inventoris/index_inventori.php");
+				} else if ($_SESSION["level"]=$row["level"]==4)
+				{
+					header("Location:kasir/index_kasir.php");
+				}else if ($_SESSION["level"]=$row["level"]==3){
+					header("Location:admin/index_admin.php");
+				}
+        else if ($_SESSION["level"]=$row["level"]==2){
+					header("Location:pemilik/index_pemilik.php");
+				}
+        else if ($_SESSION["level"]=$row["level"]==1){
+					header("Location:montir/index_montir.php");
+				}
+		
+				
+			}else {
+				echo "<div class='alert alert-danger'>
+				<strong>Error!</strong> Username dan password salah. 
+			  </div>";
+			}
+
+		}
+	
+	?>
 
                 </div>
               </div>
@@ -98,7 +149,6 @@
                 <!-- You can delete the links only if you purchased the pro version. -->
                 <!-- Licensing information: https://bootstrapmade.com/license/ -->
                 <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
-                Designed by <a href="https://bootstrapmade.com/">Bima Motor</a>
               </div>
 
             </div>

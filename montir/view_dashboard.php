@@ -61,14 +61,14 @@
       <ul class="sidebar-nav" id="sidebar-nav">
   
         <li class="nav-item">
-          <a class="nav-link " href="../admin/index_admin.php">
+          <a class="nav-link " href="../admin/view_dashboard.php">
             <i class="bi bi-grid"></i>
             <span>Beranda</span>
           </a>
         </li><!-- End Dashboard Nav -->
   
         <li class="nav-item">
-          <a class="nav-link " href="../admin/view_barang.php">
+          <a class="nav-link " href="../admin/view_stok.php">
             <i class="bi bi-grid"></i>
             <span>Sparepart</span>
           </a>
@@ -120,10 +120,10 @@
   <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>Dashboard</h1>
+      <h1>Beranda</h1>
       <nav>
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="../admin/index_admin.php">Home</a></li>
+          <li class="breadcrumb-item"><a href="../montir/view_dashboard.php">Home</a></li>
         </ol>
 
       </nav>
