@@ -10,7 +10,7 @@ include "../config.php";
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Sparepart - Bima Motor</title>
+  <title>Pelanggan - Bima Motor</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -63,60 +63,35 @@ include "../config.php";
       <ul class="sidebar-nav" id="sidebar-nav">
   
         <li class="nav-item">
-          <a class="nav-link " href="view_dashboard.php">
+          <a class="nav-link " href="../montir/index_montir.php">
             <i class="bi bi-grid"></i>
             <span>Beranda</span>
           </a>
         </li><!-- End Dashboard Nav -->
   
         <li class="nav-item">
-          <a class="nav-link " href="../admin/view_barang.php">
+          <a class="nav-link " href="../montir/view_barang.php">
             <i class="bi bi-grid"></i>
             <span>Sparepart</span>
           </a>
         </li>
 
         <li class="nav-item">
-          <a class="nav-link collapsed" data-bs-target="#laporan-nav" data-bs-toggle="collapse" href="#">
-            <i class="bi bi-eval-wide"></i><span>Pelanggan</span><i class="bi bi-chevron-down ms-auto"></i>
+          <a class="nav-link " href="../montir/view_pelanggan.php">
+            <i class="bi bi-grid"></i>
+            <span>Pelanggan</span>
           </a>
-          <ul id="laporan-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-            <li>
-              <a href="components-alerts.html">
-                <i class="bi bi-circle"></i><span>Data Pelanggan</span>
-              </a>
-            </li>
-          </ul>
-          </li>
-  
+        </li>
 
-          <li class="nav-item">
-          <a class="nav-link collapsed" data-bs-target="#laporan-nav" data-bs-toggle="collapse" href="#">
-            <i class="bi bi-eval-wide"></i><span>Transaksi</span><i class="bi bi-chevron-down ms-auto"></i>
-          </a>
-          <ul id="laporan-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-            <li>
-              <a href="components-alerts.html">
-                <i class="bi bi-circle"></i><span>Transaksi</span>
-              </a>
-            </li>
-            <li>
-              <a href="components-accordion.html">
-                <i class="bi bi-circle"></i><span>Pembayaran</span>
-              </a>
-            </li>
-          </ul>
-          </li>
-        <li class="nav-heading">Pages</li>
-  
-        
-  
         <li class="nav-item">
-          <a class="nav-link collapsed" href="pages-faq.html">
+          <a class="nav-link" href="../login.php">
             <i class="bi bi-question-circle"></i>
-            <span>Tentang</span>
+            <span>Logout</span>
           </a>
         </li><!-- End F.A.Q Page Nav -->
+    </aside><!-- End Sidebar-->
+      
+  
   
     </aside><!-- End Sidebar-->
 
@@ -126,7 +101,7 @@ include "../config.php";
       <h1>Pelanggan</h1>
       <nav>
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item"><a href="../montir/view_pelanggan.php">Home</a></li>
           <li class="breadcrumb-item">Pelanggan</li>
         </ol>
       </nav>
@@ -168,7 +143,6 @@ include "../config.php";
                     <td><?=$row['no_hp']?></td>
                     <td><?=$row['keperluan']?></td>
                     <td align = "center">
-                    <a class="btn btn-primary" href="../admin/edit_barang.php?id_barang=<?=$row['id_pelanggan']?>">Edit</a>
                     
                   </td>
                   </tr>

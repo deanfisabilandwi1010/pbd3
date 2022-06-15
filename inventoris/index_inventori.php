@@ -68,71 +68,13 @@
         </li><!-- End Dashboard Nav -->
   
         <li class="nav-item">
-          <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
-            <i class="bi bi-menu-button-wide"></i><span>Sparepart</span><i class="bi bi-chevron-down ms-auto"></i>
-          </a>
-          <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-            <li>
-              <a href="../admin/view_barang.php">
-                <i class="bi bi-circle"></i><span>Barang</span>
-              </a>
-            </li>
-            <li>
-              <a href="../admin/view_stok.php">
-                <i class="bi bi-circle"></i><span>Stok Barang</span>
-              </a>
-            </li>
-          </ul>
-        </li><!-- End Components Nav -->
-  
-        <li class="nav-item">
-          <a class="nav-link " href="index_admin.php">
+          <a class="nav-link " href="../admin/view_barang.php">
             <i class="bi bi-grid"></i>
-            <span>Pegawai</span>
+            <span>Sparepart</span>
           </a>
         </li>
-
-        <li class="nav-item">
-          <a class="nav-link collapsed" data-bs-target="#laporan-nav" data-bs-toggle="collapse" href="#">
-            <i class="bi bi-eval-wide"></i><span>Laporan</span><i class="bi bi-chevron-down ms-auto"></i>
-          </a>
-          <ul id="laporan-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-            <li>
-              <a href="components-alerts.html">
-                <i class="bi bi-circle"></i><span>Pembelian</span>
-              </a>
-            </li>
-            <li>
-              <a href="components-accordion.html">
-                <i class="bi bi-circle"></i><span>Pelanggan</span>
-              </a>
-            </li>
-            <li>
-              <a href="components-accordion.html">
-                <i class="bi bi-circle"></i><span>Penjualan</span>
-              </a>
-            </li>
-          </ul>
-          </li>
   
-          <li class="nav-item">
-          <a class="nav-link collapsed" data-bs-target="#laporan-nav" data-bs-toggle="collapse" href="#">
-            <i class="bi bi-eval-wide"></i><span>Pelanggan</span><i class="bi bi-chevron-down ms-auto"></i>
-          </a>
-          <ul id="laporan-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-            <li>
-              <a href="components-alerts.html">
-                <i class="bi bi-circle"></i><span>Data Pelanggan</span>
-              </a>
-            </li>
-            <li>
-              <a href="components-accordion.html">
-                <i class="bi bi-circle"></i><span>Data Mobil Pelanggan</span>
-              </a>
-            </li>
-          </ul>
-          </li>
-
+        
           <li class="nav-item">
           <a class="nav-link collapsed" data-bs-target="#laporan-nav" data-bs-toggle="collapse" href="#">
             <i class="bi bi-eval-wide"></i><span>Transaksi</span><i class="bi bi-chevron-down ms-auto"></i>
@@ -152,14 +94,16 @@
           </li>
         <li class="nav-heading">Pages</li>
   
-        
-  
         <li class="nav-item">
-          <a class="nav-link collapsed" href="pages-faq.html">
+          <a class="nav-link" href="../login.php">
             <i class="bi bi-question-circle"></i>
-            <span>Tentang</span>
+            <span>Logout</span>
           </a>
         </li><!-- End F.A.Q Page Nav -->
+    </aside><!-- End Sidebar-->
+      
+  
+       
   
     </aside><!-- End Sidebar-->
 

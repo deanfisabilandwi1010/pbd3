@@ -9,7 +9,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Pemilik - Bima Motor</title>
+  <title>DashBoard - Bima Motor</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -46,7 +46,7 @@
   <header id="header" class="header fixed-top d-flex align-items-center">
   
     <div class="d-flex align-items-center justify-content-between">
-      <a href="index.html" class="logo d-flex align-items-center">
+      <a href="index_admin.php" class="logo d-flex align-items-center">
         <img src="../assets/img/Logoo.PNG" alt="">
         <span class="d-none d-lg-block">Bima Motor</span>
       </a>
@@ -61,26 +61,11 @@
       <ul class="sidebar-nav" id="sidebar-nav">
   
         <li class="nav-item">
-          <a class="nav-link " href="../admin/index_admin.php">
+          <a class="nav-link " href="../pemilik/index_pemilik.php">
             <i class="bi bi-grid"></i>
             <span>Beranda</span>
           </a>
         </li><!-- End Dashboard Nav -->
-  
-        <li class="nav-item">
-          <a class="nav-link " href="../admin/view_barang.php">
-            <i class="bi bi-grid"></i>
-            <span>Sparepart</span>
-          </a>
-        </li>
-  
-  
-        <li class="nav-item">
-          <a class="nav-link " href="../admin/view_pegawai.php">
-            <i class="bi bi-grid"></i>
-            <span>Pegawai</span>
-          </a>
-        </li>
 
         <li class="nav-item">
           <a class="nav-link collapsed" data-bs-target="#laporan-nav" data-bs-toggle="collapse" href="#">
@@ -93,7 +78,7 @@
               </a>
             </li>
             <li>
-              <a href="components-accordion.html">
+              <a href="../pemilik/laporan_pelanggan.php">
                 <i class="bi bi-circle"></i><span>Pelanggan</span>
               </a>
             </li>
@@ -104,18 +89,15 @@
             </li>
           </ul>
           </li>
-          
-        <li class="nav-heading">Pages</li>
-  
         
-  
+
         <li class="nav-item">
-          <a class="nav-link collapsed" href="pages-faq.html">
+          <a class="nav-link collapsed" href="../login.php">
             <i class="bi bi-question-circle"></i>
-            <span>Tentang</span>
+            <span>Logout</span>
           </a>
         </li><!-- End F.A.Q Page Nav -->
-  
+
     </aside><!-- End Sidebar-->
 
   <main id="main" class="main">

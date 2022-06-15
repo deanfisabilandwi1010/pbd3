@@ -140,12 +140,13 @@
         
 
         <li class="nav-item">
-          <a class="nav-link collapsed" href="../login.php">
+          <a class="nav-link" href="../login.php">
             <i class="bi bi-question-circle"></i>
             <span>Logout</span>
           </a>
         </li><!-- End F.A.Q Page Nav -->
     </aside><!-- End Sidebar-->
+      
 
   <main id="main" class="main">
 

@@ -116,7 +116,7 @@
       <h1>Dashboard</h1>
       <nav>
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="../admin/index_admin.php">Home</a></li>
+          <li class="breadcrumb-item"><a href="../kasir/index_kasir.php">Home</a></li>
         </ol>
 
       </nav>
