@@ -135,13 +135,6 @@ include "../config.php";
   
         
   
-        <li class="nav-item">
-          <a class="nav-link collapsed" href="pages-faq.html">
-            <i class="bi bi-question-circle"></i>
-            <span>Tentang</span>
-          </a>
-        </li><!-- End F.A.Q Page Nav -->
-  
     </aside><!-- End Sidebar-->
 
   <main id="main" class="main">
@@ -202,7 +195,7 @@ include "../config.php";
                 </div>
 
                 
-                <input type="submit" class = "btn btn-primary" name="simpan" value="Simpan" class="but mb-4 w-50 mt-2">
+                <input type="submit" class = "btn btn-primary" name="simpan" value="Simpan" class="btn btn-primary">
 
             </div>
             <div class="col-sm-6">

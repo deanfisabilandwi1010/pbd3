@@ -12,7 +12,7 @@ $row = pg_fetch_array($sql);
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Edit Barang - Bima Motor</title>
+  <title>Edit Pegawai - Bima Motor</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -135,14 +135,6 @@ $row = pg_fetch_array($sql);
           </li>
         <li class="nav-heading">Pages</li>
   
-        
-  
-        <li class="nav-item">
-          <a class="nav-link collapsed" href="pages-faq.html">
-            <i class="bi bi-question-circle"></i>
-            <span>Tentang</span>
-          </a>
-        </li><!-- End F.A.Q Page Nav -->
   
     </aside><!-- End Sidebar-->
 
@@ -204,7 +196,7 @@ include "../config.php";
                 </div>
 
                 <div>
-                <input type="submit" name="simpan" value="Simpan" class="but mb-4 w-50 mt-2">
+                <input type="submit" name="simpan" value="Simpan" class="btn btn-primary">
                 </div>
 
 

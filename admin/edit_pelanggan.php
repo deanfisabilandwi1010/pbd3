@@ -1,22 +1,24 @@
-<?php  
-include "../config.php";
+<?php
+include '../config.php'; 
+
+$id_pelanggan = $_GET['id_pelanggan'];
+$sql = pg_query($conn, "SELECT * from pelanggan where id_pelanggan='$id_pelanggan'");
+$row = pg_fetch_array($sql);
 
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
 
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Sparepart - Bima Motor</title>
+  <title>Edit Pelanggan - Bima Motor</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
   <!-- Favicons -->
   <link href="../assets/img/Logoo.PNG" rel="icon">
-  <link href="../assets/img/Logoo.PNG" rel="Logoo">
+  <link href="../assets/img/Logoo.PNG" rel="icon">
   
   <!-- Google Fonts -->
   <link href="https://fonts.gstatic.com" rel="preconnect">
@@ -48,8 +50,8 @@ include "../config.php";
   <header id="header" class="header fixed-top d-flex align-items-center">
   
     <div class="d-flex align-items-center justify-content-between">
-      <a href="../admin/index_admin.php" class="logo d-flex align-items-center">
-      <img src="../assets/img/Logoo.PNG" alt="">
+      <a href="index.html" class="logo d-flex align-items-center">
+        <img src="../assets/img/Logoo.PNG" alt="">
         <span class="d-none d-lg-block">Bima Motor</span>
       </a>
       <i class="bi bi-list toggle-sidebar-btn"></i>
@@ -63,7 +65,7 @@ include "../config.php";
       <ul class="sidebar-nav" id="sidebar-nav">
   
       <li class="nav-item">
-          <a class="nav-link " href="../admin/index_admin.php">
+          <a class="nav-link " href="index_admin.php">
             <i class="bi bi-grid"></i>
             <span>Beranda</span>
           </a>
@@ -132,82 +134,126 @@ include "../config.php";
           </ul>
           </li>
         <li class="nav-heading">Pages</li>
-  
-        
+
   
     </aside><!-- End Sidebar-->
 
   <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>Barang</h1>
+      <h1>Pegawai</h1>
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="../admin/index_admin.php">Home</a></li>
-          <li class="breadcrumb-item">Sparepart</li>
+          <li class="breadcrumb-item">Pelanggan</li>
+          <li class="breadcrumb-item">Edit Pelanggan</li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
 
-    <section class="section">
-      <div class="row">
-        <div class="col-lg-12">
+    <?php
+include "../config.php";
 
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Tabel Barang</h5>
+?>
 
-              <!-- Default Table -->
-              <table class="table">
-                <thead>
-                  <tr>
-                    <td scope="col">Kode Barang</td>
-                    <td scope="col">Nama Barng</td>
-                    <td scope="col">Harga Jual</td>
-                    <td scope="col">Harga Beli</td>
-                    <td scope="col">Jumlah Barang</td>
-                    
-                  </tr>
-                </thead>
 
-                <tbody>
-                  <?php
-                  $result = pg_query($conn,"SELECT *FROM barang ");
-                  while ($row = pg_fetch_array($result)){
-                    ?>
-                  
-                  <tr>
-                    <td><?=$row['id_barang']?></td>
-                    <td><?=$row['nama_barang']?></td>
-                    <td><?=$row['harga_jual']?></td>
-                    <td><?=$row['harga_beli']?></td>
-                    <td><?=$row['total_barang']?></td>
-                    <td align = "center">
-                    <a class="btn btn-primary" href="../admin/edit_barang.php?id_barang=<?=$row['id_barang']?>">Edit</a>
-                    <a onclick="return confirm('Yakin menghapus data ini ?')" class="btn btn-danger" href="../admin/hapus_barang.php?id_barang=<?=$row['id_barang']?>">Hapus</a>
-                    
-                  </td>
-                  </tr>
-                  <?php
-                  }
-                  ?>
-                <!-- <a href="../admin/input_barang.php" class="button-link">add</a> -->
-                <!-- <button class="btn btn-primary" href="../admin/input_barang.php" >Add</button> -->
-                
-                
-                <button class="btn btn-primary" onclick="location.href='../admin/input_barang.php'" type="button" style="float: right" >Add</button>
-                
-                
-                  
+<section class="main-panel d-flex">
+    <div class="container card">
+        <div class="section-title">
+            <h3 class="fw-bolder mb-4">Edit Pelanggan</h3>
 
-                </tbody>
-              </table>
-              <!-- End Default Table Example -->
-            </div>
-          </div>
         </div>
-      </div>
-    </section>
+       
+
+        <form method="POST" class="d-flex">
+            <div class="col-sm-6">
+                <label for="">Id Pelanggan</label>
+                <div class="form-group">
+                    <div class="form-line">
+                    <input type="text" class="form-control" readonly name="id_pelanggan" value="<?php echo $row['id_pelanggan']?>" required>
+                    </div>
+                </div>
+
+                <label for="">Nama Pelanggan</label>
+                <div class="form-group">
+                    <div class="form-line">
+                    <input type="text" class="form-control" name="nama_pelanggan" value="<?php echo $row['nama_pelanggan']?>" required>
+                    </div>
+                </div>
+
+                <label for="">Plat Mobil</label>
+                <div class="form-group">
+                    <div class="form-line">
+                    <input type="text" class="form-control" name="plat_mobil" value="<?php echo $row['plat_mobil']?>" required>
+                    </div>
+                </div>
+
+                <label for="">Jenis Mobil</label>
+                <div class="form-group">
+                    <div class="form-line">
+                    <input type="text" class="form-control" name="jenis_mobil" value="<?php echo $row['jenis_mobil']?>" required>
+                    </div>
+                </div>
+
+                
+                <label for="">Nomor Telepon</label>
+                <div class="form-group">
+                    <div class="form-line">
+                    <input type="text" class="form-control" name="no_hp" value="<?php echo $row['no_hp']?>" required>
+                    </div>
+                </div>
+
+                
+                <label for="">Keperluan</label>
+                <div class="form-group">
+                    <div class="form-line">
+                    <input type="text" class="form-control" name="keperluan" value="<?php echo $row['keperluan']?>" required>
+                    </div>
+                </div>
+
+
+
+                <div>
+                <input type="submit" name="simpan" value="Simpan" class="btn btn-primary">
+                </div>
+
+
+
+            </div>
+            <div class="col-sm-6">
+
+                </div>
+
+
+            </div>
+
+        </form>
+        <?php 
+   
+        if (isset($_POST['simpan'])) {
+            $id_pelanggan = $_POST['id_pelanggan'];
+            $nama_pelanggan = $_POST['nama_pelanggan'];
+            $plat_mobil = $_POST['plat_mobil'];
+            $jenis_mobil = $_POST['jenis_mobil'];
+            $no_hp = $_POST['no_hp'];
+            $keperluan = $_POST['keperluan'];
+    
+        $sql =  pg_query($conn,"UPDATE pelanggan SET nama_pelanggan='$nama_pelanggan',  plat_mobil='$plat_mobil', jenis_mobil='$jenis_mobil', no_hp='$no_hp', keperluan='$keperluan' WHERE id_pelanggan='$id_pelanggan'");
+    
+        if($sql){
+        echo "<script>alert('Data berhasil diedit');window.location='../admin/view_pelanggan.php';</script>";
+        } else {
+        echo pg_last_error($conn);
+        }
+        }
+        
+        
+        ?>
+
+
+    </div>
+</section>
+
 
   </main><!-- End #main -->
 
@@ -236,6 +282,7 @@ include "../config.php";
   <script src="../assets/vendor/simple-datatables/simple-datatables.js"></script>
   <script src="../assets/vendor/tinymce/tinymce.min.js"></script>
   <script src="../assets/vendor/php-email-form/validate.js"></script>
+
   <!-- Template Main JS File -->
   <script src="../assets/js/main.js"></script>
 
