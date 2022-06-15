@@ -61,14 +61,14 @@
       <ul class="sidebar-nav" id="sidebar-nav">
   
         <li class="nav-item">
-          <a class="nav-link " href="../admin/view_dashboard.php">
+          <a class="nav-link " href="../montir/view_dashboard.php">
             <i class="bi bi-grid"></i>
             <span>Beranda</span>
           </a>
         </li><!-- End Dashboard Nav -->
   
         <li class="nav-item">
-          <a class="nav-link " href="../admin/view_stok.php">
+          <a class="nav-link " href="../montir/view_stok.php">
             <i class="bi bi-grid"></i>
             <span>Sparepart</span>
           </a>
