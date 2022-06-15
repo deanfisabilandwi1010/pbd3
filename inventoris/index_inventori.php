@@ -79,7 +79,7 @@
             </li>
             <li>
               <a href="../admin/view_stok.php">
-                <i class="bi bi-circle"></i><span>Stok Barang</span>
+                <i class="bi bi-circle"></i><span>Re-Stok Barang</span>
               </a>
             </li>
           </ul>
@@ -94,7 +94,7 @@
           <ul id="laporan-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
             <li>
               <a href="components-alerts.html">
-                <i class="bi bi-circle"></i><span>Stok</span>
+                <i class="bi bi-circle"></i><span>Re-Stok</span>
               </a>
             </li>
             <li>
@@ -123,7 +123,7 @@
       <h1>Inventory</h1>
       <nav>
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="dashboard">Home</a></li>
+          <li class="breadcrumb-item"><a href="../inventoris/index_inventori.php">Home</a></li>
         </ol>
       </nav>
     </div><!-- End Page Title -->

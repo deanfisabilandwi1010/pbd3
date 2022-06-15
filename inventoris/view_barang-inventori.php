@@ -10,14 +10,13 @@ include "../config.php";
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Sparepart - Bima Motor</title>
+  <title>Inventory - Bima Motor</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
   <!-- Favicons -->
   <link href="../assets/img/Logoo.PNG" rel="icon">
-  <link href="../assets/img/Logoo.PNG" rel="Logoo">
-  
+  <link href="../assets/img/Logoo.PNG" rel="icon">
   <!-- Google Fonts -->
   <link href="https://fonts.gstatic.com" rel="preconnect">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
@@ -48,8 +47,8 @@ include "../config.php";
   <header id="header" class="header fixed-top d-flex align-items-center">
   
     <div class="d-flex align-items-center justify-content-between">
-      <a href="../admin/index_admin.php" class="logo d-flex align-items-center">
-      <img src="../assets/img/Logoo.PNG" alt="">
+      <a href="../inventoris/index_inventori.php" class="logo d-flex align-items-center">
+        <img src="../assets/img/Logoo.PNG" alt="">
         <span class="d-none d-lg-block">Bima Motor</span>
       </a>
       <i class="bi bi-list toggle-sidebar-btn"></i>
@@ -81,7 +80,7 @@ include "../config.php";
             </li>
             <li>
               <a href="../admin/view_stok.php">
-                <i class="bi bi-circle"></i><span>Stok Barang</span>
+                <i class="bi bi-circle"></i><span>Re-Stok Barang</span>
               </a>
             </li>
           </ul>
@@ -96,7 +95,7 @@ include "../config.php";
           <ul id="laporan-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
             <li>
               <a href="components-alerts.html">
-                <i class="bi bi-circle"></i><span>Transaksi</span>
+                <i class="bi bi-circle"></i><span>Re-Stok</span>
               </a>
             </li>
             <li>
@@ -119,14 +118,15 @@ include "../config.php";
   
     </aside><!-- End Sidebar-->
 
+
   <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>Barang</h1>
+      <h1>Inventory</h1>
       <nav>
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="../admin/index_admin.php">Home</a></li>
-          <li class="breadcrumb-item">Sparepart</li>
+          <li class="breadcrumb-item"><a href="../inventoris/index_inventori.php.php">Home</a></li>
+          <li class="breadcrumb-item">Data Barang</li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
@@ -137,7 +137,7 @@ include "../config.php";
 
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Tabel Barang</h5>
+              <h5 class="card-title">Tabel Inventory</h5>
 
               <!-- Default Table -->
               <table class="table">
@@ -165,9 +165,8 @@ include "../config.php";
                     <td><?=$row['harga_beli']?></td>
                     <td><?=$row['total_barang']?></td>
                     <td align = "center">
-                    <a class="btn btn-primary" href="../admin/edit_barang.php?id_barang=<?=$row['id_barang']?>">Edit</a>
-                    <a onclick="return confirm('Yakin menghapus data ini ?')" class="btn btn-danger" href="../admin/hapus_barang.php?id_barang=<?=$row['id_barang']?>">Hapus</a>
-                    
+                    <a class="btn btn-primary" href="../inventoris/edit_barang-inventori.php?id_barang=<?=$row['id_barang']?>">Edit</a>
+                    <!-- <a class="btn btn-primary" href="../admin/edit_barang.php?id_barang=<?=$row['id_barang']?>">Edit</a> -->
                   </td>
                   </tr>
                   <?php
@@ -177,7 +176,7 @@ include "../config.php";
                 <!-- <button class="btn btn-primary" href="../admin/input_barang.php" >Add</button> -->
                 
                 
-                <button class="btn btn-primary" onclick="location.href='../admin/input_barang.php'" type="button" style="float: right" >Add</button>
+                <!-- <button class="btn btn-primary" onclick="location.href='../admin/input_barang.php'" type="button" style="float: right" >Add</button> -->
                 
                 
                   

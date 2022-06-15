@@ -2,7 +2,7 @@
 
 $host       =  "localhost";
 $dbuser     =  "postgres";
-$dbpass     =  "1234567";
+$dbpass     =  "12345";
 $port       =  "5432";
 $dbname    =  "bima_motor";
 
