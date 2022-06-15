@@ -10,7 +10,7 @@ include "../config.php";
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Sparepart - Bima Motor</title>
+  <title>Pelanggan - Bima Motor</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -133,14 +133,6 @@ include "../config.php";
           </li>
         <li class="nav-heading">Pages</li>
   
-        
-  
-        <li class="nav-item">
-          <a class="nav-link collapsed" href="pages-faq.html">
-            <i class="bi bi-question-circle"></i>
-            <span>Tentang</span>
-          </a>
-        </li><!-- End F.A.Q Page Nav -->
   
     </aside><!-- End Sidebar-->
 
@@ -192,7 +184,7 @@ include "../config.php";
                     <td><?=$row['no_hp']?></td>
                     <td><?=$row['keperluan']?></td>
                     <td align = "center">
-                    <a class="btn btn-primary" href="../admin/edit_barang.php?id_barang=<?=$row['id_pelanggan']?>">Edit</a>
+                    <a class="btn btn-primary" href="../admin/edit_pelanggan.php?id_pelanggan=<?=$row['id_pelanggan']?>">Edit</a>
                     
                   </td>
                   </tr>
