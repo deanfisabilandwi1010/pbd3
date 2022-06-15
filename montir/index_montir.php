@@ -58,64 +58,35 @@
     <!-- ======= Sidebar ======= -->
     <aside id="sidebar" class="sidebar">
   
-      <ul class="sidebar-nav" id="sidebar-nav">
-  
-        <li class="nav-item">
-          <a class="nav-link " href="../montir/view_dashboard.php">
-            <i class="bi bi-grid"></i>
-            <span>Beranda</span>
-          </a>
-        </li><!-- End Dashboard Nav -->
-  
-        <li class="nav-item">
-          <a class="nav-link " href="../montir/view_stok.php">
-            <i class="bi bi-grid"></i>
-            <span>Sparepart</span>
-          </a>
-        </li>
-  
-        <li class="nav-item">
-          <a class="nav-link collapsed" data-bs-target="#laporan-nav" data-bs-toggle="collapse" href="#">
-            <i class="bi bi-eval-wide"></i><span>Pelanggan</span><i class="bi bi-chevron-down ms-auto"></i>
-          </a>
-          <ul id="laporan-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-            <li>
-              <a href="components-alerts.html">
-                <i class="bi bi-circle"></i><span>Data Pelanggan</span>
-              </a>
-            </li>
-          </ul>
-          </li>
+  <ul class="sidebar-nav" id="sidebar-nav">
 
-          <li class="nav-item">
-          <a class="nav-link collapsed" data-bs-target="#laporan-nav" data-bs-toggle="collapse" href="#">
-            <i class="bi bi-eval-wide"></i><span>Transaksi</span><i class="bi bi-chevron-down ms-auto"></i>
-          </a>
-          <ul id="laporan-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-            <li>
-              <a href="components-alerts.html">
-                <i class="bi bi-circle"></i><span>Transaksi</span>
-              </a>
-            </li>
-            <li>
-              <a href="components-accordion.html">
-                <i class="bi bi-circle"></i><span>Pembayaran</span>
-              </a>
-            </li>
-          </ul>
-          </li>
-        <li class="nav-heading">Pages</li>
-  
-        
-  
-        <li class="nav-item">
-          <a class="nav-link collapsed" href="pages-faq.html">
-            <i class="bi bi-question-circle"></i>
-            <span>Tentang</span>
-          </a>
-        </li><!-- End F.A.Q Page Nav -->
-  
-    </aside><!-- End Sidebar-->
+    <li class="nav-item">
+      <a class="nav-link " href="../montir/index_montir.php">
+        <i class="bi bi-grid"></i>
+        <span>Beranda</span>
+      </a>
+    </li><!-- End Dashboard Nav -->
+
+    <li class="nav-item">
+      <a class="nav-link " href="../montir/view_barang-montir.php">
+        <i class="bi bi-grid"></i>
+        <span>Sparepart</span>
+      </a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link " href="../montir/view_pelanggan.php">
+        <i class="bi bi-grid"></i>
+        <span>Pelanggan</span>
+      </a>
+    </li>
+
+
+    
+
+   
+
+</aside><!-- End Sidebar-->
 
   <main id="main" class="main">
 
@@ -123,7 +94,7 @@
       <h1>Beranda</h1>
       <nav>
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="../montir/view_dashboard.php">Home</a></li>
+          <li class="breadcrumb-item"><a href="../montir/index_montir.php">Home</a></li>
         </ol>
 
       </nav>

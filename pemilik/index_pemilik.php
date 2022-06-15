@@ -9,7 +9,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Inventory - Bima Motor</title>
+  <title>Montir - Bima Motor</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -46,7 +46,7 @@
   <header id="header" class="header fixed-top d-flex align-items-center">
   
     <div class="d-flex align-items-center justify-content-between">
-      <a href="../inventoris/index_inventori.php" class="logo d-flex align-items-center">
+      <a href="index.html" class="logo d-flex align-items-center">
         <img src="../assets/img/Logoo.PNG" alt="">
         <span class="d-none d-lg-block">Bima Motor</span>
       </a>
@@ -58,57 +58,57 @@
     <!-- ======= Sidebar ======= -->
     <aside id="sidebar" class="sidebar">
   
-      <ul class="sidebar-nav" id="sidebar-nav">
-  
-        <li class="nav-item">
-          <a class="nav-link " href="../inventoris/index_inventori.php">
-            <i class="bi bi-grid"></i>
-            <span>Beranda</span>
-          </a>
-        </li><!-- End Dashboard Nav -->
-  
-        <li class="nav-item">
-          <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
-            <i class="bi bi-menu-button-wide"></i><span>Sparepart</span><i class="bi bi-chevron-down ms-auto"></i>
-          </a>
-          <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-            <li>
-              <a href="../inventoris/view_barang-inventori.php">
-                <i class="bi bi-circle"></i><span>Barang</span>
-              </a>
-            </li>
-            <li>
-              <a href="../inventoris/view_restok-inventori.php">
-                <i class="bi bi-circle"></i><span>Re-Stok Barang</span>
-              </a>
-            </li>
-          </ul>
-        </li><!-- End Components Nav -->
-  
-        
+  <ul class="sidebar-nav" id="sidebar-nav">
 
-          <li class="nav-item">
-          <a class="nav-link collapsed" data-bs-target="#laporan-nav" data-bs-toggle="collapse" href="#">
-            <i class="bi bi-eval-wide"></i><span>Transaksi</span><i class="bi bi-chevron-down ms-auto"></i>
-          </a>
-          <ul id="laporan-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-            <li>
-              <a href="../inventoris/view_transaksi_restok-inventori.php">
-                <i class="bi bi-circle"></i><span>Re-Stok</span>
-              </a>
-            </li>
-            
-  
-    </aside><!-- End Sidebar-->
+    <li class="nav-item">
+      <a class="nav-link " href="../pemilik/index_pemilik.php">
+        <i class="bi bi-grid"></i>
+        <span>Beranda</span>
+      </a>
+    </li><!-- End Dashboard Nav -->
+
+    <li class="nav-item">
+      <a class="nav-link " href="../pemilik/view_barang-pemilik.php">
+        <i class="bi bi-grid"></i>
+        <span>Sparepart</span>
+      </a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link " href="../pemilik/view_pegawai-pemilik.php">
+        <i class="bi bi-grid"></i>
+        <span>Pegawai</span>
+      </a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link " href="../pemilik/view_transaksi-pemilik.php">
+        <i class="bi bi-grid"></i>
+        <span>Transaksi</span>
+      </a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link " href="../pemilik/view_pelanggan-pemilik.php">
+        <i class="bi bi-grid"></i>
+        <span>Pelanggan</span>
+      </a>
+    </li>
+    
+
+    
+
+</aside><!-- End Sidebar-->
 
   <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>Inventory</h1>
+      <h1>Beranda</h1>
       <nav>
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="../inventoris/index_inventori.php">Home</a></li>
+          <li class="breadcrumb-item"><a href="../pemilik/index_pemilik.php">Home</a></li>
         </ol>
+
       </nav>
     </div><!-- End Page Title -->
 
