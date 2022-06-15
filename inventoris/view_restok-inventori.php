@@ -1,4 +1,5 @@
-<?php
+<?php  
+include "../config.php";
 
 ?>
 
@@ -68,13 +69,25 @@
         </li><!-- End Dashboard Nav -->
   
         <li class="nav-item">
-          <a class="nav-link " href="../admin/view_barang.php">
-            <i class="bi bi-grid"></i>
-            <span>Sparepart</span>
+          <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
+            <i class="bi bi-menu-button-wide"></i><span>Sparepart</span><i class="bi bi-chevron-down ms-auto"></i>
           </a>
-        </li>
+          <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+            <li>
+              <a href="../inventoris/view_barang-inventori.php">
+                <i class="bi bi-circle"></i><span>Barang</span>
+              </a>
+            </li>
+            <li>
+              <a href="../inventoris/view_restok-inventori.php">
+                <i class="bi bi-circle"></i><span>Re-Stok Barang</span>
+              </a>
+            </li>
+          </ul>
+        </li><!-- End Components Nav -->
   
         
+
           <li class="nav-item">
           <a class="nav-link collapsed" data-bs-target="#laporan-nav" data-bs-toggle="collapse" href="#">
             <i class="bi bi-eval-wide"></i><span>Transaksi</span><i class="bi bi-chevron-down ms-auto"></i>
@@ -94,18 +107,17 @@
           </li>
         <li class="nav-heading">Pages</li>
   
+        
+  
         <li class="nav-item">
-          <a class="nav-link" href="../login.php">
+          <a class="nav-link collapsed" href="tentang.html">
             <i class="bi bi-question-circle"></i>
-            <span>Logout</span>
+            <span>Tentang</span>
           </a>
         </li><!-- End F.A.Q Page Nav -->
-    </aside><!-- End Sidebar-->
-      
-  
-       
   
     </aside><!-- End Sidebar-->
+
 
   <main id="main" class="main">
 
@@ -113,11 +125,70 @@
       <h1>Inventory</h1>
       <nav>
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="../inventoris/index_inventori.php">Home</a></li>
+          <li class="breadcrumb-item"><a href="../inventoris/index_inventori.php.php">Home</a></li>
+          <li class="breadcrumb-item">Data Barang</li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
 
+    <section class="section">
+      <div class="row">
+        <div class="col-lg-12">
+
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Tabel Inventory</h5>
+
+              <!-- Default Table -->
+              <table class="table">
+                <thead>
+                  <tr>
+                    <td scope="col">Faktur Re-Stok</td>
+                    <td scope="col">Kode Barang</td>
+                    <td scope="col">Tanggal</td>
+                    <td scope="col">Harga Total</td>
+                    <td scope="col">Jumlah Pembelian</td>
+                    
+                  </tr>
+                </thead>
+
+                <tbody>
+                  <?php
+                  $result = pg_query($conn,"SELECT *FROM detail_restok ");
+                  while ($row = pg_fetch_array($result)){
+                    ?>
+                  
+                  <tr>
+                    <td><?=$row['faktur_restok']?></td>
+                    <td><?=$row['id_barang']?></td>
+                    <td><?=$row['tanggal']?></td>
+                    <td><?=$row['harga_total']?></td>
+                    <td><?=$row['jumlah_pembelian']?></td>
+                    <td align = "center">
+                    <!-- <a class="btn btn-primary" href="../inventoris/edit_barang-inventori.php?id_barang=<?=$row['faktur_restok']?>">Re-Stok Barang</a> -->
+                    <!-- <a class="btn btn-primary" href="../inventoris/tambah_stok-inventori.php?id_barang=<?=$row['id_barang']?>">Tambah</a> -->
+                  </td>
+                  </tr>
+                  <?php
+                  }
+                  ?>
+                <!-- <a href="../admin/input_barang.php" class="button-link">add</a> -->
+                <!-- <button class="btn btn-primary" href="../admin/input_barang.php" >Add</button> -->
+                
+                
+                <button class="btn btn-primary" onclick="location.href= ' ../inventoris/index_restok-inventori.php'" type="button" style="float: right" >Add</button>
+                <!-- <button class="btn btn-primary" onclick="location.href='../admin/input_barang.php'" type="button" style="float: right" >Add</button> -->
+                
+                  
+
+                </tbody>
+              </table>
+              <!-- End Default Table Example -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
   </main><!-- End #main -->
 
@@ -146,7 +217,6 @@
   <script src="../assets/vendor/simple-datatables/simple-datatables.js"></script>
   <script src="../assets/vendor/tinymce/tinymce.min.js"></script>
   <script src="../assets/vendor/php-email-form/validate.js"></script>
-
   <!-- Template Main JS File -->
   <script src="../assets/js/main.js"></script>
 

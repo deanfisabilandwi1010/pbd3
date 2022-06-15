@@ -1,4 +1,5 @@
 <?php
+include "../config.php";
 
 ?>
 
@@ -9,17 +10,18 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Inventory - Bima Motor</title>
+  <title>Input Barang - Bima Motor</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
   <!-- Favicons -->
   <link href="../assets/img/Logoo.PNG" rel="icon">
-  <link href="../assets/img/Logoo.PNG" rel="icon">
+  <link href="../assets/img/Logoo.PNG" rel="Logoo">
+
   <!-- Google Fonts -->
   <link href="https://fonts.gstatic.com" rel="preconnect">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
-  
+
   <!-- Vendor CSS Files -->
   <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
@@ -28,33 +30,33 @@
   <link href="../assets/vendor/quill/quill.bubble.css" rel="stylesheet">
   <link href="../assets/vendor/remixicon/remixicon.css" rel="stylesheet">
   <link href="../assets/vendor/simple-datatables/style.css" rel="stylesheet">
-  
+
   <!-- Template Main CSS File -->
   <link href="../assets/css/style.css" rel="stylesheet">
-  
+
   <!-- =======================================================
   * Template Name: NiceAdmin - v2.2.2
   * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
-  </head>
-  
-  <body>
-  
+</head>
+
+<body>
+
   <!-- ======= Header ======= -->
   <header id="header" class="header fixed-top d-flex align-items-center">
-  
+
     <div class="d-flex align-items-center justify-content-between">
-      <a href="../inventoris/index_inventori.php" class="logo d-flex align-items-center">
+      <a href="index.html" class="logo d-flex align-items-center">
         <img src="../assets/img/Logoo.PNG" alt="">
         <span class="d-none d-lg-block">Bima Motor</span>
       </a>
       <i class="bi bi-list toggle-sidebar-btn"></i>
     </div><!-- End Logo -->
   </header><!-- End Header -->
-  
-  
+
+
     <!-- ======= Sidebar ======= -->
     <aside id="sidebar" class="sidebar">
   
@@ -68,13 +70,25 @@
         </li><!-- End Dashboard Nav -->
   
         <li class="nav-item">
-          <a class="nav-link " href="../admin/view_barang.php">
-            <i class="bi bi-grid"></i>
-            <span>Sparepart</span>
+          <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
+            <i class="bi bi-menu-button-wide"></i><span>Sparepart</span><i class="bi bi-chevron-down ms-auto"></i>
           </a>
-        </li>
+          <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+            <li>
+              <a href="../inventoris/view_barang-inventori.php">
+                <i class="bi bi-circle"></i><span>Barang</span>
+              </a>
+            </li>
+            <li>
+              <a href="../inventoris/view_restok-inventori.php">
+                <i class="bi bi-circle"></i><span>Re-Stok Barang</span>
+              </a>
+            </li>
+          </ul>
+        </li><!-- End Components Nav -->
   
         
+
           <li class="nav-item">
           <a class="nav-link collapsed" data-bs-target="#laporan-nav" data-bs-toggle="collapse" href="#">
             <i class="bi bi-eval-wide"></i><span>Transaksi</span><i class="bi bi-chevron-down ms-auto"></i>
@@ -94,29 +108,148 @@
           </li>
         <li class="nav-heading">Pages</li>
   
+        
+  
         <li class="nav-item">
-          <a class="nav-link" href="../login.php">
+          <a class="nav-link collapsed" href="tentang.html">
             <i class="bi bi-question-circle"></i>
-            <span>Logout</span>
+            <span>Tentang</span>
           </a>
         </li><!-- End F.A.Q Page Nav -->
-    </aside><!-- End Sidebar-->
-      
-  
-       
   
     </aside><!-- End Sidebar-->
-
   <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>Inventory</h1>
+      <h1>Barang</h1>
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="../inventoris/index_inventori.php">Home</a></li>
+          <li class="breadcrumb-item">Transaksi</li>
+          <li class="breadcrumb-item active">Tambah Transaksi</li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
+
+    <?php
+    include "../config.php";
+
+    ?>
+
+
+    <section class="main-panel d-flex">
+      <div class="container card">
+        <div class="section-title">
+          <h3 class="fw-bolder mb-4">Tambah Transaksi</h3>
+
+        </div>
+
+
+        <form method="POST" class="d-flex">
+          <div class="col-sm-6">
+            <label for="">No Faktur</label>
+            <div class="form-group">
+              <div class="form-line">
+                <input type="text" name="no_faktur" class="form-control" maxlength="5" required />
+              </div>
+            </div>
+
+            <label for="">ID Barang</label>
+            <div class="form-group">
+              <div class="form-line">
+                <input type="text" name="id_barang" class="form-control" required />
+              </div>
+            </div>
+
+            <label for="">ID Pelanggan</label>
+            <div class="form-group">
+              <div class="form-line">
+                <input type="text" name="id_pelanggan" class="form-control" required />
+              </div>
+            </div>
+
+            <label for="">Harga Total</label>
+            <div class="form-group">
+              <div class="form-line">
+                <input type="text" name="harga_total" class="form-control" required />
+              </div>
+            </div>
+
+            <label for="">Jumlah Barang</label>
+            <div class="form-group">
+              <div class="form-line">
+                <input type="text" name="jumlah_barang" class="form-control" required />
+              </div>
+            </div>
+
+            <!-- <label for="">Status</label>
+            <div class="form-group">
+              <div class="form-line">
+                <input type="text" name="status" class="form-control" required />
+              </div>
+            </div> -->
+            <label for="">Status Barang : </label>
+            <div class="form-group">
+                <div class="form-line">
+                <input type="radio" name="status" value="Masuk" required />
+                <label >Masuk</label>  
+                </div>
+                <div class="form-line">
+                <input type="radio" name="status" value="Keluar" required />
+                <label >Keluar</label>  
+                </div>
+
+            </div>
+
+            <label for="">Tanggal</label>
+            <div class="form-group">
+              <div class="form-line">
+                <input type="date" name="tanggal" class="form-control" required />
+              </div>
+            </div>
+
+
+            <input type="submit" name="simpan" value="Simpan" class="but mb-4 w-50 mt-2">
+
+          </div>
+          <div class="col-sm-6">
+
+          </div>
+
+
+      </div>
+
+      </form>
+      <?php
+
+      if (isset($_POST['simpan'])) {
+        $no_faktur = $_POST['no_faktur'];
+        $id_barang = $_POST['id_barang'];
+        $id_pelanggan = $_POST['id_pelanggan'];
+        $harga_total = $_POST['harga_total'];
+        $jumlah_barang = $_POST['jumlah_barang'];
+        $status = $_POST['status'];
+        $tanggal = $_POST['tanggal'];
+
+        $sql = pg_query($conn, "insert into transaksi (no_faktur,id_barang,id_pelanggan,harga_total,jumlah_barang,status,tanggal) values ('$no_faktur','$id_barang','$id_pelanggan','$harga_total', '$jumlah_barang', '$status', '$tanggal')");
+        // $sql = pg_query($conn, "insert into barang (id_barang,nama_barang,harga_jual,harga_beli,total_barang) values ('$id_barang','$nama_barang','$harga_jual', '$harga_beli', '$total_barang')");
+        if ($sql) {
+      ?>
+          echo "<script>
+            alert('Data berhasil ditambah');
+            window.location = '../inventoris/view_transaksi-inventori.php';
+          </script>";
+      <?php
+        }
+      }
+
+      
+
+
+      ?>
+
+      </div>
+    </section>
 
 
   </main><!-- End #main -->
