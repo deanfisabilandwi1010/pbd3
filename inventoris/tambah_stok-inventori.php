@@ -2,7 +2,7 @@
 include '../config.php'; 
 
 $id_barang = $_GET['id_barang'];
-$sql = pg_query($conn, "SELECT * from barang where id_barang='$id_barang'");
+$sql = pg_query($conn, "SELECT * from detail_restok where id_barang='$id_barang'");
 $row = pg_fetch_array($sql);
 
 ?>
@@ -82,7 +82,7 @@ $row = pg_fetch_array($sql);
               </a>
             </li>
             <li>
-              <a href="../admin/view_stok.php">
+              <a href="../inventoris/view_restok-inventori.php">
                 <i class="bi bi-circle"></i><span>Re-Stok Barang</span>
               </a>
             </li>
@@ -97,12 +97,12 @@ $row = pg_fetch_array($sql);
           </a>
           <ul id="laporan-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
             <li>
-              <a href="components-alerts.html">
+              <a href="../inventoris/view_transaksi_restok-inventori.php">
                 <i class="bi bi-circle"></i><span>Re-Stok</span>
               </a>
             </li>
             <li>
-              <a href="components-accordion.html">
+              <a href="../inventoris/view_transaksi-inventori.php">
                 <i class="bi bi-circle"></i><span>Pembayaran</span>
               </a>
             </li>
@@ -113,7 +113,7 @@ $row = pg_fetch_array($sql);
         
   
         <li class="nav-item">
-          <a class="nav-link collapsed" href="pages-faq.html">
+          <a class="nav-link collapsed" href="tentang.html">
             <i class="bi bi-question-circle"></i>
             <span>Tentang</span>
           </a>
@@ -124,7 +124,7 @@ $row = pg_fetch_array($sql);
     <main id="main" class="main">
 
 <div class="pagetitle">
-  <h1>Sparepart</h1>
+  <h1>Data Barang</h1>
   <nav>
     <ol class="breadcrumb">
       <li class="breadcrumb-item"><a href="../admin/index_admin.php">Home</a></li>
@@ -200,11 +200,11 @@ include "../config.php";
     <?php 
 
     if (isset($_POST['simpan'])) {
+        $faktur_restok = $_POST['faktur_restok'];
         $id_barang = $_POST['id_barang'];
-        $nama_barang = $_POST['nama_barang'];
-        $harga_jual = $_POST['harga_jual'];
-        $harga_beli = $_POST['harga_beli'];
-        $total_barang = $_POST['total_barang'];
+        $tanggal = $_POST['tanggal'];
+        $harga_total = $_POST['harga_total'];
+        $jumlah_pembelian = $_POST['jumlah_pembelian'];
 
     $sql =  pg_query($conn,"UPDATE barang SET nama_barang='$nama_barang',  harga_jual='$harga_jual', harga_beli='$harga_beli', total_barang ='$total_barang' WHERE id_barang='$id_barang'");
 
