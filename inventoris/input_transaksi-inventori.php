@@ -106,14 +106,14 @@ include "../config.php";
             </li>
           </ul>
           </li>
-        <li class="nav-heading">Pages</li>
+        <li class="nav-heading">Lainnya</li>
   
         
   
         <li class="nav-item">
-          <a class="nav-link collapsed" href="tentang.html">
+          <a class="nav-link collapsed" href="../login.php">
             <i class="bi bi-question-circle"></i>
-            <span>Tentang</span>
+            <span>Log Out</span>
           </a>
         </li><!-- End F.A.Q Page Nav -->
   

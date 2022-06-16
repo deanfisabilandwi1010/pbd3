@@ -1,6 +1,9 @@
 <?php
 include "../config.php";
-
+$id_brg = 0;
+if(isset($_POST['test'])){
+$id_brg = $_POST['id_barang'];
+}
 ?>
 
 <!DOCTYPE html>
@@ -106,18 +109,21 @@ include "../config.php";
             </li>
           </ul>
           </li>
-        <li class="nav-heading">Pages</li>
+        <li class="nav-heading">Lainnya</li>
   
         
   
         <li class="nav-item">
-          <a class="nav-link collapsed" href="tentang.html">
+          <a class="nav-link collapsed" href="../login.php">
             <i class="bi bi-question-circle"></i>
-            <span>Tentang</span>
+            <span>Log Out</span>
           </a>
         </li><!-- End F.A.Q Page Nav -->
   
     </aside><!-- End Sidebar-->
+      
+  
+      
 
   <main id="main" class="main">
 
@@ -155,12 +161,19 @@ include "../config.php";
               </div>
             </div>
 
-            <label for="">Kode Barang</label>
-            <div class="form-group">
-              <div class="form-line">
-                <input type="text" name="id_barang" class="form-control" required />
+            <div class="form-group" style="margin-bottom:20px">
+               <label for="id_barang" style="margin-bottom:10px">id_barang</label>
+              <select style="padding:5px 10px; width:100%;" class="chosen-select" data-placeholder="Pilih ID Barang yang akan Di Restok" name="id_barang" required>
+              <option value="" disabled selected>Pilih ID Barang</option>
+              <?php 
+              include '../connect.php';
+              $barang = pg_query($conn, "select * from barang order by nama_barang ASC");
+              while ($row = pg_fetch_assoc($barang)) {
+              echo "<option value='$row[id_barang]'>$row[nama_barang]</option>";
+              }
+              ?>
+              </select>
               </div>
-            </div>
 
             <label for="">Tanggal</label>
             <div class="form-group">
@@ -169,20 +182,36 @@ include "../config.php";
               </div>
             </div>
 
-            <label for="">Harga Total</label>
-            <div class="form-group">
-              <div class="form-line">
-                <input type="integer" name="harga_total" class="form-control" required />
-              </div>
-            </div>
-
+         
             <label for="">Jumlah Pembelian</label>
             <div class="form-group">
               <div class="form-line">
-                <input type="integer" name="jumlah_pembelian" class="form-control" required />
+                <input type="text" name="jumlah_pembelian" class="form-control" required />
               </div>
             </div>
 
+
+            <label for="">Harga Total</label>
+            <div class="form-group">
+              <div class="form-line">
+                <input type="text" name="harga_total" class="form-control" value = />
+              </div>
+            </div>
+
+            <?php 
+            if(isset($_POST['test'])){
+            $sql2 = $query = pg_query($conn, "SELECT * FROM barang WHERE id_barang = '$id_brg'");
+            $row2 = pg_fetch_array($sql2);  
+            $harga_beli = $row2['harga_beli'];
+            $qty = $_POST['jumlah_pembelian'];
+            $harga_total = $harga_beli*$qty;
+
+            $sql = pg_query($conn, "insert into detail_restok (faktur_restok,id_barang,tanggal,harga_total,jumlah_pembelian) values ('$faktur_restok','$id_barang','$tanggal', '$harga_total', '$jumlah_pembelian')");
+            }
+            ?>
+
+            
+          <!-- <input type="submit" name="test" value="test" class="btn btn-primary">   -->
 
             <input type="submit" name="simpan" value="Simpan" class="btn btn-primary">
 

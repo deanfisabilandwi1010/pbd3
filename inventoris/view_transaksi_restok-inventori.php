@@ -56,77 +56,77 @@ include "../config.php";
   </header><!-- End Header -->
   
   
-    <!-- ======= Sidebar ======= -->
-    <aside id="sidebar" class="sidebar">
+        <!-- ======= Sidebar ======= -->
+        <aside id="sidebar" class="sidebar">
   
-      <ul class="sidebar-nav" id="sidebar-nav">
-  
-        <li class="nav-item">
-          <a class="nav-link " href="../inventoris/index_inventori.php">
-            <i class="bi bi-grid"></i>
-            <span>Beranda</span>
-          </a>
-        </li><!-- End Dashboard Nav -->
-  
-        <li class="nav-item">
-          <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
-            <i class="bi bi-menu-button-wide"></i><span>Sparepart</span><i class="bi bi-chevron-down ms-auto"></i>
-          </a>
-          <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-            <li>
-              <a href="../inventoris/view_barang-inventori.php">
-                <i class="bi bi-circle"></i><span>Barang</span>
-              </a>
-            </li>
-            <li>
-              <a href="../inventoris/view_restok-inventori.php">
-                <i class="bi bi-circle"></i><span>Re-Stok Barang</span>
-              </a>
-            </li>
-          </ul>
-        </li><!-- End Components Nav -->
-  
-        
+  <ul class="sidebar-nav" id="sidebar-nav">
 
-          <li class="nav-item">
-          <a class="nav-link collapsed" data-bs-target="#laporan-nav" data-bs-toggle="collapse" href="#">
-            <i class="bi bi-eval-wide"></i><span>Transaksi</span><i class="bi bi-chevron-down ms-auto"></i>
+    <li class="nav-item">
+      <a class="nav-link " href="../inventoris/index_inventori.php">
+        <i class="bi bi-grid"></i>
+        <span>Beranda</span>
+      </a>
+    </li><!-- End Dashboard Nav -->
+
+    <li class="nav-item">
+      <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
+        <i class="bi bi-menu-button-wide"></i><span>Sparepart</span><i class="bi bi-chevron-down ms-auto"></i>
+      </a>
+      <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+        <li>
+          <a href="../inventoris/view_barang-inventori.php">
+            <i class="bi bi-circle"></i><span>Barang</span>
           </a>
-          <ul id="laporan-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-            <li>
-              <a href="../inventoris/view_transaksi_restok-inventori.php">
-                <i class="bi bi-circle"></i><span>Re-Stok</span>
-              </a>
-            </li>
-            <li>
-              <a href="../inventoris/view_transaksi-inventori.php">
-                <i class="bi bi-circle"></i><span>Pembayaran</span>
-              </a>
-            </li>
-          </ul>
-          </li>
-        <li class="nav-heading">Pages</li>
-  
-        
-  
-        <li class="nav-item">
-          <a class="nav-link collapsed" href="tentang.html">
+        </li>
+        <li>
+          <a href="../inventoris/view_restok-inventori.php">
+            <i class="bi bi-circle"></i><span>Re-Stok Barang</span>
+          </a>
+        </li>
+      </ul>
+    </li><!-- End Components Nav -->
+
+    
+
+      <li class="nav-item">
+      <a class="nav-link collapsed" data-bs-target="#laporan-nav" data-bs-toggle="collapse" href="#">
+        <i class="bi bi-eval-wide"></i><span>Transaksi</span><i class="bi bi-chevron-down ms-auto"></i>
+      </a>
+      <ul id="laporan-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+        <li>
+          <a href="../inventoris/view_transaksi_restok-inventori.php">
+            <i class="bi bi-circle"></i><span>Re-Stok</span>
+          </a>
+        </li>
+        <li>
+          <a href="../inventoris/view_transaksi-inventori.php">
+            <i class="bi bi-circle"></i><span>Pembayaran</span>
+          </a>
+        </li>
+      </ul>
+      </li>
+    <li class="nav-heading">Lainnya</li>
+
+    
+
+    <li class="nav-item">
+          <a class="nav-link collapsed" href="../login.php">
             <i class="bi bi-question-circle"></i>
-            <span>Tentang</span>
+            <span>Log Out</span>
           </a>
-        </li><!-- End F.A.Q Page Nav -->
-  
-    </aside><!-- End Sidebar-->
+    </li><!-- End F.A.Q Page Nav -->
+
+</aside><!-- End Sidebar-->
 
 
   <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>Inventory</h1>
+      <h1>Re-Stok</h1>
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="../inventoris/index_inventori.php.php">Home</a></li>
-          <li class="breadcrumb-item">Data Barang</li>
+          <li class="breadcrumb-item">Transaksi</li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
@@ -137,7 +137,7 @@ include "../config.php";
 
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Tabel Inventory</h5>
+              <h5 class="card-title">Transaksi Re-Stok Barang</h5>
 
               <!-- Default Table -->
               <table class="table">
