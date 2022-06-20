@@ -1,4 +1,4 @@
-<?php
+<?php  
 include "../config.php";
 
 ?>
@@ -48,7 +48,7 @@ include "../config.php";
   <header id="header" class="header fixed-top d-flex align-items-center">
   
     <div class="d-flex align-items-center justify-content-between">
-      <a href="index.html" class="logo d-flex align-items-center">
+      <a href="../admin/index_admin.php" class="logo d-flex align-items-center">
       <img src="../assets/img/Logoo.PNG" alt="">
         <span class="d-none d-lg-block">Bima Motor</span>
       </a>
@@ -197,7 +197,7 @@ include "../config.php";
   <script src="../assets/vendor/tinymce/tinymce.min.js"></script>
   <script src="../assets/vendor/php-email-form/validate.js"></script>
   <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
+  <script src="../assets/js/main.js"></script>
 
 </body>
 

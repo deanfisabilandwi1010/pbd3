@@ -48,7 +48,7 @@ include "../config.php";
   <header id="header" class="header fixed-top d-flex align-items-center">
   
     <div class="d-flex align-items-center justify-content-between">
-      <a href="../admin/index_admin.php" class="logo d-flex align-items-center">
+      <a href="../kasir/index_kasir.php" class="logo d-flex align-items-center">
       <img src="../assets/img/Logoo.PNG" alt="">
         <span class="d-none d-lg-block">Bima Motor</span>
       </a>
@@ -74,9 +74,15 @@ include "../config.php";
           </a>
         </li>
 
-          <li class="nav-item">
-          <a class="nav-link collapsed" data-bs-target="#laporan-nav" data-bs-toggle="collapse" href="#">
-            <i class="bi bi-eval-wide"></i><span>Transaksi</span><i class="bi bi-chevron-down ms-auto"></i>
+
+      <li class="nav-item">
+      <a class="nav-link collapsed" data-bs-target="#laporan-nav" data-bs-toggle="collapse" href="#">
+        <i class="bi bi-eval-wide"></i><span>Transaksi</span><i class="bi bi-chevron-down ms-auto"></i>
+      </a>
+      <ul id="laporan-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+        <li>
+          <a href="components-alerts.html">
+            <i class="bi bi-circle"></i><span>Transaksi</span>
           </a>
           <ul id="laporan-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
             <li>
@@ -108,7 +114,7 @@ include "../config.php";
       <h1>Transaksi</h1>
       <nav>
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="../admin/index_admin.php">Home</a></li>
+          <li class="breadcrumb-item"><a href="../kasir/index_kasir.php">Home</a></li>
           <li class="breadcrumb-item">Transaksi</li>
         </ol>
       </nav>

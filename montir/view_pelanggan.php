@@ -70,7 +70,7 @@ include "../config.php";
         </li><!-- End Dashboard Nav -->
   
         <li class="nav-item">
-          <a class="nav-link " href="../montir/view_barang.php">
+          <a class="nav-link " href="../montir/view_barang-montir.php">
             <i class="bi bi-grid"></i>
             <span>Sparepart</span>
           </a>
