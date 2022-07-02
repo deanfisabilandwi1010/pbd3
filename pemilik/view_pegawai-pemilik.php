@@ -130,6 +130,9 @@ include "../config.php";
               <!-- Default Table -->
               <table class="table">
                 <thead>
+                <div>
+                 <a  name="Print" class="bi bi-printer-fill btn btn-primary"  href = "./print_pegawai.php" style="float: left" > Print </a>
+                </div>
                   <tr>
                     <td scope="col">ID Pegawai</td>
                     <td scope="col">Nama Pegawai</td>
@@ -168,15 +171,20 @@ include "../config.php";
                   
 
                 </tbody>
+                
               </table>
               <!-- End Default Table Example -->
             </div>
           </div>
         </div>
       </div>
+    
+    
     </section>
 
+  
   </main><!-- End #main -->
+
 
   <!-- ======= Footer ======= -->
   <footer id="footer" class="footer">

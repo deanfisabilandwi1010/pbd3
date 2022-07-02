@@ -129,6 +129,9 @@ include "../config.php"
               <!-- Default Table -->
               <table class="table">
                 <thead>
+                <div>
+                 <a  name="Print" class="bi bi-printer-fill btn btn-primary"  href = "./print_transaksi.php" style="float: left" > Print </a>
+                </div>
                   <tr>
                     <td scope="col">No Faktur</td>
                     <td scope="col">ID Pelanggan</td>
@@ -177,6 +180,7 @@ include "../config.php"
         </div>
       </div>
     </section>
+  
 
   </main><!-- End main -->
 

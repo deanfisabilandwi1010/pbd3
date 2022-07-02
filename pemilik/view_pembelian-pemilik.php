@@ -129,6 +129,9 @@ include "../config.php"
               <!-- Default Table -->
               <table class="table">
                 <thead>
+                <div>
+                 <a  name="Print" class="bi bi-printer-fill btn btn-primary"  href = "./print_pembelian.php" style="float: left" > Print </a>
+                </div>
                   <tr>
                     <td scope="col">Faktur Re-Stok</td>
                     <td scope="col">Kode Barang</td>
@@ -176,6 +179,7 @@ include "../config.php"
         </div>
       </div>
     </section>
+   
 
   </main><!-- End main -->
 
