@@ -57,20 +57,20 @@ include "../config.php";
   
   
         <!-- ======= Sidebar ======= -->
-        <aside id="sidebar" class="sidebar">
+    <aside id="sidebar" class="sidebar">
   
   <ul class="sidebar-nav" id="sidebar-nav">
 
     <li class="nav-item">
-      <a class="nav-link " href="../inventoris/index_inventori.php">
-        <i class="bi bi-grid"></i>
+      <a class="nav-link collapsed" href="../inventoris/index_inventori.php">
+        <i class="bi bi-house"></i>
         <span>Beranda</span>
       </a>
     </li><!-- End Dashboard Nav -->
 
     <li class="nav-item">
       <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
-        <i class="bi bi-menu-button-wide"></i><span>Sparepart</span><i class="bi bi-chevron-down ms-auto"></i>
+        <i class="bi bi-nut-fill"></i><span>Sparepart</span><i class="bi bi-chevron-down ms-auto"></i>
       </a>
       <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
         <li>
@@ -89,31 +89,20 @@ include "../config.php";
     
 
       <li class="nav-item">
-      <a class="nav-link collapsed" data-bs-target="#laporan-nav" data-bs-toggle="collapse" href="#">
-        <i class="bi bi-eval-wide"></i><span>Transaksi</span><i class="bi bi-chevron-down ms-auto"></i>
-      </a>
-      <ul id="laporan-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-        <li>
-          <a href="../inventoris/view_transaksi_restok-inventori.php">
-            <i class="bi bi-circle"></i><span>Re-Stok</span>
-          </a>
-        </li>
-        <li>
-          <a href="../inventoris/view_transaksi-inventori.php">
-            <i class="bi bi-circle"></i><span>Pembayaran</span>
-          </a>
-        </li>
-      </ul>
+      <a class="nav-link collapsed"  href="../inventoris/view_transaksi_restok-inventori.php">
+        <i class="bi bi-cash-stack "></i><span>Transaksi Re-Stok</span>
+      </a>          
       </li>
+      
     <li class="nav-heading">Lainnya</li>
 
     
 
     <li class="nav-item">
-          <a class="nav-link collapsed" href="../login.php">
-            <i class="bi bi-question-circle"></i>
-            <span>Log Out</span>
-          </a>
+      <a class="nav-link collapsed" href="../login.php">
+        <i class="bi bi-door-open-fill"></i>
+        <span>Log Out</span>
+      </a>
     </li><!-- End F.A.Q Page Nav -->
 
 </aside><!-- End Sidebar-->
@@ -122,11 +111,11 @@ include "../config.php";
   <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>Re-Stok</h1>
+      <h1>Transaksi Re-Stok</h1>
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="../inventoris/index_inventori.php.php">Home</a></li>
-          <li class="breadcrumb-item">Transaksi</li>
+          <li class="breadcrumb-item">Transaksi Re-Stok</li>
         </ol>
       </nav>
     </div><!-- End Page Title -->

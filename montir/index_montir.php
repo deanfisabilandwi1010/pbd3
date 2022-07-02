@@ -8,16 +8,8 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
-<<<<<<< HEAD
-  <title>Montir - Bima Motor</title>
-=======
-<<<<<<< HEAD:pemilik/index_pemilik.php
-  <title>DashBoard - Bima Motor</title>
-=======
-  <title>Montir - Bima Motor</title>
->>>>>>> a4d582f91a9e39ac25714d74cab48aa77bd34b37:montir/index_montir.php
->>>>>>> a4d582f91a9e39ac25714d74cab48aa77bd34b37
+  
+  <title>DashBoard Montir- Bima Motor</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -54,11 +46,7 @@
   <header id="header" class="header fixed-top d-flex align-items-center">
   
     <div class="d-flex align-items-center justify-content-between">
-<<<<<<< HEAD
-      <a href="index.html" class="logo d-flex align-items-center">
-=======
-      <a href="index_admin.php" class="logo d-flex align-items-center">
->>>>>>> a4d582f91a9e39ac25714d74cab48aa77bd34b37
+      <a href="../montir/index_montir.php" class="logo d-flex align-items-center">
         <img src="../assets/img/Logoo.PNG" alt="">
         <span class="d-none d-lg-block">Bima Motor</span>
       </a>
@@ -70,118 +58,37 @@
     <!-- ======= Sidebar ======= -->
     <aside id="sidebar" class="sidebar">
   
-<<<<<<< HEAD
       <ul class="sidebar-nav" id="sidebar-nav">
   
-        <li class="nav-item">
-          <a class="nav-link " href="../montir/view_dashboard.php">
-=======
-<<<<<<< HEAD:pemilik/index_pemilik.php
-      <ul class="sidebar-nav" id="sidebar-nav">
-  
-        <li class="nav-item">
-          <a class="nav-link " href="../pemilik/index_pemilik.php">
->>>>>>> a4d582f91a9e39ac25714d74cab48aa77bd34b37
-            <i class="bi bi-grid"></i>
+      <li class="nav-item">
+          <a class="nav-link collapsed" href="../montir/index_montir.php">
+            <i class="bi bi-house"></i>
             <span>Beranda</span>
           </a>
         </li><!-- End Dashboard Nav -->
-<<<<<<< HEAD
   
         <li class="nav-item">
-          <a class="nav-link " href="../montir/view_barang.php">
-            <i class="bi bi-grid"></i>
+          <a class="nav-link collapsed" href="../montir/view_barang.php">
+            <i class="bi bi-nut-fill"></i>
             <span>Sparepart</span>
           </a>
         </li>
   
-    
+
         <li class="nav-item">
-          <a class="nav-link " href="../montir/view_pelanggan.php">
-            <i class="bi bi-grid"></i>
+          <a class="nav-link collapsed" href="../montir/view_pelanggan.php">
+            <i class="bi bi-person-fill"></i>
             <span>Pelanggan</span>
           </a>
         </li>
-
-        <li class="nav-item">
-          <a class="nav-link" href="../login.php">
-=======
-
-        <li class="nav-item">
-          <a class="nav-link collapsed" data-bs-target="#laporan-nav" data-bs-toggle="collapse" href="#">
-            <i class="bi bi-eval-wide"></i><span>Laporan</span><i class="bi bi-chevron-down ms-auto"></i>
-          </a>
-          <ul id="laporan-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-            <li>
-              <a href="components-alerts.html">
-                <i class="bi bi-circle"></i><span>Pembelian</span>
-              </a>
-            </li>
-            <li>
-              <a href="../pemilik/laporan_pelanggan.php">
-                <i class="bi bi-circle"></i><span>Pelanggan</span>
-              </a>
-            </li>
-            <li>
-              <a href="components-accordion.html">
-                <i class="bi bi-circle"></i><span>Penjualan</span>
-              </a>
-            </li>
-          </ul>
-          </li>
-        
-
+        <li class="nav-heading">Lainnya</li>
         <li class="nav-item">
           <a class="nav-link collapsed" href="../login.php">
->>>>>>> a4d582f91a9e39ac25714d74cab48aa77bd34b37
-            <i class="bi bi-question-circle"></i>
+            <i class="bi bi-door-open-fill"></i>
             <span>Logout</span>
           </a>
         </li><!-- End F.A.Q Page Nav -->
-<<<<<<< HEAD
     </aside><!-- End Sidebar-->
-      
-        
-  
-        
-        </li><!-- End F.A.Q Page Nav -->
-  
-    </aside><!-- End Sidebar-->
-=======
-
-    </aside><!-- End Sidebar-->
-=======
-  <ul class="sidebar-nav" id="sidebar-nav">
-
-    <li class="nav-item">
-      <a class="nav-link " href="../montir/index_montir.php">
-        <i class="bi bi-grid"></i>
-        <span>Beranda</span>
-      </a>
-    </li><!-- End Dashboard Nav -->
-
-    <li class="nav-item">
-      <a class="nav-link " href="../montir/view_barang-montir.php">
-        <i class="bi bi-grid"></i>
-        <span>Sparepart</span>
-      </a>
-    </li>
-
-    <li class="nav-item">
-      <a class="nav-link " href="../montir/view_pelanggan.php">
-        <i class="bi bi-grid"></i>
-        <span>Pelanggan</span>
-      </a>
-    </li>
-
-
-    
-
-   
-
-</aside><!-- End Sidebar-->
->>>>>>> a4d582f91a9e39ac25714d74cab48aa77bd34b37:montir/index_montir.php
->>>>>>> a4d582f91a9e39ac25714d74cab48aa77bd34b37
 
   <main id="main" class="main">
 
@@ -189,11 +96,7 @@
       <h1>Beranda</h1>
       <nav>
         <ol class="breadcrumb">
-<<<<<<< HEAD
-          <li class="breadcrumb-item"><a href="../montir/view_dashboard.php">Home</a></li>
-=======
-          <li class="breadcrumb-item"><a href="../montir/index_montir.php">Home</a></li>
->>>>>>> a4d582f91a9e39ac25714d74cab48aa77bd34b37
+          <li class="breadcrumb-item"><a href="../montir/index_montir.php">Beranda</a></li>
         </ol>
 
       </nav>

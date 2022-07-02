@@ -60,57 +60,62 @@ include "../config.php";
     <!-- ======= Sidebar ======= -->
     <aside id="sidebar" class="sidebar">
   
-  <ul class="sidebar-nav" id="sidebar-nav">
+      <ul class="sidebar-nav" id="sidebar-nav">
+  
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="../pemilik/index_pemilik.php">
+            <i class="bi bi-house"></i>
+            <span>Beranda</span>
+          </a>
+        </li><!-- End Dashboard Nav -->
 
-    <li class="nav-item">
-      <a class="nav-link " href="../pemilik/index_pemilik.php">
-        <i class="bi bi-grid"></i>
-        <span>Beranda</span>
-      </a>
-    </li><!-- End Dashboard Nav -->
+        <li class="nav-item">
+          <a class="nav-link collapsed" data-bs-target="#laporan-nav" data-bs-toggle="collapse" href="#">
+            <i class="bi bi-file-text-fill"></i><span>Laporan</span><i class="bi bi-chevron-down ms-auto"></i>
+          </a>
+          <ul id="laporan-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+            <li>
+              <a href="../pemilik/view_pembelian-pemilik.php">
+                <i class="bi bi-circle"></i><span>Pembelian</span>
+              </a>
+            </li>
+            <li>
+              <a href="../pemilik/view_pegawai-pemilik.php">
+                <i class="bi bi-circle"></i><span>Pegawai</span>
+              </a>
+            </li>
+            <li>
+              <a href="../pemilik/view_transaksi-pemilik.php">
+                <i class="bi bi-circle"></i><span>Penjualan</span>
+              </a>
+            </li>
+            <li>
+              <a href="../pemilik/view_barang-pemilik.php">
+                <i class="bi bi-circle"></i><span>Barang</span>
+              </a>
+            </li>
+          </ul>
+          </li>
+          <li class="nav-heading">Lainnya</li>
 
-    <li class="nav-item">
-      <a class="nav-link " href="../pemilik/view_barang-pemilik.php">
-        <i class="bi bi-grid"></i>
-        <span>Sparepart</span>
-      </a>
-    </li>
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="../login.php">
+            <i class="bi bi-door-open-fill"></i>
+            <span>Logout</span>
+          </a>
+        </li><!-- End F.A.Q Page Nav -->
 
-    <li class="nav-item">
-      <a class="nav-link " href="../pemilik/view_pegawai-pemilik.php">
-        <i class="bi bi-grid"></i>
-        <span>Pegawai</span>
-      </a>
-    </li>
-
-    <li class="nav-item">
-      <a class="nav-link " href="../pemilik/view_transaksi-pemilik.php">
-        <i class="bi bi-grid"></i>
-        <span>Transaksi</span>
-      </a>
-    </li>
-
-    <li class="nav-item">
-      <a class="nav-link " href="../pemilik/view_pelanggan-pemilik.php">
-        <i class="bi bi-grid"></i>
-        <span>Pelanggan</span>
-      </a>
-    </li>
-    
-
-   
-
-</aside><!-- End Sidebar-->
+    </aside><!-- End Sidebar-->
 
 
   <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>Barang</h1>
+      <h1>Laporan Barang</h1>
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="../montir/index_montir.php">Home</a></li>
-          <li class="breadcrumb-item">Sparepart</li>
+          <li class="breadcrumb-item">Laporan Barang</li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
@@ -121,7 +126,7 @@ include "../config.php";
 
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Tabel Barang</h5>
+              <h5 class="card-title">Laporan Data Barang</h5>
 
               <!-- Default Table -->
               <table class="table">

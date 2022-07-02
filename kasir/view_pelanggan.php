@@ -48,7 +48,7 @@ include "../config.php";
   <header id="header" class="header fixed-top d-flex align-items-center">
   
     <div class="d-flex align-items-center justify-content-between">
-      <a href="index.html" class="logo d-flex align-items-center">
+      <a href="../montir/index_montir.php" class="logo d-flex align-items-center">
       <img src="../assets/img/Logoo.PNG" alt="">
         <span class="d-none d-lg-block">Bima Motor</span>
       </a>
@@ -60,33 +60,27 @@ include "../config.php";
     <!-- ======= Sidebar ======= -->
     <aside id="sidebar" class="sidebar">
 
-<ul class="sidebar-nav" id="sidebar-nav">
-
-    <li class="nav-item">
-      <a class="nav-link " href="../kasir/index_kasir.php">
-        <i class="bi bi-grid"></i>
-        <span>Beranda</span>
-      </a>
-    </li><!-- End Dashboard Nav -->
-
-  <ul class="sidebar-nav" id="sidebar-nav">
-
-  <li class="nav-item">
-          <a class="nav-link " href="../kasir/view_pelanggan.php">
-            <i class="bi bi-grid"></i>
+    <ul class="sidebar-nav" id="sidebar-nav">
+  
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="../kasir/index_kasir.php">
+            <i class="bi bi-house"></i>
+            <span>Beranda</span>
+          </a>
+        </li><!-- End Dashboard Nav -->
+  
+      <ul class="sidebar-nav" id="sidebar-nav">
+  
+      <li class="nav-item">
+          <a class="nav-link collapsed" href="../kasir/view_pelanggan.php">
+            <i class="bi bi-person-fill"></i>
             <span>Pelanggan</span>
           </a>
         </li>
 
-
-      <li class="nav-item">
-      <a class="nav-link collapsed" data-bs-target="#laporan-nav" data-bs-toggle="collapse" href="#">
-        <i class="bi bi-eval-wide"></i><span>Transaksi</span><i class="bi bi-chevron-down ms-auto"></i>
-      </a>
-      <ul id="laporan-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-        <li>
-          <a href="components-alerts.html">
-            <i class="bi bi-circle"></i><span>Transaksi</span>
+          <li class="nav-item">
+          <a class="nav-link collapsed" data-bs-target="#laporan-nav" data-bs-toggle="collapse" href="#">
+            <i class="bi bi-cash-stack"></i><span>Transaksi</span><i class="bi bi-chevron-down ms-auto"></i>
           </a>
           <ul id="laporan-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
             <li>
@@ -104,13 +98,13 @@ include "../config.php";
         <li class="nav-heading">Pages</li>
 
         <li class="nav-item">
-          <a class="nav-link" href="../login.php">
-            <i class="bi bi-question-circle"></i>
+          <a class="nav-link collapsed" href="../login.php">
+            <i class="bi bi-door-open-fill"></i>
             <span>Logout</span>
           </a>
         </li><!-- End F.A.Q Page Nav -->
-
-</aside><!-- End Sidebar-->
+  
+    </aside><!-- End Sidebar-->
 
   <main id="main" class="main">
 
@@ -148,7 +142,7 @@ include "../config.php";
 
                 <tbody>
                   <?php
-                  $result = pg_query($conn,"SELECT *FROM pelanggan ");
+                  $result = pg_query($conn,"SELECT *FROM pelanggan order by id_pelanggan asc");
                   while ($row = pg_fetch_array($result)){
                     ?>
                   

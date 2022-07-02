@@ -1,6 +1,5 @@
-<?php  
-include "../config.php";
-
+<?php
+include "../config.php"
 ?>
 
 <!DOCTYPE html>
@@ -10,14 +9,13 @@ include "../config.php";
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Laporan Pelanggan - Bima Motor</title>
+  <title>Pemilik - Bima Motor</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
   <!-- Favicons -->
   <link href="../assets/img/Logoo.PNG" rel="icon">
-  <link href="../assets/img/Logoo.PNG" rel="Logoo">
-  
+  <link href="../assets/img/Logoo.PNG" rel="icon">
   <!-- Google Fonts -->
   <link href="https://fonts.gstatic.com" rel="preconnect">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
@@ -48,8 +46,8 @@ include "../config.php";
   <header id="header" class="header fixed-top d-flex align-items-center">
   
     <div class="d-flex align-items-center justify-content-between">
-      <a href="../admin/index_admin.php" class="logo d-flex align-items-center">
-      <img src="../assets/img/Logoo.PNG" alt="">
+      <a href="../pemilik/index_pemilik.php" class="logo d-flex align-items-center">
+        <img src="../assets/img/Logoo.PNG" alt="">
         <span class="d-none d-lg-block">Bima Motor</span>
       </a>
       <i class="bi bi-list toggle-sidebar-btn"></i>
@@ -63,80 +61,99 @@ include "../config.php";
       <ul class="sidebar-nav" id="sidebar-nav">
   
         <li class="nav-item">
-          <a class="nav-link " href="../montir/index_montir.php">
-            <i class="bi bi-grid"></i>
+          <a class="nav-link collapsed" href="../pemilik/index_pemilik.php">
+            <i class="bi bi-house"></i>
             <span>Beranda</span>
           </a>
         </li><!-- End Dashboard Nav -->
-  
-        <li class="nav-item">
-          <a class="nav-link " href="../montir/view_barang-montir.php">
-            <i class="bi bi-grid"></i>
-            <span>Sparepart</span>
-          </a>
-        </li>
 
         <li class="nav-item">
-          <a class="nav-link " href="../montir/view_pelanggan.php">
-            <i class="bi bi-grid"></i>
-            <span>Pelanggan</span>
+          <a class="nav-link collapsed" data-bs-target="#laporan-nav" data-bs-toggle="collapse" href="#">
+            <i class="bi bi-file-text-fill"></i><span>Laporan</span><i class="bi bi-chevron-down ms-auto"></i>
           </a>
-        </li>
-  
-  
+          <ul id="laporan-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+            <li>
+              <a href="../pemilik/view_pembelian-pemilik.php">
+                <i class="bi bi-circle"></i><span>Pembelian</span>
+              </a>
+            </li>
+            <li>
+              <a href="../pemilik/view_pegawai-pemilik.php">
+                <i class="bi bi-circle"></i><span>Pegawai</span>
+              </a>
+            </li>
+            <li>
+              <a href="../pemilik/view_transaksi-pemilik.php">
+                <i class="bi bi-circle"></i><span>Penjualan</span>
+              </a>
+            </li>
+            <li>
+              <a href="../pemilik/view_barang-pemilik.php">
+                <i class="bi bi-circle"></i><span>Barang</span>
+              </a>
+            </li>
+          </ul>
+          </li>
+          <li class="nav-heading">Lainnya</li>
 
-  
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="../login.php">
+            <i class="bi bi-door-open-fill"></i>
+            <span>Logout</span>
+          </a>
+        </li><!-- End F.A.Q Page Nav -->
+
     </aside><!-- End Sidebar-->
+  
 
   <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>Pelanggan</h1>
+      <h1>Laporan Pembelian</h1>
       <nav>
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="../montir/index_montir.php">Home</a></li>
-          <li class="breadcrumb-item">Sparepart</li>
+          <li class="breadcrumb-item"><a href="../pemilik/index_pemilik.php">Beranda</a></li>
+          <li class="breadcrumb-item"><a href="">Laporan Pembelian</a></li>
         </ol>
+
       </nav>
     </div><!-- End Page Title -->
-
     <section class="section">
       <div class="row">
         <div class="col-lg-12">
 
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Tabel Barang</h5>
+              <h5 class="card-title">Laporan Data Re-Stok Barang</h5>
 
               <!-- Default Table -->
               <table class="table">
                 <thead>
                   <tr>
-                    <td scope="col">ID Pelanggan</td>
-                    <td scope="col">Plat Mobil</td>
-                    <td scope="col">Jenis Mobil</td>
-                    <td scope="col">Nama Pelanggan</td>
-                    <td scope="col">Nomor Telepon</td>
-                    <td scope="col">Keperluan</td>
+                    <td scope="col">Faktur Re-Stok</td>
+                    <td scope="col">Kode Barang</td>
+                    <td scope="col">Tanggal</td>
+                    <td scope="col">Harga Total</td>
+                    <td scope="col">Jumlah Pembelian</td>
                     
                   </tr>
                 </thead>
 
                 <tbody>
                   <?php
-                  $result = pg_query($conn,"SELECT *FROM pelanggan ");
+                  $result = pg_query($conn,"SELECT *FROM detail_restok ");
                   while ($row = pg_fetch_array($result)){
                     ?>
                   
                   <tr>
-                    <td><?=$row['id_pelanggan']?></td>
-                    <td><?=$row['plat_mobil']?></td>
-                    <td><?=$row['jenis_mobil']?></td>
-                    <td><?=$row['nama_pelanggan']?></td>
-                    <td><?=$row['no_hp']?></td>
-                    <td><?=$row['keperluan']?></td>
+                    <td><?=$row['faktur_restok']?></td>
+                    <td><?=$row['id_barang']?></td>
+                    <td><?=$row['tanggal']?></td>
+                    <td><?=$row['harga_total']?></td>
+                    <td><?=$row['jumlah_pembelian']?></td>
                     <td align = "center">
-                    
+                    <!-- <a class="btn btn-primary" href="../inventoris/edit_barang-inventori.php?id_barang=<?=$row['faktur_restok']?>">Re-Stok Barang</a> -->
+                    <!-- <a class="btn btn-primary" href="../inventoris/tambah_stok-inventori.php?id_barang=<?=$row['id_barang']?>">Tambah</a> -->
                   </td>
                   </tr>
                   <?php
@@ -146,8 +163,8 @@ include "../config.php";
                 <!-- <button class="btn btn-primary" href="../admin/input_barang.php" >Add</button> -->
                 
                 
+                <!-- <button class="btn btn-primary" onclick="location.href= ' ../inventoris/index_restok-inventori.php'" type="button" style="float: right" >Add</button> -->
                 <!-- <button class="btn btn-primary" onclick="location.href='../admin/input_barang.php'" type="button" style="float: right" >Add</button> -->
-                
                 
                   
 
@@ -160,7 +177,7 @@ include "../config.php";
       </div>
     </section>
 
-  </main><!-- End #main -->
+  </main><!-- End main -->
 
   <!-- ======= Footer ======= -->
   <footer id="footer" class="footer">
@@ -187,6 +204,7 @@ include "../config.php";
   <script src="../assets/vendor/simple-datatables/simple-datatables.js"></script>
   <script src="../assets/vendor/tinymce/tinymce.min.js"></script>
   <script src="../assets/vendor/php-email-form/validate.js"></script>
+
   <!-- Template Main JS File -->
   <script src="../assets/js/main.js"></script>
 

@@ -62,47 +62,44 @@ include "../config.php";
   
       <ul class="sidebar-nav" id="sidebar-nav">
   
-        <li class="nav-item">
-          <a class="nav-link " href="../montir/index_montir.php">
-            <i class="bi bi-grid"></i>
+      <li class="nav-item">
+          <a class="nav-link collapsed" href="../montir/index_montir.php">
+            <i class="bi bi-house"></i>
             <span>Beranda</span>
           </a>
         </li><!-- End Dashboard Nav -->
   
         <li class="nav-item">
-          <a class="nav-link " href="../montir/view_barang-montir.php">
-            <i class="bi bi-grid"></i>
+          <a class="nav-link collapsed" href="../montir/view_barang.php">
+            <i class="bi bi-nut-fill"></i>
             <span>Sparepart</span>
           </a>
         </li>
+  
 
         <li class="nav-item">
-          <a class="nav-link " href="../montir/view_pelanggan.php">
-            <i class="bi bi-grid"></i>
+          <a class="nav-link collapsed" href="../montir/view_pelanggan.php">
+            <i class="bi bi-person-fill"></i>
             <span>Pelanggan</span>
           </a>
         </li>
-
+        <li class="nav-heading">Lainnya</li>
         <li class="nav-item">
-          <a class="nav-link" href="../login.php">
-            <i class="bi bi-question-circle"></i>
+          <a class="nav-link collapsed" href="../login.php">
+            <i class="bi bi-door-open-fill"></i>
             <span>Logout</span>
           </a>
         </li><!-- End F.A.Q Page Nav -->
-    </aside><!-- End Sidebar-->
-      
-  
-  
     </aside><!-- End Sidebar-->
 
   <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>Pelanggan</h1>
+      <h1>Keperluan Pelanggan</h1>
       <nav>
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="../montir/view_pelanggan.php">Home</a></li>
-          <li class="breadcrumb-item">Pelanggan</li>
+          <li class="breadcrumb-item"><a href="../montir/view_pelanggan.php">Beranda</a></li>
+          <li class="breadcrumb-item">Keperluan Pelanggan</li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
@@ -113,7 +110,7 @@ include "../config.php";
 
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Tabel Pelanggan</h5>
+              <h5 class="card-title">Tabel Data Pelanggan</h5>
 
               <!-- Default Table -->
               <table class="table">

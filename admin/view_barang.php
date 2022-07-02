@@ -60,99 +60,51 @@ include "../config.php";
     <!-- ======= Sidebar ======= -->
     <aside id="sidebar" class="sidebar">
   
-      <ul class="sidebar-nav" id="sidebar-nav">
-  
-      <li class="nav-item">
-          <a class="nav-link " href="../admin/index_admin.php">
-            <i class="bi bi-grid"></i>
-            <span>Beranda</span>
-          </a>
-        </li><!-- End Dashboard Nav -->
-  
-        <li class="nav-item">
-          <a class="nav-link " href="../admin/view_barang.php">
-            <i class="bi bi-grid"></i>
-            <span>Sparepart</span>
-          </a>
-        </li>
-  
-        <li class="nav-item">
-          <a class="nav-link " href="../admin/view_pegawai.php">
-            <i class="bi bi-grid"></i>
-            <span>Pegawai</span>
-          </a>
-        </li>
+  <ul class="sidebar-nav" id="sidebar-nav">
 
-        <li class="nav-item">
-          <a class="nav-link " href="../admin/view_pelanggan.php">
-            <i class="bi bi-grid"></i>
-            <span>Pelanggan</span>
-          </a>
-        </li>
-  
-        <li class="nav-item">
-          <a class="nav-link collapsed" data-bs-target="#laporan-nav" data-bs-toggle="collapse" href="#">
-            <i class="bi bi-eval-wide"></i><span>Laporan</span><i class="bi bi-chevron-down ms-auto"></i>
-          </a>
-          <ul id="laporan-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-            <li>
-              <a href="components-alerts.html">
-                <i class="bi bi-circle"></i><span>Pembelian</span>
-              </a>
-            </li>
-            <li>
-              <a href="components-accordion.html">
-                <i class="bi bi-circle"></i><span>Pelanggan</span>
-              </a>
-            </li>
-            <li>
-              <a href="components-accordion.html">
-                <i class="bi bi-circle"></i><span>Penjualan</span>
-              </a>
-            </li>
-          </ul>
-          </li>
-  
+  <li class="nav-item">
+      <a class="nav-link collapsed" href="../admin/index_admin.php">
+        <i class="bi bi-house"></i>
+        <span>Beranda</span>
+      </a>
+    </li><!-- End Dashboard Nav -->
 
-          <li class="nav-item">
-          <a class="nav-link collapsed" data-bs-target="#laporan-nav" data-bs-toggle="collapse" href="#">
-            <i class="bi bi-eval-wide"></i><span>Transaksi</span><i class="bi bi-chevron-down ms-auto"></i>
-          </a>
-          <ul id="laporan-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-            <li>
-              <a href="components-alerts.html">
-                <i class="bi bi-circle"></i><span>Transaksi</span>
-              </a>
-            </li>
-            <li>
-              <a href="components-accordion.html">
-                <i class="bi bi-circle"></i><span>Pembayaran</span>
-              </a>
-            </li>
-          </ul>
-          </li>
-        <li class="nav-heading">Pages</li>
-        
-        <li class="nav-item">
-          <a class="nav-link" href="../login.php">
-            <i class="bi bi-question-circle"></i>
-            <span>Logout</span>
-          </a>
-        </li><!-- End F.A.Q Page Nav -->
-    </aside><!-- End Sidebar-->
-      
-  
-        
-  
-    </aside><!-- End Sidebar-->
+    <li class="nav-item">
+      <a class="nav-link collapsed" href="../admin/view_barang.php">
+        <i class="bi bi-nut-fill"></i>
+        <span>Sparepart</span>
+      </a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link collapsed" href="../admin/view_pegawai.php">
+        <i class="bi bi-person-badge-fill"></i>
+        <span>Pegawai</span>
+      </a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link collapsed" href="../admin/view_pelanggan.php">
+        <i class="bi bi-person-fill"></i>
+        <span>Pelanggan</span>
+      </a>
+    </li>
+      <li class="nav-heading">Lainnya</li>
+    <li class="nav-item">
+      <a class="nav-link collapsed" href="../login.php">
+        <i class="bi bi-door-open-fill"></i>
+        <span>Logout</span>
+      </a>
+    </li><!-- End F.A.Q Page Nav -->
+</aside><!-- End Sidebar-->
 
   <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>Barang</h1>
+      <h1>Sparepart</h1>
       <nav>
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="../admin/index_admin.php">Home</a></li>
+          <li class="breadcrumb-item"><a href="../admin/index_admin.php">Beranda</a></li>
           <li class="breadcrumb-item">Sparepart</li>
         </ol>
       </nav>
@@ -181,7 +133,7 @@ include "../config.php";
 
                 <tbody>
                   <?php
-                  $result = pg_query($conn,"SELECT *FROM barang ");
+                  $result = pg_query($conn,"SELECT *FROM barang order by id_barang asc ");
                   while ($row = pg_fetch_array($result)){
                     ?>
                   

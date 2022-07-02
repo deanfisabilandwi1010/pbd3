@@ -61,8 +61,8 @@
     <ul class="sidebar-nav" id="sidebar-nav">
   
         <li class="nav-item">
-          <a class="nav-link " href="../kasir/index_kasir.php">
-            <i class="bi bi-grid"></i>
+          <a class="nav-link collapsed" href="../kasir/index_kasir.php">
+            <i class="bi bi-house"></i>
             <span>Beranda</span>
           </a>
         </li><!-- End Dashboard Nav -->
@@ -70,15 +70,15 @@
       <ul class="sidebar-nav" id="sidebar-nav">
   
       <li class="nav-item">
-          <a class="nav-link " href="../kasir/view_pelanggan.php">
-            <i class="bi bi-grid"></i>
+          <a class="nav-link collapsed" href="../kasir/view_pelanggan.php">
+            <i class="bi bi-person-fill"></i>
             <span>Pelanggan</span>
           </a>
         </li>
 
           <li class="nav-item">
           <a class="nav-link collapsed" data-bs-target="#laporan-nav" data-bs-toggle="collapse" href="#">
-            <i class="bi bi-eval-wide"></i><span>Transaksi</span><i class="bi bi-chevron-down ms-auto"></i>
+            <i class="bi bi-cash-stack"></i><span>Transaksi</span><i class="bi bi-chevron-down ms-auto"></i>
           </a>
           <ul id="laporan-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
             <li>
@@ -96,8 +96,8 @@
         <li class="nav-heading">Pages</li>
 
         <li class="nav-item">
-          <a class="nav-link" href="../login.php">
-            <i class="bi bi-question-circle"></i>
+          <a class="nav-link collapsed" href="../login.php">
+            <i class="bi bi-door-open-fill"></i>
             <span>Logout</span>
           </a>
         </li><!-- End F.A.Q Page Nav -->
