@@ -135,7 +135,6 @@ include "../config.php"
                   <tr>
                     <td scope="col">No Faktur</td>
                     <td scope="col">ID Pelanggan</td>
-                    <td scope="col">Plat Mobil</td>
                     <td scope="col">Kode Barang</td>
                     <td scope="col">Total Harga</td>
                     <td scope="col">Jumlah Barang</td>
@@ -154,7 +153,6 @@ include "../config.php"
                   <tr>
                     <td><?=$row['no_faktur']?></td>
                     <td><?=$row['id_pelanggan']?></td>
-                    <td><?=$row['plat_mobil']?></td>
                     <td><?=$row['id_barang']?></td>
                     <td><?=$row['harga_total']?></td>
                     <td><?=$row['jumlah_barang']?></td>

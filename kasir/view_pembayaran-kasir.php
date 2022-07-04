@@ -1,4 +1,4 @@
-<?php
+<?php  
 include "../config.php";
 
 ?>
@@ -10,7 +10,7 @@ include "../config.php";
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Pegawai - Bima Motor</title>
+  <title>Sparepart - Bima Motor</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -45,45 +45,77 @@ include "../config.php";
   <body>
   
   <!-- ======= Header ======= -->
-  <!-- <header id="header" class="header fixed-top d-flex align-items-center">
+  <header id="header" class="header fixed-top d-flex align-items-center">
   
     <div class="d-flex align-items-center justify-content-between">
-      <a href="../admin/index_admin.php" class="logo d-flex align-items-center">
+      <a href="../kasir/index_kasir.php" class="logo d-flex align-items-center">
       <img src="../assets/img/Logoo.PNG" alt="">
         <span class="d-none d-lg-block">Bima Motor</span>
       </a>
       <i class="bi bi-list toggle-sidebar-btn"></i>
-    </div> -->
-    <!-- End Logo -->
-  <!-- </header> -->
-  <!-- End Header -->
+    </div><!-- End Logo -->
+  </header><!-- End Header -->
   
   
-    <!-- ======= Sidebar ======= -->
+<!-- ======= Sidebar ======= -->
+<aside id="sidebar" class="sidebar">
 
-  <!-- <main id="main" class="main">
+<ul class="sidebar-nav" id="sidebar-nav">
+
+    <li class="nav-item">
+      <a class="nav-link collapsed" href="../kasir/index_kasir.php">
+        <i class="bi bi-house"></i>
+        <span>Beranda</span>
+      </a>
+    </li><!-- End Dashboard Nav -->
+
+  <ul class="sidebar-nav" id="sidebar-nav">
+
+  <li class="nav-item">
+      <a class="nav-link collapsed" href="../kasir/view_pelanggan.php">
+        <i class="bi bi-person-fill"></i>
+        <span>Pelanggan</span>
+      </a>
+    </li>
+
+      <li class="nav-item">
+      <a class="nav-link collapsed" data-bs-target="#laporan-nav" data-bs-toggle="collapse" href="#">
+        <i class="bi bi-cash-stack"></i><span>Transaksi</span><i class="bi bi-chevron-down ms-auto"></i>
+      </a>
+      <ul id="laporan-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+        <li>
+          <a href="../kasir/view_transaksi.php">
+            <i class="bi bi-circle"></i><span>Transaksi</span>
+          </a>
+        </li>
+        <li>
+          <a href="../kasir/view_pembayaran-kasir.php">
+            <i class="bi bi-circle"></i><span>Pembayaran</span>
+          </a>
+        </li>
+      </ul>
+      </li>
+    <li class="nav-heading">Pages</li>
+
+    <li class="nav-item">
+      <a class="nav-link collapsed" href="../login.php">
+        <i class="bi bi-door-open-fill"></i>
+        <span>Logout</span>
+      </a>
+    </li><!-- End F.A.Q Page Nav -->
+
+</aside><!-- End Sidebar-->
+
+  <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>Laporan Pegawai</h1>
+      <h1>Transaksi</h1>
       <nav>
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="../pemilik/index_pemilik.php">Home</a></li>
-          <li class="breadcrumb-item">Laporan Pegawai</li>
+          <li class="breadcrumb-item"><a href="../kasir/index_kasir.php">Home</a></li>
+          <li class="breadcrumb-item">Transaksi</li>
         </ol>
       </nav>
-    </div> -->
-    <!-- End Page Title -->
-
-    <main id="main" class="main">
-
-    <div class="pagetitle">
-      <h1>Laporan Data Barang</h1>
-      <!-- <nav>
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="../montir/index_montir.php">Home</a></li>
-          <li class="breadcrumb-item">Laporan Barang</li>
-        </ol>
-      </nav> -->
     </div><!-- End Page Title -->
 
     <section class="section">
@@ -92,40 +124,37 @@ include "../config.php";
 
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Laporan Data Penjualan</h5>
+              <h5 class="card-title">Tabel Transaksi</h5>
 
               <!-- Default Table -->
               <table class="table">
                 <thead>
                   <tr>
-                    <td scope="col">No Faktur</td>
+                    <td scope="col">No Faktur</td>  
+                    <td scope="col">ID Pegawai</td>
                     <td scope="col">ID Pelanggan</td>
                     <td scope="col">Kode Barang</td>
-                    <td scope="col">Total Harga</td>
-                    <td scope="col">Jumlah Barang</td>
-                    <td scope="col">Status Barang</td>
+                    <td scope="col">Harga Total</td>
                     <td scope="col">Tanggal</td>
+                    <!-- <td scope="col">Aksi</td> -->
                     
                   </tr>
                 </thead>
 
                 <tbody>
                   <?php
-                  $result = pg_query($conn,"SELECT *FROM transaksi ");
+                  $result = pg_query($conn,"SELECT *FROM pembayaran ");
                   while ($row = pg_fetch_array($result)){
                     ?>
                   
                   <tr>
                     <td><?=$row['no_faktur']?></td>
+                    <td><?=$row['id_pegawai']?></td>
                     <td><?=$row['id_pelanggan']?></td>
                     <td><?=$row['id_barang']?></td>
                     <td><?=$row['harga_total']?></td>
-                    <td><?=$row['jumlah_barang']?></td>
-                    <td><?=$row['status']?></td>
                     <td><?=$row['tanggal']?></td>
                     <td align = "center">
-                    <!-- <a class="btn btn-primary" href="../kasir/edit_transaksi.php?id_barang=<?=$row['id_barang']?>">Edit</a> -->
-                    <!-- <a onclick="return confirm('Yakin menghapus data ini ?')" class="btn btn-danger" href="../admin/hapus_barang.php?id_barang=<?=$row['id_barang']?>">Hapus</a> -->
                   </td>
                   </tr>
                   <?php
@@ -134,7 +163,6 @@ include "../config.php";
                 <!-- <a href="../admin/input_barang.php" class="button-link">add</a> -->
                 <!-- <button class="btn btn-primary" href="../admin/input_barang.php" >Add</button> -->
                 
-                <!-- <button class="btn btn-primary" onclick="location.href='../inventoris/input_transaksi.php'" type="button" style="float: right" >Tambah</button> -->
                 </tbody>
               </table>
               <!-- End Default Table Example -->
@@ -143,10 +171,6 @@ include "../config.php";
         </div>
       </div>
     </section>
-
-    <script> 
-    window.print();  
-  </script>
 
   </main><!-- End #main -->
 
@@ -176,7 +200,7 @@ include "../config.php";
   <script src="../assets/vendor/tinymce/tinymce.min.js"></script>
   <script src="../assets/vendor/php-email-form/validate.js"></script>
   <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
+  <script src="../assets/js/main.js"></script>
 
 </body>
 

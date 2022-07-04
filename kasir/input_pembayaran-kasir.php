@@ -1,21 +1,10 @@
 <?php
 include "../config.php";
-$id_barang = 0;
-$stok = 0;
 
-if (isset($_POST['simpan'])){
-    $id_barang = $_POST['id_barang'];
-    $stok = $_POST['total_barang'];
+$no_faktur = $_GET['no_faktur'];
+$sql = pg_query($conn, "SELECT * from transaksi where no_faktur = '$no_faktur'");
+$row = pg_fetch_array($sql);
 
-}
-
-$query = pg_query($conn, "SELECT max(no_faktur) as no_faktur FROM transaksi");
-$row = pg_fetch_array($query);
-$kode = $row['no_faktur'];
-$urutan = (int) substr($kode, 3, 3);
-$urutan=$urutan+1;
-$huruf = "FT";
-$id = $huruf . sprintf("%03s", $urutan); 
 ?>
 
 <!DOCTYPE html>
@@ -124,12 +113,12 @@ $id = $huruf . sprintf("%03s", $urutan);
   <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>Transaksi</h1>
+      <h1>Pembayaran</h1>
       <nav>
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="../kasir/index_kasir.php">Home</a></li>
-          <li class="breadcrumb-item">Transaksi</li>
-          <li class="breadcrumb-item active">Tambah Transaksi</li>
+          <li class="breadcrumb-item"><a href="../kasir/index_kasir.php">Beranda</a></li>
+          <li class="breadcrumb-item">Pembayaran</li>
+          <li class="breadcrumb-item active">Form Pembayaran</li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
@@ -143,7 +132,7 @@ $id = $huruf . sprintf("%03s", $urutan);
     <section class="main-panel d-flex">
       <div class="container card">
         <div class="section-title">
-          <h3 class="fw-bolder mb-4">Tambah Transaksi</h3>
+          <h3 class="fw-bolder mb-4">Pembayaran</h3>
 
         </div>
 
@@ -153,89 +142,57 @@ $id = $huruf . sprintf("%03s", $urutan);
             <label for="">No Faktur</label>
             <div class="form-group">
               <div class="form-line">
-                <input type="text" name="no_faktur" class="form-control" value ="<?php echo $id?>" readonly />
+                <input type="text" name="no_faktur" class="form-control" value ="<?php echo $row['no_faktur']?>" readonly />
               </div>
             </div>
 
             <div class="form-group" style="margin-bottom:20px">
-              <label for="id_pelanggan" style="margin-bottom:10px">id_pelanggan</label>
-              <select style="padding:5px 10px; width:100%;" class="chosen-select" data-placeholder="Pilih Pelanggan :" name="id_pelanggan" required>
-                <option value="<?php ?>" disabled selected>Pelanggan</option>
+              <label for="id_pegawai" style="margin-bottom:10px">ID Pegawai</label>
+              <select style="padding:5px 10px; width:100%;"  class="chosen-select" data-placeholder="Pilih Pegawai :" name="id_pegawai" required>
+                <option value="<?php ?>" disabled selected>Pilih pegawai</option>
                 <?php
                 include '../connect.php';
-                $pelanggan = pg_query($conn, "SELECT * FROM pelanggan order by id_pelanggan ASC");
-                while ($row = pg_fetch_assoc($pelanggan)) {
-                  echo "<option value='$row[id_pelanggan]'>$row[nama_pelanggan] - $row[plat_mobil] - $row[keperluan] </option>";
+                $pegawai = pg_query($conn, "SELECT * FROM pegawai order by id_pegawai ASC");
+                while ($row2 = pg_fetch_assoc($pegawai)) {
+                  echo "<option value='$row2[id_pegawai]'>$row2[nama_pegawai] - $row2[jabatan] </option>";
                 }
                 ?>
               </select>
             </div>
 
-            <div class="form-group" style="margin-bottom:20px">
-              <label for="id_barang" style="margin-bottom:10px">ID Barang</label>
-              <select style="padding:5px 10px; width:100%;" class="chosen-select" data-placeholder="Barang Yang Digunakan" name="id_barang" required>
-                <option value="<?php ?>" disabled selected>Barang</option>
-                <?php
-                include '../connect.php';
-                $barang = pg_query($conn, "SELECT * FROM barang order by nama_barang ASC");
-                while ($row = pg_fetch_assoc($barang)) {
-                  echo "<option value='$row[id_barang]'>$row[nama_barang] - $row[harga_jual]  </option>";
-                }
-                ?>
-              </select>
+            <form method="POST" class="d-flex">
+          <div class="col-sm-6">
+            <label for="">Id Pelanggan</label>
+            <div class="form-group">
+              <div class="form-line">
+                <input type="text" name="id_pelanggan" class="form-control" value ="<?php echo $row['id_pelanggan']?>" readonly />
+              </div>
+            </div>
+
+            <form method="POST" class="d-flex">
+          <div class="col-sm-6">
+            <label for="">Id Barang</label>
+            <div class="form-group">
+              <div class="form-line">
+                <input type="text" name="id_barang" class="form-control" value ="<?php echo $row['id_barang']?>" readonly />
+              </div>
             </div>
 
             <label for="">Harga Barang</label>
             <div class="form-group">
               <div class="form-line">
-                <input type="text" name="harga_barang" class="form-control" id="harga_barang" required />
+              <input type="text" name="harga_barang" class="form-control" value ="<?php echo $row['harga_barang']?>" readonly />
               </div>
             </div>
 
-
-            <label for="">Jumlah Barang</label>
-            <div class="form-group">
-              <div class="form-line">
-                <input type="text" name="jumlah_barang" class="form-control" id="jml_brg" required />
-              </div>
-            </div>
-            <script>
-              function doMath() {
-                var numOne = document.getElementById('harga_barang').value;
-                var numTwo = document.getElementById('jml_brg').value;
-                var theProduct = parseInt(numOne) * parseInt(numTwo);
-                document.getElementById("total").value = theProduct;
-
-              }
-            </script>
 
             <label for="">Total Harga</label>
             <div class="form-group">
               <div class="form-line">
-                <input type="text" name="harga_total" class="form-control" id="total" readonly />
+                <input type="text" name="harga_total" class="form-control" id="total" value = "<?php echo $row['harga_total']?>" readonly />
               </div>
             </div>
 
-            
-
-            <!-- <label for="">Status</label>
-            <div class="form-group">
-              <div class="form-line">
-                <input type="text" name="status" class="form-control" required />
-              </div>
-            </div> -->
-            <label for="">Status Barang : </label>
-            <div class="form-group">
-                <div class="form-line">
-                <input type="radio" name="status" value="Selesai" required />
-                <label >Selesai</label>  
-                </div>
-                <div class="form-line">
-                <input type="radio" name="status" value="Belum" required />
-                <label >Belum</label>  
-                </div>
-
-            </div>
 
             <label for="">Tanggal</label>
             <div class="form-group">
@@ -244,9 +201,33 @@ $id = $huruf . sprintf("%03s", $urutan);
               </div>
             </div>
 
+            <label for="">Uang Pelanggan</label>
+            <div class="form-group">
+              <div class="form-line">
+                <input type="text" name="harga_total" class="form-control" id="uang"  required />
+              </div>
+            </div>
+
+            <label for="">Kembalian</label>
+            <div class="form-group">
+              <div class="form-line">
+                <input type="text" name="kembalian" class="form-control" id="kembalian"  readonly />
+              </div>
+            </div>
+
+            <script>
+              function doMath() {
+                var numOne = document.getElementById('uang').value;
+                var numTwo = document.getElementById('total').value;
+                var theProduct = parseInt(numOne) - parseInt(numTwo);
+                document.getElementById("kembalian").value = theProduct;
+
+              }
+            </script>
+
             <br>
             <a href="#" class="btn btn-primary bi bi-calculator mb-2" name="hitung" onclick="doMath()">Hitung</a>
-            <input type="submit" name="simpan" value="simpan" class="btn btn-primary bi bi-save-fill mb-2">
+            <input type="submit" name="bayar" value="bayar" class="btn btn-primary bi bi-save-fill mb-2">
             
 
           </div>
@@ -260,29 +241,21 @@ $id = $huruf . sprintf("%03s", $urutan);
       </form>
       <?php
 
-      if (isset($_POST['simpan'])) {
-        $barang = pg_query($conn, "SELECT total_barang from barang where id_barang='$id_barang'");
-        $row3 = pg_fetch_array($barang);
-        $tot = $row3['total_barang'];
-        $jumlah_barang = $_POST['jumlah_barang'];
+      if (isset($_POST['bayar'])) {
         $no_faktur = $_POST['no_faktur'];
         $id_barang = $_POST['id_barang'];
+        $id_pegawai = $_POST['id_pegawai'];
         $id_pelanggan = $_POST['id_pelanggan'];
         $harga_total = $_POST['harga_total'];
-        $status = $_POST['status'];
         $tanggal = $_POST['tanggal'];
-        $harga_barang = $_POST['harga_barang'];
-        $stok = $tot - $jumlah_barang;
 
-
-        $sql = pg_query($conn, "insert into transaksi (no_faktur,id_barang,id_pelanggan,harga_total,jumlah_barang,status,tanggal,harga_barang) values ('$no_faktur','$id_barang','$id_pelanggan','$harga_total', '$jumlah_barang', '$status', '$tanggal', '$harga_barang')");
-        $sql2 = pg_query($conn, "UPDATE barang SET total_barang='$stok' WHERE id_barang='$id_barang'");
-
-        if ($sql and $sql2) {
+        
+        $sql = pg_query($conn, "INSERT INTO pembayaran (no_faktur ,id_pegawai ,id_barang, id_pelanggan, harga_total, tanggal) values ('$no_faktur','$id_pegawai','$id_barang','$id_pelanggan','$harga_total', '$tanggal')");
+        if ($sql ) {
       ?>
           echo "<script>
             alert('Data berhasil ditambah');
-            window.location = '../kasir/view_transaksi.php';
+            window.location = '../kasir/view_pembayaran-kasir.php';
           </script>";
       <?php
         }

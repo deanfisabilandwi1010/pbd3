@@ -1,6 +1,10 @@
 <?php
 include "../config.php";
 
+$no_faktur = $_GET['no_faktur'];
+$sql = pg_query($conn, "SELECT * from transaksi where no_faktur = '$no_faktur'");
+$row = pg_fetch_array($sql);
+ 
 ?>
 
 <!DOCTYPE html>
@@ -10,18 +14,18 @@ include "../config.php";
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Pelanggan - Bima Motor</title>
+  <title>Input Transaksi - Bima Motor</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
   <!-- Favicons -->
   <link href="../assets/img/Logoo.PNG" rel="icon">
   <link href="../assets/img/Logoo.PNG" rel="Logoo">
-  
+
   <!-- Google Fonts -->
   <link href="https://fonts.gstatic.com" rel="preconnect">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
-  
+
   <!-- Vendor CSS Files -->
   <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
@@ -30,33 +34,33 @@ include "../config.php";
   <link href="../assets/vendor/quill/quill.bubble.css" rel="stylesheet">
   <link href="../assets/vendor/remixicon/remixicon.css" rel="stylesheet">
   <link href="../assets/vendor/simple-datatables/style.css" rel="stylesheet">
-  
+
   <!-- Template Main CSS File -->
   <link href="../assets/css/style.css" rel="stylesheet">
-  
+
   <!-- =======================================================
   * Template Name: NiceAdmin - v2.2.2
   * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
-  </head>
-  
-  <body>
-  
+</head>
+
+<body>
+
   <!-- ======= Header ======= -->
   <header id="header" class="header fixed-top d-flex align-items-center">
-  
+
     <div class="d-flex align-items-center justify-content-between">
-      <a href="../montir/index_montir.php" class="logo d-flex align-items-center">
-      <img src="../assets/img/Logoo.PNG" alt="">
+      <a href="index.html" class="logo d-flex align-items-center">
+        <img src="../assets/img/Logoo.PNG" alt="">
         <span class="d-none d-lg-block">Bima Motor</span>
       </a>
       <i class="bi bi-list toggle-sidebar-btn"></i>
     </div><!-- End Logo -->
   </header><!-- End Header -->
-  
-  
+
+
     <!-- ======= Sidebar ======= -->
     <aside id="sidebar" class="sidebar">
 
@@ -109,69 +113,144 @@ include "../config.php";
   <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>Pelanggan</h1>
+      <h1>Transaksi</h1>
       <nav>
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-          <li class="breadcrumb-item">Pelanggan</li>
+          <li class="breadcrumb-item"><a href="../kasir/index_kasir.php">Home</a></li>
+          <li class="breadcrumb-item">Transaksi</li>
+          <li class="breadcrumb-item active">Tambah Transaksi</li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
 
-    <section class="section">
-      <div class="row">
-        <div class="col-lg-12">
+    <?php
+    include "../config.php";
 
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Tabel Pelanggan</h5>
+    ?>
 
-              <!-- Default Table -->
-              <table class="table">
-                <thead>
-                  <tr>
-                    <td scope="col">ID Pelanggan</td>
-                    <td scope="col">Plat Mobil</td>
-                    <td scope="col">Jenis Mobil</td>
-                    <td scope="col">Nama Pelanggan</td>
-                    <td scope="col">Nomor Telepon</td>
-                    <td scope="col">Keperluan</td>
-                    
-                  </tr>
-                </thead>
 
-                <tbody>
-                  <?php
-                  $result = pg_query($conn,"SELECT *FROM pelanggan order by id_pelanggan asc");
-                  while ($row = pg_fetch_array($result)){
-                    ?>
-                  
-                  <tr>
-                    <td><?=$row['id_pelanggan']?></td>
-                    <td><?=$row['plat_mobil']?></td>
-                    <td><?=$row['jenis_mobil']?></td>
-                    <td><?=$row['nama_pelanggan']?></td>
-                    <td><?=$row['no_hp']?></td>
-                    <td><?=$row['keperluan']?></td>
-                    <td align = "center">
-                    
-                  </td>
-                  </tr>
-                  <?php
-                  }
-                  ?>
-                <!-- <a href="../admin/input_barang.php" class="button-link">add</a> -->
-                <!-- <button class="btn btn-primary" href="../admin/input_barang.php" >Add</button> -->
-                  
+    <section class="main-panel d-flex">
+      <div class="container card">
+        <div class="section-title">
+          <h3 class="fw-bolder mb-4">Tambah Transaksi</h3>
 
-                </tbody>
-              </table>
-              <!-- End Default Table Example -->
-            </div>
-          </div>
         </div>
+
+
+        <form method="POST" class="d-flex">
+          <div class="col-sm-6">
+            <label for="">No Faktur</label>
+            <div class="form-group">
+              <div class="form-line">
+                <input type="text" name="no_faktur" class="form-control" value ="<?php echo $row['no_faktur']?>" readonly />
+              </div>
+            </div>
+
+            <label for="">Id Pelanggan</label>
+            <div class="form-group">
+              <div class="form-line">
+                <input type="text" name="id_pelanggan" class="form-control" value="<?php echo $row['id_pelanggan'] ?>" readonly />
+              </div>
+            </div>
+
+            <label for="">Id Barang</label>
+            <div class="form-group">
+              <div class="form-line">
+                <input type="text" name="id_barang" class="form-control" value="<?php echo $row['id_barang'] ?>" readonly />
+              </div>
+            </div>
+
+        
+
+            <label for="">Harga Barang</label>
+            <div class="form-group">
+              <div class="form-line">
+                <input type="text" name="harga_barang" class="form-control" id="harga_barang" value ="<?php echo $row['harga_barang']?>" readonly />
+              </div>
+            </div>
+
+
+            <label for="">Jumlah Barang</label>
+            <div class="form-group">
+              <div class="form-line">
+                <input type="text" name="jumlah_barang" class="form-control" id="jml_brg" value ="<?php echo $row['jumlah_barang']?>" readonly />
+              </div>
+            </div>
+            
+
+            <label for="">Total Harga</label>
+            <div class="form-group">
+              <div class="form-line">
+                <input type="text" name="harga_total" class="form-control" id="total" value ="<?php echo $row['harga_total']?>" readonly />
+              </div>
+            </div>
+
+            
+
+            <!-- <label for="">Status</label>
+            <div class="form-group">
+              <div class="form-line">
+                <input type="text" name="status" class="form-control" required />
+              </div>
+            </div> -->
+            <label for="">Status Barang : </label>
+            <div class="form-group">
+                <div class="form-line">
+                <input type="radio" name="status" value="Selesai" required />
+                <label >Selesai</label>  
+                </div>
+                <div class="form-line">
+                <input type="radio" name="status" value="Belum" required />
+                <label >Belum</label>  
+                </div>
+
+            </div>
+
+            <label for="">Tanggal</label>
+            <div class="form-group">
+              <div class="form-line">
+                <input type="date" name="tanggal" class="form-control" required />
+              </div>
+            </div>
+
+            <br>
+            <input type="submit" name="simpan" value="simpan" class="btn btn-primary bi bi-save-fill mb-2">
+            
+
+          </div>
+          <div class="col-sm-6">
+
+          </div>
+
+
+      </div>
+
+      </form>
+      <?php
+
+
+        if (isset($_POST['simpan'])) {
+            $no_faktur = $_POST['no_faktur'];
+            $id_pelanggan = $_POST['id_pelanggan'];
+            $id_barang = $_POST['id_barang'];
+            $harga_barang = $_POST['harga_barang'];
+            $jumlah_barang = $_POST['jumlah_barang'];
+            $harga_total = $_POST['harga_total'];
+            $status = $_POST['status'];
+            $tanggal = $_POST['tanggal'];
+    
+            $sql = pg_query($conn, "UPDATE transaksi set no_faktur='$no_faktur', id_pelanggan='$id_pelanggan', id_barang='$id_barang', harga_barang='$harga_barang', jumlah_barang='$jumlah_barang', harga_total='$harga_total', status='$status', tanggal='$tanggal' where no_faktur='$no_faktur'");
+        if($sql){
+        echo "<script>alert('Data berhasil diedit');window.location='../kasir/view_transaksi.php';</script>";
+        } else {
+        echo pg_last_error($conn);
+        }
+        }
+      ?>
+
       </div>
     </section>
+
 
   </main><!-- End #main -->
 
@@ -200,8 +279,9 @@ include "../config.php";
   <script src="../assets/vendor/simple-datatables/simple-datatables.js"></script>
   <script src="../assets/vendor/tinymce/tinymce.min.js"></script>
   <script src="../assets/vendor/php-email-form/validate.js"></script>
+
   <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
+  <script src="../assets/js/main.js"></script>
 
 </body>
 

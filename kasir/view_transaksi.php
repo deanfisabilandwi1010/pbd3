@@ -89,7 +89,7 @@ include "../config.php";
           </a>
         </li>
         <li>
-          <a href="components-accordion.html">
+          <a href="../kasir/view_pembayaran-kasir.php">
             <i class="bi bi-circle"></i><span>Pembayaran</span>
           </a>
         </li>
@@ -132,12 +132,12 @@ include "../config.php";
                   <tr>
                     <td scope="col">No Faktur</td>
                     <td scope="col">ID Pelanggan</td>
-                    <td scope="col">Plat Mobil</td>
                     <td scope="col">Kode Barang</td>
                     <td scope="col">Total Harga</td>
                     <td scope="col">Jumlah Barang</td>
                     <td scope="col">Status Barang</td>
                     <td scope="col">Tanggal</td>
+                    <td scope="col">Aksi</td>
                     
                   </tr>
                 </thead>
@@ -151,15 +151,15 @@ include "../config.php";
                   <tr>
                     <td><?=$row['no_faktur']?></td>
                     <td><?=$row['id_pelanggan']?></td>
-                    <td><?=$row['plat_mobil']?></td>
                     <td><?=$row['id_barang']?></td>
                     <td><?=$row['harga_total']?></td>
                     <td><?=$row['jumlah_barang']?></td>
                     <td><?=$row['status']?></td>
                     <td><?=$row['tanggal']?></td>
                     <td align = "center">
-                    <!-- <a class="btn btn-primary" href="../kasir/edit_transaksi.php?id_barang=<?=$row['id_barang']?>">Edit</a> -->
-                    <!-- <a onclick="return confirm('Yakin menghapus data ini ?')" class="btn btn-danger" href="../admin/hapus_barang.php?id_barang=<?=$row['id_barang']?>">Hapus</a> -->
+                      
+                    <a class="btn btn-primary bi bi-pencil-square" href="../kasir/edit_transaksi-kasir.php?no_faktur=<?=$row['no_faktur']?>">Edit</a>
+                    <a class="btn btn-warning bi bi-pencil-square" href="../kasir/input_pembayaran-kasir.php?no_faktur=<?=$row['no_faktur']?>">Bayar</a>
                   </td>
                   </tr>
                   <?php
@@ -168,7 +168,7 @@ include "../config.php";
                 <!-- <a href="../admin/input_barang.php" class="button-link">add</a> -->
                 <!-- <button class="btn btn-primary" href="../admin/input_barang.php" >Add</button> -->
                 
-                <button class="btn btn-primary" onclick="location.href='../inventoris/input_transaksi.php'" type="button" style="float: right" >Tambah</button>
+                <button class="btn btn-primary" onclick="location.href='./input_transaksi.php'" type="button" style="float: right" >Tambah</button>
                 </tbody>
               </table>
               <!-- End Default Table Example -->
