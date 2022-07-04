@@ -57,6 +57,19 @@ include "../config.php";
   </header><!-- End Header -->
   
   
+  <!-- ======= Header ======= -->
+  <header id="header" class="header fixed-top d-flex align-items-center">
+  
+    <div class="d-flex align-items-center justify-content-between">
+      <a href="../inventoris/index_inventori.php" class="logo d-flex align-items-center">
+        <img src="../assets/img/Logoo.PNG" alt="">
+        <span class="d-none d-lg-block">Bima Motor</span>
+      </a>
+      <i class="bi bi-list toggle-sidebar-btn"></i>
+    </div><!-- End Logo -->
+  </header><!-- End Header -->
+  
+  
     <!-- ======= Sidebar ======= -->
     <aside id="sidebar" class="sidebar">
   
@@ -70,22 +83,11 @@ include "../config.php";
         </li><!-- End Dashboard Nav -->
   
         <li class="nav-item">
-          <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
-            <i class="bi bi-nut-fill"></i><span>Sparepart</span><i class="bi bi-chevron-down ms-auto"></i>
+          <a class="nav-link collapsed" href="../inventoris/view_barang-inventori.php">
+          <i class="bi bi-nut-fill"></i><span>Barang</span>
           </a>
-          <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-            <li>
-              <a href="../inventoris/view_barang-inventori.php">
-                <i class="bi bi-circle"></i><span>Barang</span>
-              </a>
-            </li>
-            <li>
-              <a href="../inventoris/view_restok-inventori.php">
-                <i class="bi bi-circle"></i><span>Re-Stok Barang</span>
-              </a>
-            </li>
-          </ul>
-        </li><!-- End Components Nav -->
+        </li>
+        <!-- End Components Nav -->
   
         
 

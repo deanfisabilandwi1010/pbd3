@@ -1,6 +1,13 @@
-<?php  
+<?php
 include "../config.php";
+$id_b = 0;
+    if (isset($_POST['simpan'])){
+        $id_b = $_POST['id_barang'];
 
+    }
+
+    $sql1 = pg_query($conn, "SELECT * from barang ORDER BY id_barang ASC");
+    $row1 = pg_fetch_array($sql1);
 ?>
 
 <!DOCTYPE html>
@@ -10,18 +17,18 @@ include "../config.php";
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Sparepart - Bima Motor</title>
+  <title>Input Barang - Bima Motor</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
   <!-- Favicons -->
   <link href="../assets/img/Logoo.PNG" rel="icon">
   <link href="../assets/img/Logoo.PNG" rel="Logoo">
-  
+
   <!-- Google Fonts -->
   <link href="https://fonts.gstatic.com" rel="preconnect">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
-  
+
   <!-- Vendor CSS Files -->
   <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
@@ -30,34 +37,34 @@ include "../config.php";
   <link href="../assets/vendor/quill/quill.bubble.css" rel="stylesheet">
   <link href="../assets/vendor/remixicon/remixicon.css" rel="stylesheet">
   <link href="../assets/vendor/simple-datatables/style.css" rel="stylesheet">
-  
+
   <!-- Template Main CSS File -->
   <link href="../assets/css/style.css" rel="stylesheet">
-  
+
   <!-- =======================================================
   * Template Name: NiceAdmin - v2.2.2
   * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
-  </head>
-  
-  <body>
-  
+</head>
+
+<body>
+
   <!-- ======= Header ======= -->
   <header id="header" class="header fixed-top d-flex align-items-center">
-  
+
     <div class="d-flex align-items-center justify-content-between">
-      <a href="../admin/index_admin.php" class="logo d-flex align-items-center">
-      <img src="../assets/img/Logoo.PNG" alt="">
+      <a href="index.html" class="logo d-flex align-items-center">
+        <img src="../assets/img/Logoo.PNG" alt="">
         <span class="d-none d-lg-block">Bima Motor</span>
       </a>
       <i class="bi bi-list toggle-sidebar-btn"></i>
     </div><!-- End Logo -->
   </header><!-- End Header -->
-  
-  
-       <!-- ======= Header ======= -->
+
+
+    <!-- ======= Header ======= -->
   <header id="header" class="header fixed-top d-flex align-items-center">
   
   <div class="d-flex align-items-center justify-content-between">
@@ -109,78 +116,135 @@ include "../config.php";
       </li><!-- End F.A.Q Page Nav -->
 
   </aside><!-- End Sidebar-->
+      
+  
+      
 
   <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>Barang</h1>
+      <h1>Re-Stok</h1>
       <nav>
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="../admin/index_admin.php">Beranda</a></li>
-          <li class="breadcrumb-item">Barang</li>
+          <li class="breadcrumb-item"><a href="../inventoris/index_inventori.php">Home</a></li>
+          <li class="breadcrumb-item">Sparepart</li>
+          <li class="breadcrumb-item active">Re-Stok</li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
 
-    <section class="section">
-      <div class="row">
-        <div class="col-lg-12">
+    <?php
+    include "../config.php";
 
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Tabel Data Barang</h5>
+    ?>
 
-              <!-- Default Table -->
-              <table class="table">
-                <thead>
-                  <tr>
-                    <td scope="col">Kode Barang</td>
-                    <td scope="col">Nama Barng</td>
-                    <td scope="col">Harga Jual</td>
-                    <td scope="col">Harga Beli</td>
-                    <td scope="col">Jumlah Barang</td>
-                    
-                  </tr>
-                </thead>
 
-                <tbody>
-                  <?php
-                  $result = pg_query($conn,"SELECT *FROM barang order by id_barang asc");
-                  while ($row = pg_fetch_array($result)){
-                    ?>
-                  
-                  <tr>
-                    <td><?=$row['id_barang']?></td>
-                    <td><?=$row['nama_barang']?></td>
-                    <td><?=$row['harga_jual']?></td>
-                    <td><?=$row['harga_beli']?></td>
-                    <td><?=$row['total_barang']?></td>
-                    <td align = "center">
-                    <!-- <a class="btn btn-primary" href="../admin/edit_barang.php?id_barang=<?=$row['id_barang']?>">Edit</a>
-                    <a onclick="return confirm('Yakin menghapus data ini ?')" class="btn btn-danger" href="../admin/hapus_barang.php?id_barang=<?=$row['id_barang']?>">Hapus</a> -->
-                    
-                  </td>
-                  </tr>
-                  <?php
-                  }
-                  ?>
-                <!-- <a href="../admin/input_barang.php" class="button-link">add</a> -->
-                <!-- <button class="btn btn-primary" href="../admin/input_barang.php" >Add</button> -->
-                
-                
-                <!-- <button class="btn btn-primary" onclick="location.href='../admin/input_barang.php'" type="button" style="float: right" >Add</button> -->
-                
-                
-                  
+    <section class="main-panel d-flex">
+      <div class="container card">
+        <div class="section-title">
+          <h3 class="fw-bolder mb-4">Re-Stok Barang</h3>
 
-                </tbody>
-              </table>
-              <!-- End Default Table Example -->
-            </div>
-          </div>
         </div>
+
+
+        <form method="POST" class="d-flex">
+          <div class="col-sm-6">
+            <label for="">Faktur Re-Stok</label>
+            <div class="form-group">
+              <div class="form-line">
+                <input type="text" name="faktur_restok" class="form-control" maxlength="5" required />
+              </div>
+            </div>
+
+            <div class="form-group" style="margin-bottom:20px">
+               <label for="id_barang" style="margin-bottom:10px">id_barang</label>
+              <select style="padding:5px 10px; width:100%;" class="chosen-select" data-placeholder="Pilih ID Barang yang akan Di Restok" name="id_barang" required>
+              <option value="<?php ?>" disabled selected>Pilih ID Barang</option>
+              <?php 
+              include '../connect.php';
+              $barang = pg_query($conn, "SELECT * FROM barang order by nama_barang ASC");
+              while ($row = pg_fetch_assoc($barang)) {
+              echo "<option value='$row[id_barang]'>$row[nama_barang]</option>";
+              }
+              ?>
+              </select>
+              </div>
+
+              <label for="">Harga Barang</label>
+            <div class="form-group">
+              <div class="form-line">
+                <input type="text" name="harga_beli" class="form-control" value="<?php echo $row1['harga_beli']?>" readonly />
+              </div>
+            </div>
+
+            <label for="">Tanggal</label>
+            <div class="form-group">
+              <div class="form-line">
+                <input type="date" name="tanggal" class="form-control" required />
+              </div>
+            </div>
+
+            <label for="">Jumlah Pembelian</label>
+            <div class="form-group">
+              <div class="form-line">
+                <input type="text" name="qty" class="form-control" required />
+              </div>
+            </div>
+
+
+            <label for="">Harga Total</label>
+            <div class="form-group">
+              <div class="form-line">
+                <input type="text" name="harga_total" class="form-control" />
+              </div>
+            </div>
+
+            
+          <!-- <input type="submit" name="test" value="test" class="btn btn-primary">   -->
+
+            <input type="submit" name="simpan" value="simpan" class="btn btn-primary">
+            
+            <?php
+        if (isset($_POST['simpan'])){
+
+        $harga_beli = pg_query($conn, "SELECT harga_beli from barang where id_barang='$id_brg'");
+        $row3 = pg_fetch_array($harga_beli);
+        $harga_beli = $row3['harga_beli'];
+        $id_brg = $row1['id_barang'];
+        $qty = $_POST['jumlah_pembelian'];
+        $total_harga = $harga_beli * $qty;
+        $faktur_restok = $_POST['faktur_restok'];
+        $id_barang = $_POST['id_barang'];
+        $tanggal = $_POST['tanggal'];
+        $harga_beli = $_POST['harga_beli'];
+        $harga_total = $_POST['harga_total'];
+
+
+        pg_query($conn, "insert into detail_restok (faktur_restok,id_barang,tanggal,harga_total,jumlah_pembelian,harga_beli) values('$faktur_restok','$id_brg','$tanggal','$harga_total','$qty','$harga_beli')");
+ }
+  ?>
+  }
+}
+
+
+
+
+?>
+
+          </div>
+          <div class="col-sm-6">
+
+          </div>
+
+
+      </div>
+
+      </form>
+  
+
       </div>
     </section>
+
 
   </main><!-- End #main -->
 
@@ -209,6 +273,7 @@ include "../config.php";
   <script src="../assets/vendor/simple-datatables/simple-datatables.js"></script>
   <script src="../assets/vendor/tinymce/tinymce.min.js"></script>
   <script src="../assets/vendor/php-email-form/validate.js"></script>
+
   <!-- Template Main JS File -->
   <script src="../assets/js/main.js"></script>
 

@@ -1,5 +1,19 @@
 <?php
 include "../config.php";
+$id_brg = 0;
+if (isset($_POST['simpan'])) {
+  $id_brg = $_POST['id_barang'];
+}
+
+$sql1 = pg_query($conn, "SELECT * from barang ORDER BY id_barang ASC");
+$row1 = pg_fetch_array($sql1);
+$query2 = pg_query($conn, "SELECT max(faktur_restok) as faktur_restok FROM detail_restok");
+$row4 = pg_fetch_array($query2);
+$kode = $row4['faktur_restok'];
+$urutan = (int) substr($kode, 3, 3);
+$huruf = "FR";
+$urutan=$urutan+1;
+$id = $huruf.sprintf("%03s", $urutan);
 
 ?>
 
@@ -57,17 +71,17 @@ include "../config.php";
   </header><!-- End Header -->
 
 
-    <!-- ======= Header ======= -->
+  <!-- ======= Header ======= -->
   <header id="header" class="header fixed-top d-flex align-items-center">
-  
-  <div class="d-flex align-items-center justify-content-between">
-    <a href="../inventoris/index_inventori.php" class="logo d-flex align-items-center">
-      <img src="../assets/img/Logoo.PNG" alt="">
-      <span class="d-none d-lg-block">Bima Motor</span>
-    </a>
-    <i class="bi bi-list toggle-sidebar-btn"></i>
-  </div><!-- End Logo -->
-</header><!-- End Header -->
+
+    <div class="d-flex align-items-center justify-content-between">
+      <a href="../inventoris/index_inventori.php" class="logo d-flex align-items-center">
+        <img src="../assets/img/Logoo.PNG" alt="">
+        <span class="d-none d-lg-block">Bima Motor</span>
+      </a>
+      <i class="bi bi-list toggle-sidebar-btn"></i>
+    </div><!-- End Logo -->
+  </header><!-- End Header -->
 
 
   <!-- ======= Sidebar ======= -->
@@ -84,22 +98,22 @@ include "../config.php";
 
       <li class="nav-item">
         <a class="nav-link collapsed" href="../inventoris/view_barang-inventori.php">
-        <i class="bi bi-nut-fill"></i><span>Barang</span>
+          <i class="bi bi-nut-fill"></i><span>Barang</span>
         </a>
       </li>
       <!-- End Components Nav -->
 
-      
 
-        <li class="nav-item">
-        <a class="nav-link collapsed"  href="../inventoris/view_transaksi_restok-inventori.php">
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="../inventoris/view_transaksi_restok-inventori.php">
           <i class="bi bi-cash-stack "></i><span>Transaksi Re-Stok</span>
-        </a>          
-        </li>
-        
+        </a>
+      </li>
+
       <li class="nav-heading">Lainnya</li>
 
-      
+
 
       <li class="nav-item">
         <a class="nav-link collapsed" href="../login.php">
@@ -110,15 +124,18 @@ include "../config.php";
 
   </aside><!-- End Sidebar-->
 
+
+
+
   <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>Barang</h1>
+      <h1>Re-Stok</h1>
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="../inventoris/index_inventori.php">Home</a></li>
-          <li class="breadcrumb-item">Transaksi</li>
-          <li class="breadcrumb-item active">Tambah Transaksi</li>
+          <li class="breadcrumb-item">Sparepart</li>
+          <li class="breadcrumb-item active">Re-Stok</li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
@@ -132,65 +149,39 @@ include "../config.php";
     <section class="main-panel d-flex">
       <div class="container card">
         <div class="section-title">
-          <h3 class="fw-bolder mb-4">Tambah Transaksi</h3>
+          <h3 class="fw-bolder mb-4">Re-Stok Barang</h3>
 
         </div>
 
 
         <form method="POST" class="d-flex">
           <div class="col-sm-6">
-            <label for="">No Faktur</label>
+            <label for="">Faktur Re-Stok</label>
             <div class="form-group">
               <div class="form-line">
-                <input type="text" name="no_faktur" class="form-control" maxlength="5" required />
+                <input type="text" name="faktur_restok" value="<?php echo $id?>" class="form-control" maxlength="5" readonly />
               </div>
             </div>
 
-            <label for="">ID Barang</label>
-            <div class="form-group">
-              <div class="form-line">
-                <input type="text" name="id_barang" class="form-control" required />
-              </div>
+            <div class="form-group" style="margin-bottom:20px">
+              <label for="id_barang" style="margin-bottom:10px">id_barang</label>
+              <select style="padding:5px 10px; width:100%;" class="chosen-select" data-placeholder="Pilih ID Barang yang akan Di Restok" name="id_barang" required>
+                <option value="<?php ?>" disabled selected>Pilih Barang</option>
+                <?php
+                include '../connect.php';
+                $barang = pg_query($conn, "SELECT * FROM barang order by nama_barang ASC");
+                while ($row = pg_fetch_assoc($barang)) {
+                  echo "<option value='$row[id_barang]'>$row[nama_barang] - $row[harga_beli] </option>";
+                }
+                ?>
+              </select>
             </div>
 
-            <label for="">ID Pelanggan</label>
+            <label for="">Harga Barang</label>
             <div class="form-group">
               <div class="form-line">
-                <input type="text" name="id_pelanggan" class="form-control" required />
+                <input type="text" name="harga_beli" class="form-control" id="harga" required />
               </div>
-            </div>
-
-            <label for="">Harga Total</label>
-            <div class="form-group">
-              <div class="form-line">
-                <input type="text" name="harga_total" class="form-control" required />
-              </div>
-            </div>
-
-            <label for="">Jumlah Barang</label>
-            <div class="form-group">
-              <div class="form-line">
-                <input type="text" name="jumlah_barang" class="form-control" required />
-              </div>
-            </div>
-
-            <!-- <label for="">Status</label>
-            <div class="form-group">
-              <div class="form-line">
-                <input type="text" name="status" class="form-control" required />
-              </div>
-            </div> -->
-            <label for="">Status Barang : </label>
-            <div class="form-group">
-                <div class="form-line">
-                <input type="radio" name="status" value="Masuk" required />
-                <label >Masuk</label>  
-                </div>
-                <div class="form-line">
-                <input type="radio" name="status" value="Keluar" required />
-                <label >Keluar</label>  
-                </div>
-
             </div>
 
             <label for="">Tanggal</label>
@@ -200,8 +191,73 @@ include "../config.php";
               </div>
             </div>
 
+            <label for="">Jumlah Pembelian</label>
+            <div class="form-group">
+              <div class="form-line">
+                <input type="text" name="jumlah_pembelian" class="form-control" id="jumlah" required />
+              </div>
+            </div>
 
-            <input type="submit" name="simpan" value="Simpan" class="but mb-4 w-50 mt-2">
+            <script>
+              function doMath() {
+                var numOne = document.getElementById('harga').value;
+                var numTwo = document.getElementById('jumlah').value;
+                var theProduct = parseInt(numOne) * parseInt(numTwo);
+                document.getElementById("hargaTotal").value = theProduct;
+
+              }
+            </script>
+
+          
+            <label for="">Harga Total</label>
+            <div class="form-group">
+              <div class="form-line">
+                <input type="text" name="harga_total" id="hargaTotal" class="form-control" value="" readonly />
+              </div>
+            </div>
+
+
+
+            <!-- <input type="submit" name="test" value="test" class="btn btn-primary">   -->
+              <br>
+              <a href="#" class="btn btn-primary bi bi-calculator mb-2" onclick="doMath()">Hitung</a>
+            <input type="submit" name="simpan" value="simpan" onclick="domath()" class="btn btn-primary mb-2">
+              
+            <?php
+            if (isset($_POST['simpan'])) {
+
+              $detail = pg_query($conn, "SELECT harga_beli, total_barang from barang where id_barang='$id_brg'");
+              $id_brg = $row1['id_barang'];
+              $total_barang = $_POST['total_barang'];
+              $harga_beli = $detail['harga_beli'];
+              $total_barang = $detail['total_barang'];
+              $qty = $_POST['jumlah_pembelian'];
+              $harga_total = $harga_beli * $qty;
+              $faktur_restok = $_POST['faktur_restok'];
+              $id_barang = $_POST['id_barang'];
+              $tanggal = $_POST['tanggal'];
+              $harga_beli = $_POST['harga_beli'];
+              $harga_total = $_POST['harga_total'];
+              
+
+              $Stok = $_POST['jumlah_pembelian'] + $total_barang;
+              
+               
+              $inputQuery2 =  pg_query($conn,"UPDATE barang SET total_barang='$Stok' WHERE id_barang='$id_brg'");
+              $inputQuery = pg_query($conn, "insert into detail_restok (faktur_restok,id_barang,tanggal,harga_total,jumlah_pembelian,harga_beli) values('$faktur_restok','$id_brg','$tanggal','$harga_total','$qty','$harga_beli')");
+
+              if ($inputQuery) {
+                if ($inputQuery2){
+                  echo "<script>
+                  alert('Data berhasil ditambah!');
+                  window.location = '../inventoris/view_transaksi_restok-inventori.php';
+                </script>";
+                }
+               
+              }
+            }
+            ?>
+
 
           </div>
           <div class="col-sm-6">
@@ -212,33 +268,7 @@ include "../config.php";
       </div>
 
       </form>
-      <?php
 
-      if (isset($_POST['simpan'])) {
-        $no_faktur = $_POST['no_faktur'];
-        $id_barang = $_POST['id_barang'];
-        $id_pelanggan = $_POST['id_pelanggan'];
-        $harga_total = $_POST['harga_total'];
-        $jumlah_barang = $_POST['jumlah_barang'];
-        $status = $_POST['status'];
-        $tanggal = $_POST['tanggal'];
-
-        $sql = pg_query($conn, "insert into transaksi (no_faktur,id_barang,id_pelanggan,harga_total,jumlah_barang,status,tanggal) values ('$no_faktur','$id_barang','$id_pelanggan','$harga_total', '$jumlah_barang', '$status', '$tanggal')");
-        // $sql = pg_query($conn, "insert into barang (id_barang,nama_barang,harga_jual,harga_beli,total_barang) values ('$id_barang','$nama_barang','$harga_jual', '$harga_beli', '$total_barang')");
-        if ($sql) {
-      ?>
-          echo "<script>
-            alert('Data berhasil ditambah');
-            window.location = '../inventoris/view_transaksi-inventori.php';
-          </script>";
-      <?php
-        }
-      }
-
-      
-
-
-      ?>
 
       </div>
     </section>
